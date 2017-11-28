@@ -4,7 +4,7 @@
 
 **Welcome to API Specifications!**
 
-This project contains [OpenAPI](https://www.openapis.org/) specifications for the Image Intelligence API. There are currently two versions of our API (api-v1.json and api-v2.json).
+This project contains [OpenAPI](https://www.openapis.org/) specifications for the Image Intelligence API. There are currently two versions of our API ([api-v1.json](./api-v1.json) and [api-v2.json](./api-v2.json)).
 
 ## Installation & Usage
 
@@ -29,13 +29,18 @@ When you're making changes to the API specification, it is often useful to verif
 
 ```bash
 npm install -g swagger-cli
+```
+
+```bash
 swagger-cli help
+swagger-cli validate api-v1.json
+swagger-cli validate api-v2.json
 ```
 
 When editing the schema, perhaps you want a preview of your changes. The [Swagger Editor](https://swagger.io/swagger-editor/) can be useful here.
 
-**Not sure what Swagger or OpenAPI is?** Check out this [article](https://swagger.io/difference-between-swagger-and-openapi/)
+**Not sure what Swagger or OpenAPI is?** Check out this [article](https://swagger.io/difference-between-swagger-and-openapi/).
 
 ## Deployment
 
-To publish a new version of api-specifications, update `"version"` in `package.json`, `"info.version"` in the OpenAPI spec and then create a GitHub Release. For example:
+To publish a new version of api-specifications, update `"version"` in `package.json`, `"info.version"` in the OpenAPI specification and then create a GitHub Release.
