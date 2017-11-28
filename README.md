@@ -1,5 +1,7 @@
 # api-specifications
 
+[![Build Status](https://travis-ci.org/ImageIntelligence/api-specification.svg?branch=master)](https://travis-ci.org/ImageIntelligence/api-specification)
+
 **Welcome to API Specifications!**
 
 This project contains [OpenAPI](https://www.openapis.org/) specifications for the Image Intelligence API. There are currently two versions of our API (api-v1.json and api-v2.json).
