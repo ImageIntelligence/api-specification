@@ -408,8 +408,7 @@
         "classes": {
           "type": "object",
           "required": [
-            "class",
-            "hitl"
+            "class"
           ],
           "properties": {
             "class": {
@@ -423,7 +422,8 @@
                 "AUTO",
                 "ALWAYS"
               ],
-              "description": "Whether you want HITL verification"
+              "description": "Whether you want HITL verification",
+              "default": "AUTO"
             }
           }
         },
