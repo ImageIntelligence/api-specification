@@ -1,6 +1,6 @@
 ## v2.0.0-rc3 (Unreleased)
 
-The following list a summary of changes made from v1.1.0 to v2.0.0-rc3. For specific details, please refer to the api-v1.json and api-v2.json JSON schema.
+The following lists a summary of changes made from v1.1.0 to v2.0.0-rc3. For specific details, please refer to the api-v1.json and api-v2.json JSON schema.
 
 **BACKWARDS INCOMPATIBILITIES / NOTES:**
 
