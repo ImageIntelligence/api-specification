@@ -3,7 +3,7 @@
   "host": "api.imageintelligence.com",
   "basePath": "/v2",
   "info": {
-    "version": "2.0.0-rc2",
+    "version": "2.0.0-rc3",
     "title": "Image Intelligence API Documentation"
   },
   "schemes": [
