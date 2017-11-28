@@ -1,0 +1,10 @@
+{
+  "name": "@image-intelligence/api-specification",
+  "version": "2.0.0rc1",
+  "description": "Swagger spec for the Image Intelligence API",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ImageIntelligence/api-specification.git"
+  }
+}

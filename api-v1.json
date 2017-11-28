@@ -1,0 +1,1258 @@
+{
+  "swagger": "2.0",
+  "host": "https://api.imageintelligence.com/v1",
+  "info": {
+    "version": "1.1.0",
+    "title": "Image Intelligence",
+    "description": "Image Intelligence API"
+  },
+  "schemes": [
+    "https"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "securityDefinitions": {
+    "Bearer": {
+      "name": "Authorization",
+      "description": "Bearer token based authentication.",
+      "type": "apiKey",
+      "in": "header"
+    }
+  },
+  "paths": {
+    "/oauth/token": {
+      "post": {
+        "summary": "Get an authorization token.",
+        "parameters": [
+          {
+            "name": "ClientCredentials",
+            "in": "body",
+            "required": true,
+            "description": "Contains an API key and client secret.",
+            "schema": {
+              "$ref": "#/definitions/ClientCredentials"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Access token with organisation name, time of issue and time of expiry for the token.",
+            "schema": {
+              "$ref": "#/definitions/AccessTokenResponse"
+            }
+          },
+          "401": {
+            "description": "Client credentials not authorised"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/detect": {
+      "post": {
+        "operationId": "detect",
+        "summary": "Given a list of images, identifies objects in each image.",
+        "description": "Submit a list of images for detection, responds with an in-progress job. The results can be acquired by either specifying a publicly accessible webhook URL, or querying with the job ID on the /detect/{id} endpoint.",
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "DetectionJobRequest",
+            "in": "body",
+            "description": "An object representing a request to detect labels on images.",
+            "schema": {
+              "$ref": "#/definitions/DetectionJobRequest"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Everything worked as expected",
+            "schema": {
+              "$ref": "#/definitions/DetectionJobResponse"
+            }
+          },
+          "400": {
+            "description": "Malformed request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      },
+      "get": {
+        "operationId": "detect-search",
+        "summary": "Search detect result set using filters. The response could change depending on whether the job is complete.",
+        "description": "",
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "The page to start at. Defaults to 1",
+            "type": "number",
+            "required": false,
+            "default": 1
+          },
+          {
+            "name": "customId",
+            "in": "query",
+            "description": "Jobs with this custom id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "feedId",
+            "in": "query",
+            "description": "Jobs with this feed id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "before",
+            "in": "query",
+            "description": "Jobs created before this timestamp",
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "after",
+            "in": "query",
+            "description": "Jobs created after this timestamp",
+            "type": "number",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Everything worked as expected",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DetectionJobResponse"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/detect/{id}": {
+      "get": {
+        "operationId": "detect-get",
+        "summary": "Get a detect result set by job ID. The response could change depending on whether the job is complete.",
+        "description": "",
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "description": "ID of detect job.",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Everything worked as expected",
+            "schema": {
+              "$ref": "#/definitions/DetectionJobResponse"
+            }
+          },
+          "404": {
+            "description": "No job found with this ID"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/find-person": {
+      "post": {
+        "operationId": "find-person",
+        "summary": "Given a sequence of images, find all images with person labels.",
+        "description": "Detect person labels on all images. If the detection model is unsure about all images, human-in-the-loop is used to verify and select any image with a person.",
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "FindPersonDetectionJobRequest",
+            "in": "body",
+            "description": "An object representing a request to find a person in a list of images.",
+            "schema": {
+              "$ref": "#/definitions/FindPersonDetectionJobRequest"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Everything worked as expected",
+            "schema": {
+              "$ref": "#/definitions/FindPersonDetectionJobResponse"
+            }
+          },
+          "400": {
+            "description": "Malformed request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      },
+      "get": {
+        "operationId": "find-person-search",
+        "summary": "Search find person result set using filters. The response could change depending on whether the job is complete.",
+        "description": "",
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "The page to start at. Defaults to 1",
+            "type": "number",
+            "required": false,
+            "default": 1
+          },
+          {
+            "name": "customId",
+            "in": "query",
+            "description": "Jobs with this custom id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "feedId",
+            "in": "query",
+            "description": "Jobs with this feed id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "before",
+            "in": "query",
+            "description": "Jobs created before this timestamp",
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "after",
+            "in": "query",
+            "description": "Jobs created after this timestamp",
+            "type": "number",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Everything worked as expected",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/FindPersonDetectionJobResponse"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/find-person/{id}": {
+      "get": {
+        "operationId": "find-person-get",
+        "summary": "Get a find person result set by job ID. The response could change depending on whether the job is complete.",
+        "description": "",
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "description": "ID of find person job.",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Everything worked as expected",
+            "schema": {
+              "$ref": "#/definitions/FindPersonDetectionJobResponse"
+            }
+          },
+          "404": {
+            "description": "No job found with this ID"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/feedback": {
+      "post": {
+        "operationId": "feedback",
+        "summary": "Provide feedback on the result of a detection.",
+        "description": "The feedback endpoint provides the ability to give feedback to the API about images that were previously detected. This is typically used to correct errors made by our deep learning platform. Each piece of feedback helps our system learn better. Please try and provide feedback whenever you see errors",
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "FeedbackRequest",
+            "in": "body",
+            "description": "An object representing a request to provide feedback on a detection.",
+            "schema": {
+              "$ref": "#/definitions/FeedbackRequest"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Everything worked as expected",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/FeedbackResponseDto"
+              }
+            }
+          },
+          "400": {
+            "description": "Malformed request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "No image found with this ID"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      },
+      "get": {
+        "operationId": "feedback-search",
+        "summary": "Search feedback result set using filters.",
+        "description": "",
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "The page to start at. Defaults to 1",
+            "type": "number",
+            "required": false,
+            "default": 1
+          },
+          {
+            "name": "tagImageResultId",
+            "in": "query",
+            "description": "Feedback with this tagImageResultId id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "before",
+            "in": "query",
+            "description": "Feedback created before this timestamp",
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "after",
+            "in": "query",
+            "description": "Feedback created after this timestamp",
+            "type": "number",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Everything worked as expected",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/FeedbackResponseDto"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      },
+      "patch": {
+        "private": true,
+        "operationId": "feedbackUpdate",
+        "summary": "Update the status of feedback",
+        "description": "The feedback endpoint provides the ability to give feedback to the API about images that were previously detected. This is typically used to correct errors made by our deep learning platform. Each piece of feedback helps our system learn better. Please try and provide feedback whenever you see errors",
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "FeedbackUpdateRequest",
+            "in": "body",
+            "description": "An object representing a request to update feedback",
+            "schema": {
+              "$ref": "#/definitions/FeedbackUpdateRequest"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Everything worked as expected",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/FeedbackResponseDto"
+              }
+            }
+          },
+          "400": {
+            "description": "Malformed request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "No feedback found with this ID"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ClientCredentials": {
+      "type": "object",
+      "required": [
+        "clientId",
+        "clientSecret"
+      ],
+      "properties": {
+        "clientId": {
+          "type": "string",
+          "description": "Client ID."
+        },
+        "clientSecret": {
+          "type": "string",
+          "description": "Client secret."
+        }
+      },
+      "example": {
+        "clientId": "69VYLJO2W9S53ARW45QYPABCX",
+        "clientSecret": "ABCSErTf78aRDPABC/r41AOIW2MlMoZR3lGgMABCDg"
+      }
+    },
+    "AccessTokenResponse": {
+      "type": "object",
+      "required": [
+        "accessToken",
+        "expiresAt",
+        "issuedAt",
+        "orgName"
+      ],
+      "properties": {
+        "accessToken": {
+          "type": "string",
+          "description": "The access token you can use to access the API."
+        },
+        "expiresAt": {
+          "type": "number",
+          "format": "int64",
+          "description": "The time at which the token expires."
+        },
+        "issuedAt": {
+          "type": "number",
+          "format": "int64",
+          "description": "The time at which the token was granted."
+        },
+        "orgName": {
+          "type": "string",
+          "description": "The organization name."
+        }
+      },
+      "example": {
+        "accessToken": "eyJzdHQiOiJhY2....xUC3RJFY1T8",
+        "expiresAt": 1489105452385,
+        "issuedAt": 1489019052385,
+        "orgName": "acme"
+      }
+    },
+    "DetectionJobRequest": {
+      "type": "object",
+      "description": "A detect request.",
+      "required": [
+        "items"
+      ],
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DetectJobItemRequest"
+          }
+        },
+        "webhookUrl": {
+          "type": "string",
+          "description": "The POST endpoint you wish to receive status updates about this job on. Must be publicly accessible."
+        },
+        "customId": {
+          "type": "string",
+          "description": "User specified ID to reference this job."
+        },
+        "feedId": {
+          "type": "string",
+          "description": "User specified ID to reference the source of the images within this job."
+        },
+        "model": {
+          "type": "string",
+          "enum": [
+            "AUTO",
+            "DETECTOR_GEN_01",
+            "CLASSIFIER_GEN_01",
+            "CLASSIFIER_IR_01"
+          ],
+          "description": "Specify the neural net to be used. Default is AUTO."
+        }
+      },
+      "example": {
+        "items": [
+          {
+            "url": "https://publicly.available.domain.net/2016-11-08/90f8754aa4e287bbb2c07ec99ade0de72ddbd4b6Et.jpg",
+            "customId": "0285a6b8-a617-11e6-8253-175f847ef3cf"
+          },
+          {
+            "url": "https://publicly.available.domain.net/2016-11-08/90f8754aa4e287bbb2c07ec99ade0de72ddbd4b7Et.jpg",
+            "customId": "0285a6b8-a617-11e6-8253-175f847ef3cg"
+          },
+          {
+            "url": "https://publicly.available.domain.net/2016-11-08/90f8754aa4e287bbb2c07ec99ade0de72ddbd4b8Et.jpg",
+            "customId": "0285a6b8-a617-11e6-8253-175f847ef3ch"
+          }
+        ],
+        "webhookUrl": "https://publicly.available.domain.net/2016-11-08/90f8754aa4e287bbb2c07ec99ade0de72ddbd4b8Et",
+        "customId": "0285a6b8-a617-11e6-8253-175f847ef3cf",
+        "feedId": "Camera_123456",
+        "model": "CLASSIFIER_GEN_01"
+      }
+    },
+    "DetectJobItemRequest": {
+      "type": "object",
+      "description": "An image to detect.",
+      "required": [
+        "url"
+      ],
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "URL of the image."
+        },
+        "customId": {
+          "type": "string",
+          "description": "User specified ID to reference this item."
+        }
+      },
+      "example": {
+        "url": "https://publicly.available.domain.net/2016-11-08/90f8754aa4e287bbb2c07ec99ade0de72ddbd4b6Et.jpg",
+        "customId": "0285a6b8-a617-11e6-8253-175f847ef3cf"
+      }
+    },
+    "FindPersonDetectionJobRequest": {
+      "type": "object",
+      "description": "Find Person request.",
+      "required": [
+        "items"
+      ],
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DetectJobItemRequest"
+          }
+        },
+        "tolerance": {
+          "type": "string",
+          "enum": [
+            "ZERO",
+            "LOW",
+            "MEDIUM",
+            "HIGH",
+            "MAX"
+          ],
+          "description": "Represents the tolerance level of the AI to determine whether a human-in-the-loop interaction is required. A ZERO tolerance means hitl will always be used. A LOW tolerance will trigger hitl more often than a HIGH tolerance. A MAX tolerance means hitl is never used. Default is MEDIUM."
+        },
+        "model": {
+          "type": "string",
+          "enum": [
+            "AUTO",
+            "DETECTOR_GEN_01",
+            "CLASSIFIER_GEN_01",
+            "CLASSIFIER_IR_01"
+          ],
+          "description": "Specify the neural net to be used. Default is AUTO."
+        },
+        "webhookUrl": {
+          "type": "string",
+          "description": "The POST endpoint you wish to receive status updates about this job on. Must be publicly accessible."
+        },
+        "customId": {
+          "type": "string",
+          "description": "User specified ID to reference this job."
+        },
+        "feedId": {
+          "type": "string",
+          "description": "User specified ID to reference the source of the images within this job."
+        }
+      },
+      "example": {
+        "items": [
+          {
+            "url": "https://publicly.available.domain.net/2016-11-08/90f8754aa4e287bbb2c07ec99ade0de72ddbd4b6Et.jpg",
+            "customId": "some_person_filled_image"
+          },
+          {
+            "url": "https://publicly.available.domain.net/2016-11-08/90f8754aa4e287bbb2c07ec99ade0de72ddbd4b7Et.jpg",
+            "customId": "0285a6b8-a617-11e6-8253-175f847ef3cg"
+          }
+        ],
+        "tolerance": "HIGH",
+        "model": "CLASSIFIER_GEN_01",
+        "webhookUrl": "https://publicly.available.domain.net/2016-11-08/90f8754aa4e287bbb2c07ec99ade0de72ddbd4b6Et",
+        "customId": "6c78df0a-67b6-4d5f-93cf-5820cfee501c",
+        "feedId": "Camera_123456"
+      }
+    },
+    "DetectionJobResponse": {
+      "type": "object",
+      "description": "The response to a detect request.",
+      "required": [
+        "id",
+        "results",
+        "createdAt",
+        "status",
+        "model"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "results": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DetectImageResult"
+          }
+        },
+        "createdAt": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Unix timestamp for when the job was created."
+        },
+        "status": {
+          "$ref": "#/definitions/DetectionJobStatus"
+        },
+        "customId": {
+          "type": "string",
+          "description": "User specified ID to reference this job."
+        },
+        "feedId": {
+          "type": "string",
+          "description": "User specified ID to reference the source of the images within this job."
+        },
+        "webhookUrl": {
+          "type": "string",
+          "description": "The POST endpoint you wish to receive status updates about this job on. Must be publicly accessible."
+        },
+        "model": {
+          "type": "string",
+          "enum": [
+            "AUTO",
+            "DETECTOR_GEN_01",
+            "CLASSIFIER_GEN_01",
+            "CLASSIFIER_IR_01"
+          ],
+          "description": "Specify the neural net to be used. Default is AUTO."
+        }
+      },
+      "example": {
+        "id": "5d689c71-e68f-46c3-ac71-4053806e71de",
+        "results": [
+          {
+            "id": "52547074-a622-11e6-8f61-63f37dc33285",
+            "jobId": "5d689c71-e68f-46c3-ac71-4053806e71de",
+            "url": "https://publicly.available.domain.net/2016-11-08/90f8754aa4e287bbb2c07ec99ade0de72ddbd4b6Et.jpg",
+            "proxyUrl": "https://publicly.available.domain/ab7923c4-c731-4f96-9290-164661331eb5",
+            "objects": [
+              {
+                "class": "person",
+                "confidence": 0.9971387386,
+                "boundingBox": {
+                  "xMin": 52,
+                  "yMin": 23,
+                  "yMax": 375,
+                  "xMax": 363
+                }
+              }
+            ],
+            "status": {
+              "code": "COMPLETED_SUCCESSFULLY"
+            },
+            "createdAt": 1487648348,
+            "customId": "some_person_filled_image"
+          }
+        ],
+        "createdAt": 1487648348,
+        "status": {
+          "code": "COMPLETED_SUCCESSFULLY",
+          "message": "Labels successfully detected on all images."
+        },
+        "customId": "6c78df0a-67b6-4d5f-93cf-5820cfee501c",
+        "feedId": "Camera_123456",
+        "webhookUrl": "https://publicly.available.domain.net/2016-11-08/90f8754aa4e287bbb2c07ec99ade0de72ddbd4b6Et",
+        "model": "CLASSIFIER_GEN_01"
+      }
+    },
+    "DetectionJobStatus": {
+      "type": "object",
+      "description": "The status of this job.",
+      "required": [
+        "code",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "string",
+          "enum": [
+            "COMPLETED_SUCCESSFULLY",
+            "COMPLETED_PARTIAL_ERROR",
+            "COMPLETED_ALL_ERROR",
+            "IN_PROGRESS"
+          ]
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "DetectImageResult": {
+      "type": "object",
+      "description": "Label results of detecting an image.",
+      "required": [
+        "id",
+        "jobId",
+        "url",
+        "objects",
+        "status",
+        "createdAt"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "ID of this image result."
+        },
+        "jobId": {
+          "type": "string",
+          "description": "ID of the detection job that this result belongs to."
+        },
+        "url": {
+          "type": "string",
+          "description": "URL of the image."
+        },
+        "proxyUrl": {
+          "type": "string",
+          "description": "URL where the processed image can be accessed."
+        },
+        "objects": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DetectionObject"
+          }
+        },
+        "status": {
+          "$ref": "#/definitions/DetectImageResultStatus"
+        },
+        "createdAt": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Unix timestamp for when this result was created."
+        },
+        "customId": {
+          "type": "string",
+          "description": "User specified ID to reference this item."
+        }
+      }
+    },
+    "DetectImageResultStatus": {
+      "type": "object",
+      "description": "The status of this image.",
+      "required": [
+        "code"
+      ],
+      "properties": {
+        "code": {
+          "type": "string",
+          "enum": [
+            "COMPLETED_SUCCESSFULLY",
+            "IN_PROGRESS",
+            "IMAGE_DOWNLOAD_ERROR",
+            "INVALID_IMAGE_FORMAT_ERROR",
+            "DETECTION_ENGINE_ERROR",
+            "UNKNOWN_ERROR"
+          ]
+        }
+      }
+    },
+    "DetectionObject": {
+      "type": "object",
+      "description": "An object identified in the image.",
+      "required": [
+        "class",
+        "confidence",
+        "boundingBox"
+      ],
+      "properties": {
+        "class": {
+          "type": "string",
+          "description": "The class of this object. eg 'person' or 'bicycle'."
+        },
+        "confidence": {
+          "type": "number",
+          "format": "double",
+          "description": "The confidence in the classification result. This is a number between 0 and 1."
+        },
+        "boundingBox": {
+          "$ref": "#/definitions/BoundingBox"
+        }
+      }
+    },
+    "BoundingBox": {
+      "type": "object",
+      "description": "Co-ordinates for the rectangle around this object in the image.",
+      "required": [
+        "xMin",
+        "yMin",
+        "yMax",
+        "xMax"
+      ],
+      "properties": {
+        "xMin": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "yMin": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "yMax": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "xMax": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "FindPersonDetectionJobResponse": {
+      "type": "object",
+      "description": "Response to a find person request.",
+      "required": [
+        "id",
+        "createdAt",
+        "results",
+        "status",
+        "model"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Job ID."
+        },
+        "createdAt": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Unix timestamp for when this job was created."
+        },
+        "results": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PersonResult"
+          }
+        },
+        "status": {
+          "$ref": "#/definitions/DetectionJobStatus"
+        },
+        "customId": {
+          "type": "string",
+          "description": "User specified ID to reference this job."
+        },
+        "feedId": {
+          "type": "string",
+          "description": "User specified ID to reference the source of the images within this job."
+        },
+        "webhookUrl": {
+          "type": "string",
+          "description": "The POST endpoint you wish to receive status updates about this job on. Must be publicly accessible."
+        },
+        "model": {
+          "type": "string",
+          "enum": [
+            "AUTO",
+            "DETECTOR_GEN_01",
+            "CLASSIFIER_GEN_01",
+            "CLASSIFIER_IR_01"
+          ],
+          "description": "Specify the neural net to be used. Default is AUTO."
+        }
+      },
+      "example": {
+        "id": "5d689c71-e68f-46c3-ac71-4053806e71de",
+        "createdAt": 1487648348,
+        "results": [
+          {
+            "id": "52547074-a622-11e6-8f61-63f37dc33285",
+            "status": {
+              "code": "COMPLETED_SUCCESSFULLY"
+            },
+            "customId": "some_person_filled_image",
+            "url": "https://publicly.available.domain.net/2016-11-08/90f8754aa4e287bbb2c07ec99ade0de72ddbd4b6Et.jpg",
+            "proxyUrl": "https://publicly.available.domain/ab7923c4-c731-4f96-9290-164661331eb5",
+            "confidence": 0.95,
+            "boundingBox": {
+              "xMin": 52,
+              "yMin": 23,
+              "yMax": 375,
+              "xMax": 363
+            },
+            "hasPerson": true,
+            "hitl": true
+          }
+        ],
+        "status": {
+          "code": "COMPLETED_SUCCESSFULLY",
+          "message": "Labels successfully detected on all images."
+        },
+        "customId": "6c78df0a-67b6-4d5f-93cf-5820cfee501c",
+        "feedId": "Camera_123456",
+        "webhookUrl": "https://publicly.available.domain.net/2016-11-08/90f8754aa4e287bbb2c07ec99ade0d",
+        "model": "CLASSIFIER_GEN_01"
+      }
+    },
+    "PersonResult": {
+      "type": "object",
+      "description": "Person label result.",
+      "required": [
+        "id",
+        "status",
+        "url",
+        "hitl"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "ID of this image result."
+        },
+        "status": {
+          "$ref": "#/definitions/DetectImageResultStatus"
+        },
+        "customId": {
+          "type": "string",
+          "description": "User specified ID to reference this item."
+        },
+        "url": {
+          "type": "string",
+          "description": "The URL for the image."
+        },
+        "proxyUrl": {
+          "type": "string",
+          "description": "URL where the processed image can be accessed."
+        },
+        "confidence": {
+          "type": "number",
+          "format": "double",
+          "description": "The confidence in the classification result. This is a number between 0 and 1."
+        },
+        "boundingBox": {
+          "$ref": "#/definitions/BoundingBox"
+        },
+        "hasPerson": {
+          "type": "boolean",
+          "description": "True if this image has a person label. Null if the image had an error."
+        },
+        "hitl": {
+          "type": "boolean",
+          "description": "True if human-in-the-loop was used to append this label."
+        }
+      },
+      "example": {
+        "id": "52547074-a622-11e6-8f61-63f37dc33285",
+        "status": {
+          "code": "COMPLETED_SUCCESSFULLY"
+        },
+        "customId": "some_person_filled_image",
+        "url": "https://publicly.available.domain.net/2016-11-08/90f8754aa4e287bbb2c07ec99ade0de72ddbd4b6Et.jpg",
+        "proxyUrl": "https://publicly.available.domain/ab7923c4-c731-4f96-9290-164661331eb5",
+        "confidence": 0.95,
+        "boundingBox": {
+          "xMin": 52,
+          "yMin": 23,
+          "yMax": 375,
+          "xMax": 363
+        },
+        "hasPerson": true,
+        "hitl": true
+      }
+    },
+    "FeedbackStatus": {
+      "type": "object",
+      "description": "The status of this image.",
+      "required": [
+        "code"
+      ],
+      "properties": {
+        "code": {
+          "type": "string",
+          "enum": [
+            "SUBMITTED",
+            "APPROVED",
+            "REJECTED"
+          ]
+        },
+        "message": {
+          "type": "string",
+          "message": "An optional message to explain the status"
+        }
+      }
+    },
+    "FeedbackRequest": {
+      "type": "object",
+      "description": "Feedback request",
+      "required": [
+        "id",
+        "addClasses",
+        "removeClasses"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "ID of the DetectImageResult"
+        },
+        "message": {
+          "type": "string",
+          "description": "A message field to provide specific feedback on the given image."
+        },
+        "addClasses": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Any additional classes that you feel are present on the given image."
+        },
+        "removeClasses": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Any classes that you feel are not present on the given image."
+        }
+      },
+      "example": {
+        "id": "50BBB693-B529-4EEE-B9A6-6D387DD90C5B",
+        "message": "There shouldn't be a cat in this photo",
+        "addClasses": [
+          "person",
+          "dog"
+        ],
+        "removeClasses": [
+          "cat"
+        ]
+      }
+    },
+    "FeedbackUpdateRequest": {
+      "private": true,
+      "type": "object",
+      "description": "Feedback update request",
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "$ref": "#/definitions/FeedbackStatus"
+        }
+      },
+      "example": {
+        "status": "APPROVED"
+      }
+    },
+    "FeedbackResponseDto": {
+      "type": "object",
+      "description": "Feedback response",
+      "required": [
+        "id",
+        "jobId",
+        "jobType",
+        "tagImageResultId",
+        "url",
+        "addClasses",
+        "removeClasses",
+        "status",
+        "createdAt"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Feedback ID."
+        },
+        "jobId": {
+          "type": "string",
+          "description": "ID of the job that this feedback belongs to."
+        },
+        "jobType": {
+          "type": "string",
+          "description": "The type of job that this feedback belongs to."
+        },
+        "tagImageResultId": {
+          "type": "string",
+          "description": "ID of the DetectImageResult."
+        },
+        "url": {
+          "type": "string",
+          "description": "URL for the image."
+        },
+        "proxyUrl": {
+          "type": "string",
+          "description": "URL where the processed image can be accessed."
+        },
+        "message": {
+          "type": "string",
+          "description": "A message field to provide specific feedback on the given image."
+        },
+        "addClasses": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Any additional classes that you feel are present on the given image."
+        },
+        "removeClasses": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Any classes that you feel are not present on the given image."
+        },
+        "status": {
+          "$ref": "#/definitions/FeedbackStatus"
+        },
+        "createdAt": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Unix timestamp for when the feedback was created."
+        }
+      },
+      "example": {
+        "id": "50BBB693-B529-4EEE-B9A6-6D387DD90C5B",
+        "jobId": "5d689c71-e68f-46c3-ac71-4053806e71de",
+        "jobType": "find-person-job",
+        "tagImageResultId": "EB0ACB41-54EC-468D-892B-A8C0D676F495",
+        "url": "https://publicly.available.domain.net/2016-11-08/90f8754aa4e287bbb2c07ec99ade0de72ddbd4b6Et.jpg",
+        "proxyUrl": "https://publicly.available.domain/ab7923c4-c731-4f96-9290-164661331eb5",
+        "message": "There shouldn't be a cat in this photo",
+        "addClasses": [
+          "person",
+          "dog"
+        ],
+        "removeClasses": [
+          "cat"
+        ],
+        "status": "APPROVED",
+        "createdAt": 1487648348
+      }
+    }
+  }
+}

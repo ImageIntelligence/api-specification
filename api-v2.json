@@ -1,0 +1,765 @@
+{
+  "swagger": "2.0",
+  "host": "api.imageintelligence.com",
+  "basePath": "/v2",
+  "info": {
+    "version": "2.0.0",
+    "title": "Image Intelligence API Documentation"
+  },
+  "schemes": [
+    "https"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "securityDefinitions": {
+    "Bearer": {
+      "name": "Authorization",
+      "description": "Bearer token based authentication",
+      "type": "apiKey",
+      "in": "header"
+    }
+  },
+  "paths": {
+    "/oauth/token": {
+      "post": {
+        "summary": "Generates an access token given your client credentials",
+        "parameters": [{
+          "name": "ClientCredentials",
+          "in": "body",
+          "required": true,
+          "description": "Contains a client ID and secret",
+          "schema": {
+            "$ref": "#/definitions/ClientCredentials"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Access token with organization name, time of issue, and time of expiry",
+            "schema": {
+              "$ref": "#/definitions/AccessTokenResponse"
+            }
+          },
+          "401": {
+            "description": "Request failed due to invalid authentication credentials"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/find-object": {
+      "post": {
+        "operationId": "find-object",
+        "security": [{
+          "Bearer": []
+        }],
+        "parameters": [{
+          "name": "FindObjectJobRequest",
+          "in": "body",
+          "schema": {
+            "$ref": "#/definitions/FindObjectJobRequest"
+          },
+          "required": true
+        }],
+        "responses": {
+          "200": {
+            "description": "Find object job request was successfully submitted",
+            "schema": {
+              "$ref": "#/definitions/FindObjectJobResponse"
+            }
+          },
+          "400": {
+            "description": "Malformed request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/find-object/{id}": {
+      "get": {
+        "operationId": "find-object-get",
+        "security": [{
+          "Bearer": []
+        }],
+        "parameters": [{
+          "name": "id",
+          "in": "path",
+          "type": "string",
+          "description": "The job ID of a find-object request",
+          "required": true
+        }],
+        "responses": {
+          "200": {
+            "description": "Resources from the find-object job successfully returned",
+            "schema": {
+              "$ref": "#/definitions/FindObjectJobResponse"
+            }
+          },
+          "404": {
+            "description": "No job found with the given ID"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/find-target": {
+      "post": {
+        "operationId": "find-target",
+        "security": [{
+          "Bearer": []
+        }],
+        "parameters": [{
+          "name": "FindTargetJobRequest",
+          "in": "body",
+          "schema": {
+            "$ref": "#/definitions/FindTargetJobRequest"
+          },
+          "required": true
+        }],
+        "responses": {
+          "200": {
+            "description": "Find target job request was successfully submitted",
+            "schema": {
+              "$ref": "#/definitions/FindTargetJobResponse"
+            }
+          },
+          "400": {
+            "description": "Malformed request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/find-target/{id}": {
+      "get": {
+        "operationId": "find-target-get",
+        "security": [{
+          "Bearer": []
+        }],
+        "parameters": [{
+          "name": "id",
+          "in": "path",
+          "type": "string",
+          "description": "The job ID of a find-target request",
+          "required": true
+        }],
+        "responses": {
+          "200": {
+            "description": "Resources from the find-target job successfully returned",
+            "schema": {
+              "$ref": "#/definitions/FindTargetJobResponse"
+            }
+          },
+          "400": {
+            "description": "Malformed request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ClientCredentials": {
+      "type": "object",
+      "required": [
+        "clientId",
+        "clientSecret"
+      ],
+      "properties": {
+        "clientId": {
+          "type": "string",
+          "description": "Your application's clientId"
+        },
+        "clientSecret": {
+          "type": "string",
+          "description": "Your application's clientSecret"
+        }
+      },
+      "example": {
+        "clientId": "69VYLJO2W9S53ARW45QYPABCX",
+        "clientSecret": "ABCSErTf78aRDPABC/r41AOIW2MlMoZR3lGgMABCDg"
+      }
+    },
+    "AccessTokenResponse": {
+      "type": "object",
+      "required": [
+        "accessToken",
+        "expiresAt",
+        "issuedAt",
+        "orgName",
+        "appName",
+        "scope"
+      ],
+      "properties": {
+        "accessToken": {
+          "type": "string",
+          "description": "A generated access token used to authenicate with the API"
+        },
+        "expiresAt": {
+          "type": "number",
+          "format": "int64",
+          "description": "The UNIX timestamp for when this access token expires"
+        },
+        "issuedAt": {
+          "type": "number",
+          "format": "int64",
+          "description": "The UNIX timestamp for when this access token was generated"
+        },
+        "orgName": {
+          "type": "string",
+          "description": "Name of the organization this token belongs to"
+        },
+        "appName": {
+          "type": "string",
+          "description": "Name of the application this access token was generated from"
+        },
+        "scope": {
+          "type": "string",
+          "description": "A list of space delimited scopes e.g. 'detect:create detect:read'"
+        }
+      },
+      "example": {
+        "accessToken": "eyJzdHQiOiJhY2....xUC3RJFY1T8",
+        "expiresAt": 1489105452385,
+        "issuedAt": 1489019052385,
+        "orgName": "acme"
+      }
+    },
+    "FindObjectJobRequest": {
+      "type": "object",
+      "required": [
+        "images"
+      ],
+      "properties": {
+        "images": {
+          "type": "array",
+          "description": "A list of image URLs (maximum of 64)",
+          "items": {
+            "$ref": "#/definitions/ImageRequestItem"
+          }
+        },
+        "classes": {
+          "type": "object",
+          "required": [
+            "class",
+            "hitl"
+          ],
+          "properties": {
+            "class": {
+              "type": "string",
+              "description": "A class you want to search for"
+            },
+            "hitl": {
+              "type": "string",
+              "enum": [
+                "NEVER",
+                "AUTO",
+                "ALWAYS"
+              ],
+              "description": "Whether you want HITL verification"
+            }
+          }
+        },
+        "webhookUrl": {
+          "type": "string",
+          "description": "Publicly accessible POST endpoint for receiving job status updates"
+        },
+        "customId": {
+          "type": "string",
+          "description": "User specified ID to reference this job"
+        },
+        "feedId": {
+          "type": "string",
+          "description": "User specified ID to reference the source of the images within this job"
+        }
+      },
+      "example": {
+        "images": [{
+            "url": "https://publicly.available.domain.net/image-001.jpg",
+            "customId": "some_person_filled_image"
+          },
+          {
+            "url": "https://publicly.available.domain.net/image-002.jpg",
+            "customId": "some_car_filled_image"
+          }
+        ],
+        "classes": [{
+            "class": "person",
+            "hitl": "ALWAYS"
+          },
+          {
+            "class": "car",
+            "hitl": "NEVER"
+          }
+        ],
+        "customId": "6c78df0a-67b6-4d5f-93cf-5820cfee501c",
+        "feedId": "Camera_123456",
+        "webhookUrl": "https://publicly.available.domain.net/90f8754aa4e287bbb2c07ec99ade0de72ddbd4b6Et"
+      }
+    },
+    "FindTargetJobRequest": {
+      "type": "object",
+      "required": [
+        "images",
+        "target"
+      ],
+      "properties": {
+        "images": {
+          "type": "array",
+          "description": "A list of image URLs. A maxiumum batch of size of 64 image URls may be submitted",
+          "items": {
+            "$ref": "#/definitions/ImageRequestItem"
+          }
+        },
+        "target": {
+          "type": "object",
+          "required": [
+            "class",
+            "images"
+          ],
+          "properties": {
+            "class": {
+              "type": "string",
+              "description": "The target class you want to find in your images"
+            },
+            "images": {
+              "type": "array",
+              "description": "A list of target image URLs (maximum of 3)",
+              "items": {
+                "type": "string",
+                "description": "The image URL of the target image"
+              }
+            }
+          }
+        },
+        "webhookUrl": {
+          "type": "string",
+          "description": "Publicly accessible POST endpoint for receiving job status updates"
+        },
+        "customId": {
+          "type": "string",
+          "description": "User specified ID to reference this job"
+        },
+        "feedId": {
+          "type": "string",
+          "description": "User specified ID to reference the source of the images within this job"
+        }
+      },
+      "example": {
+        "images": [{
+            "url": "https://publicly.available.domain.net/image-001.jpg",
+            "customId": "some_person_filled_image"
+          },
+          {
+            "url": "https://publicly.available.domain.net/image-002.jpg",
+            "customId": "some_car_filled_image"
+          }
+        ],
+        "target": {
+          "class": "person",
+          "images": [
+            "https://publicly.available.domain.net/person-001.jpg",
+            "https://publicly.available.domain.net/person-002.jpg",
+            "https://publicly.available.domain.net/person-003.jpg"
+          ]
+        },
+        "customId": "6c78df0a-67b6-4d5f-93cf-5820cfee501c",
+        "feedId": "Camera_123456",
+        "webhookUrl": "https://publicly.available.domain.net/90f8754aa4e287bbb2c07ec99ade0de72ddbd4b6Et"
+      }
+    },
+    "ImageRequestItem": {
+      "type": "object",
+      "description": "An image you want to process",
+      "required": [
+        "url"
+      ],
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "URL of the image"
+        },
+        "customId": {
+          "type": "string",
+          "description": "User specified ID to reference this item"
+        }
+      },
+      "example": {
+        "url": "https://publicly.available.domain.net/image-001.jpg",
+        "customId": "0285a6b8-a617-11e6-8253-175f847ef3cf"
+      }
+    },
+    "ImageResponseItem": {
+      "type": "object",
+      "description": "The image processed",
+      "required": [
+        "url"
+      ],
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "URL of the image"
+        },
+        "proxyUrl": {
+          "type": "string",
+          "description": "Proxy URL of the image"
+        },
+        "customId": {
+          "type": "string",
+          "description": "User specified ID to reference this item"
+        }
+      },
+      "example": {
+        "url": "https://publicly.available.domain.net/image-001.jpg",
+        "proxyUrl": "https://api.quickpix.io/images/c7e9a2ca-c2ee-4290-90b4-04fe3df35be0",
+        "customId": "0285a6b8-a617-11e6-8253-175f847ef3cf"
+      }
+    },
+    "JobStatus": {
+      "type": "string",
+      "description": "The status for a job",
+      "enum": [
+        "COMPLETED_SUCCESSFULLY",
+        "COMPLETED_PARTIAL_ERROR",
+        "COMPLETED_ALL_ERROR",
+        "IN_PROGRESS"
+      ]
+    },
+    "ImageStatus": {
+      "type": "string",
+      "description": "The status for an image",
+      "enum": [
+        "COMPLETED_SUCCESSFULLY",
+        "IMAGE_DOWNLOAD_ERROR",
+        "INVALID_IMAGE_FORMAT_ERROR",
+        "UNKNOWN_ERROR",
+        "IN_PROGRESS"
+      ]
+    },
+    "FindObjectJobResponse": {
+      "type": "object",
+      "description": "The response to a find-object request",
+      "required": [
+        "id",
+        "createdAt",
+        "status",
+        "jobResults",
+        "imageResults"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "integer",
+          "format": "int64",
+          "description": "UNIX timestamp for when the job was created"
+        },
+        "status": {
+          "$ref": "#/definitions/JobStatus"
+        },
+        "customId": {
+          "type": "string",
+          "description": "User specified ID to reference this job"
+        },
+        "feedId": {
+          "type": "string",
+          "description": "User specified ID to reference the source of the images within this job"
+        },
+        "webhookUrl": {
+          "type": "string",
+          "description": "Publicly accessible POST endpoint for receiving job status updates"
+        },
+        "jobResults": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "class",
+              "image",
+              "hitl"
+            ],
+            "properties": {
+              "class": {
+                "type": "string",
+                "description": "A class you want to search for"
+              },
+              "image": {
+                "$ref": "#/definitions/ImageResponseItem"
+              },
+              "hitl": {
+                "type": "boolean",
+                "description": "Whether human-in-the-loop verification was used for this class"
+              }
+            }
+          }
+        },
+        "imageResults": {
+          "type": "object",
+          "required": [
+            "id",
+            "url",
+            "status",
+            "objects"
+          ],
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string",
+              "description": "URL of the image"
+            },
+            "proxyUrl": {
+              "type": "string",
+              "description": "Proxy URL of the image"
+            },
+            "customId": {
+              "type": "string",
+              "description": "User specified ID to reference this job"
+            },
+            "status": {
+              "$ref": "#/definitions/ImageStatus"
+            },
+            "objects": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "class",
+                  "confidence"
+                ],
+                "properties": {
+                  "class": {
+                    "type": "string",
+                    "description": "The class found"
+                  },
+                  "confidence": {
+                    "type": "number",
+                    "description": "The confidence for the class"
+                  },
+                  "verdict": {
+                    "type": "boolean",
+                    "description": "Whether this image was chosen as the verdict for this class in jobResults"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "example": {
+        "id": "5d689c71-e68f-46c3-ac71-4053806e71de",
+        "jobResults": [{
+            "class": "person",
+            "image": {
+              "url": "https://publicly.available.domain.net/image-001.jpg",
+              "proxyUrl": "https://api.quickpix.io/images/c7e9a2ca-c2ee-4290-90b4-04fe3df35be0",
+              "customId": "some_person_filled_image"
+            },
+            "hitl": "true"
+          },
+          {
+            "class": "car",
+            "image": {
+              "url": "https://publicly.available.domain.net/image-002.jpg",
+              "proxyUrl": "https://api.quickpix.io/images/c7e9a2ca-c2ee-4290-90b4-04fe3df35be1",
+              "customId": "some_car_filled_image"
+            },
+            "hitl": "false"
+          }
+        ],
+        "imageResults": [{
+            "id": "52547074-a622-11e6-8f61-63f37dc33285",
+            "url": "https://publicly.available.domain.net/image-001.jpg",
+            "proxyUrl": "https://api.quickpix.io/images/c7e9a2ca-c2ee-4290-90b4-04fe3df35be0",
+            "customId": "some_person_filled_image",
+            "objects": [{
+              "class": "person",
+              "confidence": 0.9971387386,
+              "verdict": true
+            }],
+            "status": "COMPLETED_SUCCESSFULLY"
+          },
+          {
+            "id": "52547074-a622-11e6-8f61-63f37dc33286",
+            "url": "https://publicly.available.domain.net/image-002.jpg",
+            "proxyUrl": "https://api.quickpix.io/images/c7e9a2ca-c2ee-4290-90b4-04fe3df35be1",
+            "customId": "some_car_filled_image",
+            "objects": [{
+              "class": "car",
+              "confidence": 0.9987652302,
+              "verdict": true
+            }],
+            "status": "COMPLETED_SUCCESSFULLY"
+          }
+        ],
+        "createdAt": 1487648348,
+        "status": "COMPLETED_SUCCESSFULLY",
+        "customId": "6c78df0a-67b6-4d5f-93cf-5820cfee501c",
+        "feedId": "Camera_123456",
+        "webhookUrl": "https://publicly.available.domain.net/90f8754aa4e287bbb2c07ec99ade0de72ddbd4b6Et"
+      }
+    },
+    "FindTargetJobResponse": {
+      "type": "object",
+      "description": "The response to a find-target request",
+      "required": [
+        "id",
+        "createdAt",
+        "status",
+        "jobResults"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "integer",
+          "format": "int64",
+          "description": "UNIX timestamp for when the job was created"
+        },
+        "status": {
+          "$ref": "#/definitions/JobStatus"
+        },
+        "customId": {
+          "type": "string",
+          "description": "User specified ID to reference this job"
+        },
+        "feedId": {
+          "type": "string",
+          "description": "User specified ID to reference the source of the images within this job"
+        },
+        "webhookUrl": {
+          "type": "string",
+          "description": "Publicly accessible POST endpoint for receiving job status updates"
+        },
+        "jobResults": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "target",
+              "image",
+              "hitl"
+            ],
+            "properties": {
+              "target": {
+                "type": "object",
+                "required": [
+                  "class",
+                  "images"
+                ],
+                "properties": {
+                  "class": {
+                    "type": "string",
+                    "description": "The class found"
+                  },
+                  "customId": {
+                    "type": "string",
+                    "description": "User specified ID to reference this set of target images"
+                  },
+                  "images": {
+                    "type": "array",
+                    "description": "A list of target image URLs (maximum of 3)",
+                    "items": {
+                      "type": "string",
+                      "description": "URL of target image"
+                    }
+                  }
+                }
+              },
+              "image": {
+                "$ref": "#/definitions/ImageResponseItem"
+              },
+              "hitl": {
+                "type": "boolean",
+                "description": "Whether human-in-the-loop verification was used for this class"
+              }
+            }
+          }
+        }
+      },
+      "example": {
+        "id": "5d689c71-e68f-46c3-ac71-4053806e71de",
+        "jobResults": [{
+            "target": {
+              "class": "person",
+              "customId": "0285a6b8-a617-11e6-8253-175f847ef3cf",
+              "images": [
+                "https://publicly.available.domain.net/person-001.jpg",
+                "https://publicly.available.domain.net/person-002.jpg",
+                "https://publicly.available.domain.net/person-003.jpg"
+              ]
+            },
+            "image": {
+              "url": "https://publicly.available.domain.net/image-001.jpg",
+              "proxyUrl": "https://api.quickpix.io/images/c7e9a2ca-c2ee-4290-90b4-04fe3df35be0",
+              "customId": "some_person_filled_image"
+            },
+            "hitl": "true"
+          },
+          {
+            "target": {
+              "class": "car",
+              "customId": "0285a6b8-a617-11e6-8253-175f847ef4cf",
+              "images": [
+                "https://publicly.available.domain.net/car-001.jpg",
+                "https://publicly.available.domain.net/car-002.jpg",
+                "https://publicly.available.domain.net/car-003.jpg"
+              ]
+            },
+            "image": {
+              "url": "https://publicly.available.domain.net/image-002.jpg",
+              "proxyUrl": "https://api.quickpix.io/images/c7e9a2ca-c2ee-4290-90b4-04fe3df35be1",
+              "customId": "some_car_filled_image"
+            },
+            "hitl": "true"
+          }
+        ],
+        "createdAt": 1487648348,
+        "status": "COMPLETED_SUCCESSFULLY",
+        "customId": "6c78df0a-67b6-4d5f-93cf-5820cfee501c",
+        "feedId": "Camera_123456",
+        "webhookUrl": "https://publicly.available.domain.net/90f8754aa4e287bbb2c07ec99ade0de72ddbd4b6Et"
+      }
+    }
+  }
+}
