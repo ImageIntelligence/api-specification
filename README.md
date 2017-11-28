@@ -38,4 +38,4 @@ When editing the schema, perhaps you want a preview of your changes. The [Swagge
 
 ## Deployment
 
-To publish a new version of api-specifications, update the `"version"` field in `package.json` then create a GitHub Release.
+To publish a new version of api-specifications, update `"version"` in `package.json`, `"info.version"` in the OpenAPI spec and then create a GitHub Release. For example:
