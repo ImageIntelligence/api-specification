@@ -385,7 +385,9 @@
         "accessToken": "eyJzdHQiOiJhY2....xUC3RJFY1T8",
         "expiresAt": 1489105452385,
         "issuedAt": 1489019052385,
-        "orgName": "acme"
+        "orgName": "acme",
+        "appName": "acme-app",
+        "scope": "find-target:create find-target:read find-object:create find-object:read"
       }
     },
     "FindObjectJobRequest": {
@@ -399,7 +401,9 @@
           "description": "A list of image URLs (maximum of 64)",
           "items": {
             "$ref": "#/definitions/ImageRequestItem"
-          }
+          },
+          "maxLength": 64,
+          "minLength": 1
         },
         "classes": {
           "type": "object",
@@ -472,7 +476,9 @@
           "description": "A list of image URLs. A maxiumum batch of size of 64 image URls may be submitted",
           "items": {
             "$ref": "#/definitions/ImageRequestItem"
-          }
+          },
+          "maxLength": 64,
+          "minLength": 1
         },
         "target": {
           "type": "object",
@@ -491,7 +497,9 @@
               "items": {
                 "type": "string",
                 "description": "The image URL of the target image"
-              }
+              },
+              "maxLength": 3,
+              "minLength": 1
             }
           }
         },
