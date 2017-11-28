@@ -34,4 +34,4 @@ swagger-cli help
 
 When editing the schema, perhaps you want a preview of your changes. The [Swagger Editor](https://swagger.io/swagger-editor/) can be useful here.
 
-**Not sure what Swagger or OpenAPI is?** Check out this article: https://swagger.io/difference-between-swagger-and-openapi/
+**Not sure what Swagger or OpenAPI is?** Check out this [article](https://swagger.io/difference-between-swagger-and-openapi/)
