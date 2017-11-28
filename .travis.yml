@@ -1,4 +1,5 @@
 dist: trusty
+language: node_js
 deploy:
   provider: npm
   email: $NPM_EMAIL
