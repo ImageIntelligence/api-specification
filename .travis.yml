@@ -1,0 +1,8 @@
+deploy:
+  provider: npm
+  email: $NPM_EMAIL
+  api_key:
+    secure: IDxm28DtO2fJx9HP+YEJU4QslDLG+vr785OYGP/qiZA0tzbms5/r4FpExV4ZW5V3nxUExFd+to9eRDZ2M06CCkTLG/MrRgqMAx4r27uY7OuVHylzC+dP/5k870kuGImLH2gcYR27CsFLM+WntKQWmoRVV7ajGw2VQbmOm+KlClvPXlGhhabrt4NdtWLBxEqaQXyec9atITU5XBSbTeDqJXWLPtb7mks6AL/MbAalGBdPhxezOFgpSyo8fljUxPP8nvc2dD6799JE4ZZSytu5+j/cLaq2woLXX1sJarMwn9Un5gKU7Vcvx+wr/YoZuB26UZPAmLCSarEPPnNIgYicJc1Az2I578u5rhRY17NqU23ZnMVGpaPXDBXtwDBHQyfF5Jj3NFWCvANHUhJNxE/INI0r8Ck5LUy8zq//hS8cF+C6sFYTu4iYyhh90yK6mC70fxxQj4UaxACRLsZxIAKsLK6eXtSMUzaT/P7pDf3HBC7sFZsoPMTGgPuVKiZ7M48qLmkajPXZ0p+0WGP3vt3iBpvtRDWjTPdUHTDHm+vq4lWxjxQVEVcdpUIOAsZaqvv24/+KSpECNCr518T5cAQ51E6xprwtJzk2rNycteMiSVzOl3JiX2ID1BLjOGueag4kSTFZtVbhOZRpGryYYQIlzeNCCtLfUC5aPlXxliW1T34=
+  on:
+    tags: true
+    repo: ImageIntelligence/api-specification
