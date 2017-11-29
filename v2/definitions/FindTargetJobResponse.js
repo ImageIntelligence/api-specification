@@ -37,7 +37,7 @@ module.exports = {
         type: 'object',
         required: [
           'target',
-          'image',
+          'images',
           'hitl',
         ],
         properties: {
@@ -96,7 +96,7 @@ module.exports = {
             'https://publicly.available.domain.net/person-003.jpg',
           ],
         },
-        image: {
+        images: {
           url: 'https://publicly.available.domain.net/image-xxx.jpg',
           customId: 'some_person_filled_image',
           proxyUrl: 'https://api.quickpix.io/images/c7e9a2ca-c2ee-4290-90b4-04fe3df35be0',
