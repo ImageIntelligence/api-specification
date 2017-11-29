@@ -1,7 +1,7 @@
 {
   "name": "@image-intelligence/api-specification",
   "private": false,
-  "version": "2.0.0-rc4",
+  "version": "2.0.0-rc5",
   "description": "Swagger spec for the Image Intelligence API",
   "main": "index.js",
   "repository": {
