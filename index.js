@@ -1,4 +1,4 @@
-exports.ApiSpec = {
-  v1: require('./api-v1.json'),
-  v2: require('./api-v2.json'),
+module.exports = {
+  v1: require('./v1/api.json'),
+  v2: require('./v2/api'),
 };
