@@ -1,3 +1,15 @@
+## v2.0.0-rc5 (Unreleased)
+
+**IMPROVEMENTS:**
+
+* `customId` has been added back to the `FindTargetJobResponse`.
+* `jobResults` in `FindtargetJobResponse` will always be an array of results however, `jobResults[i].images` can be an empty array (if all images do not contain a target).
+* api-specifications has been split up into multiple components.
+
+**BUG FIXES:**
+
+* Fixed various areas where fields should have been marked as `required` but were not.
+
 ## v2.0.0-rc3 (Unreleased)
 
 The following lists a summary of changes made from v1.1.0 to v2.0.0-rc3. For specific details, please refer to the api-v1.json and api-v2.json JSON schema.
