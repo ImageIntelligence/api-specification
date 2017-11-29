@@ -43,6 +43,9 @@
               "$ref": "#/definitions/AccessTokenResponse"
             }
           },
+          "400": {
+            "description": "Malformed request"
+          },
           "401": {
             "description": "Request failed due to invalid authentication credentials"
           },
