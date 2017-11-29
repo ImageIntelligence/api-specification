@@ -38,10 +38,18 @@ swagger-cli help
 swagger-cli validate xxx.json
 ```
 
+Our JSON schema is generated from JavaScript files. To generate the schema:
+
+```bash
+node -e "console.log(JSON.stringify(require('./index').v2, null, 2))" | jq .
+node -e "console.log(JSON.stringify(require('./index').v2, null, 2))" >! schema.json
+node -e "console.log(JSON.stringify(require('./index').v2, null, 2))" | pbcopy
+```
+
 When editing the schema, perhaps you want a preview of your changes. The [Swagger Editor](https://swagger.io/swagger-editor/) can be useful here.
 
 **Not sure what Swagger or OpenAPI is?** Check out this [article](https://swagger.io/difference-between-swagger-and-openapi/).
 
 ## Deployment
 
-To publish a new version of api-specifications, update `"version"` in `package.json`, `"info.version"` in the OpenAPI specification and then create a GitHub Release.
+To publish a new version of api-specifications, update `"version"` in `package.json` and then create a GitHub Release.
