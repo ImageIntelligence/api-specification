@@ -4,7 +4,7 @@
 
 **Welcome to API Specifications!**
 
-This project contains [OpenAPI](https://www.openapis.org/) specifications for the Image Intelligence API. There are currently two versions of our API ([api-v1.json](./v1/api.json) and [api-v2.json](./v2/api.js)).
+This project contains [OpenAPI](https://www.openapis.org/) specifications for the Image Intelligence API. There are currently two versions of our API ([api-v1.json](./v1/api.json) and [v2/Api.js](./v2/Api.js)). Note that V1 will be marked for deprecation soon after the release of V2. If you've just started out, please build against V2.
 
 ## Installation & Usage
 
