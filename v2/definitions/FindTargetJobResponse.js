@@ -52,6 +52,10 @@ module.exports = {
                 type: 'string',
                 description: 'The class (target) found in the image',
               },
+              customId: {
+                type: 'string',
+                description: 'User specified ID to reference this target',
+              },
               images: {
                 type: 'array',
                 description: 'A list of target image URLs that were passed in during the request)',
@@ -67,10 +71,7 @@ module.exports = {
           images: {
             type: 'array',
             items: {
-              type: 'object',
-              properties: {
-                $ref: '#/definitions/ImageResponseItem',
-              },
+              $ref: '#/definitions/ImageResponseItem',
             },
             minLength: 1,
           },
@@ -88,6 +89,7 @@ module.exports = {
       {
         target: {
           'class': 'person',
+          customId: 'custom_target_id',
           images: [
             'https://publicly.available.domain.net/person-001.jpg',
             'https://publicly.available.domain.net/person-002.jpg',
