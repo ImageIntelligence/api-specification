@@ -1,3 +1,9 @@
+## v2.0.0-rc7 (Unreleased)
+
+**BACKWARDS INCOMPATIBILITIES / NOTES:**
+
+* Breaking changes to `FindObjectJobResponse`, in particular `imageResults[i].veridct` and `jobResults[i].image` (commit: 55c0b092b757044a6e81bfdf912fbc41216b7bb7)
+
 ## v2.0.0-rc6 (Unreleased)
 
 **BUG FIXES:**
