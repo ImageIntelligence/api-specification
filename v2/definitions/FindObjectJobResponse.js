@@ -38,7 +38,6 @@ module.exports = {
         type: 'object',
         required: [
           'class',
-          'image',
           'hitl',
         ],
         properties: {
@@ -102,7 +101,7 @@ module.exports = {
               },
               verdict: {
                 type: 'boolean',
-                description: 'Whether this image was chosen as the verdict for this class in jobResults',
+                description: "Whether we're certain (based on AI only) if this class exists",
               },
             },
           },
