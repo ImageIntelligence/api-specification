@@ -1,3 +1,9 @@
+## v2.0.0-rc6 (Unreleased)
+
+**BUG FIXES:**
+
+* `classes` on `FindObjectJobRequest` is now a required field. In addition, the schema has also been change to be an array of class objects (from a single object).
+
 ## v2.0.0-rc5 (Unreleased)
 
 **IMPROVEMENTS:**
