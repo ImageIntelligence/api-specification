@@ -2,6 +2,7 @@ module.exports = {
   type: 'object',
   required: [
     'images',
+    'classes',
   ],
   properties: {
     images: {
@@ -14,26 +15,30 @@ module.exports = {
       minLength: 1,
     },
     classes: {
-      type: 'object',
-      required: [
-        'class',
-      ],
-      properties: {
-        'class': {
-          type: 'string',
-          description: 'A class you want to search for',
+      type: 'array',
+      items: {
+        type: 'object',
+        required: [
+          'class',
+        ],
+        properties: {
+          'class': {
+            type: 'string',
+            description: 'A class you want to search for',
+          },
+          hitl: {
+            type: 'string',
+            enum: [
+              'NEVER',
+              'AUTO',
+              'ALWAYS',
+            ],
+            description: 'Whether you want HITL verification',
+            default: 'AUTO',
+          },
         },
-        hitl: {
-          type: 'string',
-          enum: [
-            'NEVER',
-            'AUTO',
-            'ALWAYS',
-          ],
-          description: 'Whether you want HITL verification',
-          default: 'AUTO'
-        }
-      }
+      },
+      minLength: 1,
     },
     webhookUrl: {
       type: 'string',
