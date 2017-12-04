@@ -56,52 +56,55 @@ module.exports = {
       },
     },
     imageResults: {
-      type: 'object',
-      required: [
-        'id',
-        'url',
-        'status',
-        'objects',
-      ],
-      properties: {
-        id: {
-          type: 'string',
-        },
-        url: {
-          type: 'string',
-          description: 'URL of the image',
-        },
-        proxyUrl: {
-          type: 'string',
-          description: 'Proxy URL of the image',
-        },
-        customId: {
-          type: 'string',
-          description: 'User specified ID to reference this job',
-        },
-        status: {
-          $ref: '#/definitions/ImageStatus',
-        },
-        objects: {
-          type: 'array',
-          items: {
-            type: 'object',
-            required: [
-              'class',
-              'confidence',
-            ],
-            properties: {
-              'class': {
-                type: 'string',
-                description: 'The class found',
-              },
-              confidence: {
-                type: 'number',
-                description: 'The confidence for the class',
-              },
-              verdict: {
-                type: 'boolean',
-                description: "Whether we're certain (based on AI only) if this class exists",
+      type: 'array',
+      items: {
+        type: 'object',
+        required: [
+          'id',
+          'url',
+          'status',
+          'objects',
+        ],
+        properties: {
+          id: {
+            type: 'string',
+          },
+          url: {
+            type: 'string',
+            description: 'URL of the image',
+          },
+          proxyUrl: {
+            type: 'string',
+            description: 'Proxy URL of the image',
+          },
+          customId: {
+            type: 'string',
+            description: 'User specified ID to reference this job',
+          },
+          status: {
+            $ref: '#/definitions/ImageStatus',
+          },
+          objects: {
+            type: 'array',
+            items: {
+              type: 'object',
+              required: [
+                'class',
+                'confidence',
+              ],
+              properties: {
+                'class': {
+                  type: 'string',
+                  description: 'The class found',
+                },
+                confidence: {
+                  type: 'number',
+                  description: 'The confidence for the class',
+                },
+                verdict: {
+                  type: 'boolean',
+                  description: "Whether we're certain (based on AI only) if this class exists",
+                },
               },
             },
           },
