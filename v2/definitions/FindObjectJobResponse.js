@@ -131,7 +131,7 @@ module.exports = {
           proxyUrl: 'https://api.quickpix.io/images/c7e9a2ca-c2ee-4290-90b4-04fe3df35be1',
           customId: 'some_car_filled_image',
         },
-        hitl: 'false',
+        hitl: false,
       },
     ],
     imageResults: [
