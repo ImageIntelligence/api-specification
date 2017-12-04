@@ -1,3 +1,9 @@
+## v2.0.0-rc8 (Unreleased)
+
+**BUG FIXES:**
+
+* `imageResults` in `FindObjectJobResponse` is now an array of images.
+
 ## v2.0.0-rc7 (Unreleased)
 
 **BACKWARDS INCOMPATIBILITIES / NOTES:**
