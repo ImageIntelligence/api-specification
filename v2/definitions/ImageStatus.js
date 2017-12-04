@@ -1,6 +1,6 @@
 module.exports = {
   type: 'string',
-  description: 'The status for an image',
+  description: 'The processing status for an image',
   enum: [
     'COMPLETED_SUCCESSFULLY',
     'IMAGE_DOWNLOAD_ERROR',
