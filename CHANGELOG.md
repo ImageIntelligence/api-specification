@@ -1,3 +1,13 @@
+## v2.0.0-rc9 (Unreleased)
+
+**BUG FIXES:**
+
+* The example response in `FindObjectJobResponse` for the `hitl` now correctly reflects the type in the schema above.
+
+**IMPROVEMENTS:**
+
+* Improved attr documentation for `customId` across all areas definitions.
+
 ## v2.0.0-rc8 (Unreleased)
 
 **BUG FIXES:**
