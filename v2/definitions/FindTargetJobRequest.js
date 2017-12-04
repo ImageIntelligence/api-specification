@@ -27,7 +27,7 @@ module.exports = {
         },
         customId: {
           type: 'string',
-          description: 'User specified ID to reference this target',
+          description: 'An arbitrary client specific resource identifier to reference this target image (usually uuid)',
         },
         images: {
           type: 'array',
@@ -47,7 +47,7 @@ module.exports = {
     },
     customId: {
       type: 'string',
-      description: 'User specified ID to reference this job',
+      description: 'An arbitrary client specific resource identifier to reference this job (usually uuid)',
     },
     feedId: {
       type: 'string',

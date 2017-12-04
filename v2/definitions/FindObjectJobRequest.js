@@ -7,7 +7,6 @@ module.exports = {
   properties: {
     images: {
       type: 'array',
-      description: 'A list of image URLs',
       items: {
         $ref: '#/definitions/ImageRequestItem',
       },
@@ -24,7 +23,7 @@ module.exports = {
         properties: {
           'class': {
             type: 'string',
-            description: 'A class you want to search for',
+            description: 'A class (object) you want to search for',
           },
           hitl: {
             type: 'string',
@@ -33,7 +32,7 @@ module.exports = {
               'AUTO',
               'ALWAYS',
             ],
-            description: 'Whether you want HITL verification',
+            description: 'Whether or not you want HITL verification',
             default: 'AUTO',
           },
         },
@@ -46,7 +45,7 @@ module.exports = {
     },
     customId: {
       type: 'string',
-      description: 'User specified ID to reference this job',
+      description: 'An arbitrary client specific resource identifier to reference this job (usually uuid)',
     },
     feedId: {
       type: 'string',

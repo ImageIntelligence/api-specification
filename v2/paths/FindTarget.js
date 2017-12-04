@@ -51,7 +51,7 @@ module.exports = {
         description: 'Pagination, the page to start at',
         type: 'number',
         required: false,
-        'default': 1,
+        default: 1,
       },
       {
         name: 'customId',
