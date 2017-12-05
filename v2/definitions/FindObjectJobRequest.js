@@ -42,14 +42,17 @@ module.exports = {
     webhookUrl: {
       type: 'string',
       description: 'Publicly accessible POST endpoint for receiving job status updates',
+      maxLength: 512,
     },
     customId: {
       type: 'string',
       description: 'An arbitrary client specific resource identifier to reference this job (usually uuid)',
+      maxLength: 64,
     },
     feedId: {
       type: 'string',
       description: 'User specified ID to reference the source of the images within this job',
+      maxLength: 64,
     },
   },
   example: {

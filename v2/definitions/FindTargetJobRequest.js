@@ -28,6 +28,7 @@ module.exports = {
         customId: {
           type: 'string',
           description: 'An arbitrary client specific resource identifier to reference this target image (usually uuid)',
+          maxLength: 64,
         },
         images: {
           type: 'array',
@@ -35,6 +36,7 @@ module.exports = {
           items: {
             type: 'string',
             description: 'The image URL of the target image',
+            maxLength: 512,
           },
           maxLength: 3,
           minLength: 1,
@@ -44,14 +46,17 @@ module.exports = {
     webhookUrl: {
       type: 'string',
       description: 'Publicly accessible POST endpoint for receiving job status updates',
+      maxLength: 512,
     },
     customId: {
       type: 'string',
       description: 'An arbitrary client specific resource identifier to reference this job (usually uuid)',
+      maxLength: 64,
     },
     feedId: {
       type: 'string',
       description: 'User specified ID to reference the source of the images within this job',
+      maxLength: 64,
     },
   },
   example: {

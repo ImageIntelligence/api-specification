@@ -8,10 +8,12 @@ module.exports = {
     url: {
       type: 'string',
       description: 'URL of the image',
+      maxLength: 512,
     },
     customId: {
       type: 'string',
       description: 'An arbitrary client specific resource identifier to reference this image (usually uuid)',
+      maxLength: 64,
     },
   },
   example: {
