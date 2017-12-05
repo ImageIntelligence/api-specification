@@ -1,3 +1,9 @@
+## v2.0.0-rc10 (Unreleased)
+
+**BUG FIXES:**
+
+* All `customId`, `webhookUrl`, `feedId` and `Image.url` now have a `maxLength` attribute.
+
 ## v2.0.0-rc9 (Unreleased)
 
 **BUG FIXES:**
