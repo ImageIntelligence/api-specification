@@ -11,7 +11,7 @@ module.exports = {
   properties: {
     accessToken: {
       type: 'string',
-      description: 'A generated access token used to authenicate with the API',
+      description: 'A generated access token used to authenticate with the API',
     },
     expiresAt: {
       type: 'number',

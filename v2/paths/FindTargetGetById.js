@@ -11,7 +11,7 @@ module.exports = {
         name: 'id',
         in: 'path',
         type: 'string',
-        description: 'The job ID of a find-target request',
+        description: 'The ID of a find-target job',
         required: true,
       },
     ],

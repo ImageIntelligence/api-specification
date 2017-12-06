@@ -22,7 +22,7 @@ module.exports = {
     },
     customId: {
       type: 'string',
-      description: 'An arbitrary client specific resource identifier to reference this job (usually uuid)',
+      description: 'An arbitrary client specific resource identifier to reference this job (usually UUID)',
     },
     feedId: {
       type: 'string',
@@ -79,7 +79,7 @@ module.exports = {
           },
           customId: {
             type: 'string',
-            description: 'An arbitrary client specific resource identifier to reference this image (usually uuid)',
+            description: 'An arbitrary client specific resource identifier to reference this image (usually UUID)',
           },
           status: {
             $ref: '#/definitions/ImageStatus',

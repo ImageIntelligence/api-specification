@@ -7,7 +7,7 @@ module.exports = {
   properties: {
     images: {
       type: 'array',
-      description: 'A list of image URLs. A maxiumum batch of size of 64 image URls may be submitted',
+      description: 'A list of image URLs. A maximum batch of size of 64 image URls may be submitted',
       items: {
         $ref: '#/definitions/ImageRequestItem',
       },
@@ -27,7 +27,7 @@ module.exports = {
         },
         customId: {
           type: 'string',
-          description: 'An arbitrary client specific resource identifier to reference this target image (usually uuid)',
+          description: 'An arbitrary client specific resource identifier to reference this target image (usually UUID)',
           maxLength: 64,
         },
         images: {
@@ -50,7 +50,7 @@ module.exports = {
     },
     customId: {
       type: 'string',
-      description: 'An arbitrary client specific resource identifier to reference this job (usually uuid)',
+      description: 'An arbitrary client specific resource identifier to reference this job (usually UUID)',
       maxLength: 64,
     },
     feedId: {
