@@ -2,6 +2,12 @@
 
 **BUG FIXES:**
 
+* Array types in definitions should have `maxItems` and `minItems` attributes instead of `maxLength` and `minLength`.
+
+## v2.0.0-rc10 (Unreleased)
+
+**BUG FIXES:**
+
 * All `customId`, `webhookUrl`, `feedId` and `Image.url` now have a `maxLength` attribute.
 
 ## v2.0.0-rc9 (Unreleased)
