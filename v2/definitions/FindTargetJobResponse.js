@@ -63,8 +63,8 @@ module.exports = {
                   type: 'string',
                   description: 'URL of target image',
                 },
-                maxLength: 3,
-                minLength: 1,
+                maxItems: 3,
+                minItems: 1,
               },
             },
           },
@@ -73,7 +73,7 @@ module.exports = {
             items: {
               $ref: '#/definitions/ImageResponseItem',
             },
-            minLength: 1,
+            minItems: 1,
           },
           hitl: {
             type: 'boolean',

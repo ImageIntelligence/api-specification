@@ -11,8 +11,8 @@ module.exports = {
       items: {
         $ref: '#/definitions/ImageRequestItem',
       },
-      maxLength: 64,
-      minLength: 1,
+      maxItems: 64,
+      minItems: 1,
     },
     target: {
       type: 'object',
@@ -38,8 +38,8 @@ module.exports = {
             description: 'The image URL of the target image',
             maxLength: 512,
           },
-          maxLength: 3,
-          minLength: 1,
+          maxItems: 3,
+          minItems: 1,
         },
       },
     },

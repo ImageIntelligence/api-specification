@@ -10,8 +10,8 @@ module.exports = {
       items: {
         $ref: '#/definitions/ImageRequestItem',
       },
-      maxLength: 64,
-      minLength: 1,
+      maxItems: 64,
+      minItems: 1,
     },
     classes: {
       type: 'array',
@@ -37,7 +37,7 @@ module.exports = {
           },
         },
       },
-      minLength: 1,
+      minItems: 1,
     },
     webhookUrl: {
       type: 'string',
