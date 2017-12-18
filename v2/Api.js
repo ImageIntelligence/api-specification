@@ -29,6 +29,8 @@ module.exports = {
     '/find-object/{id}': require('./paths/FindObjectGetById'),
     '/find-target': require('./paths/FindTarget'),
     '/find-target/{id}': require('./paths/FindTargetGetById'),
+    '/answer': require('./paths/Answer'),
+    '/answer/{id}': require('./paths/AnswerGetById'),
   },
   definitions: {
     ClientCredentials: require('./definitions/ClientCredentials'),
