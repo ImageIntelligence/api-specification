@@ -35,7 +35,6 @@ module.exports = {
       type: 'object',
       required: [
         'target',
-        'images',
         'hitl',
       ],
       properties: {
@@ -66,12 +65,9 @@ module.exports = {
             },
           },
         },
-        images: {
-          type: 'array',
-          items: {
-            $ref: '#/definitions/ImageResponseItem',
-          },
-          minItems: 1,
+        image: {
+          type: 'object',
+          $ref: '#/definitions/ImageResponseItem',
         },
         hitl: {
           type: 'boolean',
@@ -92,13 +88,11 @@ module.exports = {
           'https://publicly.available.domain.net/person-003.jpg',
         ],
       },
-      images: [
-        {
-          url: 'https://publicly.available.domain.net/image-xxx.jpg',
-          customId: 'some_person_filled_image',
-          proxyUrl: 'https://api.quickpix.io/images/c7e9a2ca-c2ee-4290-90b4-04fe3df35be0',
-        }
-      ],
+      image: {
+        url: 'https://publicly.available.domain.net/image-xxx.jpg',
+        customId: 'some_person_filled_image',
+        proxyUrl: 'https://api.quickpix.io/images/c7e9a2ca-c2ee-4290-90b4-04fe3df35be0',
+      },
       hitl: true,
     },
     createdAt: 1487648348,
