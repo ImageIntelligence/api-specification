@@ -1,9 +1,9 @@
-## v2.0.0-rc11 (Unreleased)
+## v2.0.0-rc12 (Unreleased)
 **NEW FEATURES:**
 
 * Added the `/answer` endpoint. You give a Yes/No question you want to be answered for a list of images (image urls). If the answer is true for that list of images, the image chosen will be returned.
 
-## v2.0.0-rc10 (Unreleased)
+## v2.0.0-rc11 (Unreleased)
 
 **BUG FIXES:**
 
