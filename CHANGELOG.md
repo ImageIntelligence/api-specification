@@ -1,3 +1,21 @@
+## v2.0.0-rc13 (Unreleased)
+**NEW FEATURES:**
+
+* We can now adjust throttling on a per organizaton basis.
+* `ImageStatus` now has more possible values:
+  ```
+  'COMPLETED_SUCCESSFULLY',
+  'IN_PROGRESS',
+  'UNKNOWN_ERROR',
+  'JOB_ERROR',
+  'IMAGE_DOWNLOAD_ERROR',
+  'INVALID_IMAGE_FORMAT_ERROR',
+  'SPIDERWEBS_ERROR',
+  'DETECTION_ENGINE_ERROR',
+  'MODEL_SERVICE_ERROR',
+  'MALFORMED_MESSAGE_ERROR'
+  ```
+
 ## v2.0.0-rc12 (Unreleased)
 **NEW FEATURES:**
 
