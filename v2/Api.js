@@ -46,5 +46,8 @@ module.exports = {
 
     FindTargetJobRequest: require('./definitions/FindTargetJobRequest'),
     FindTargetJobResponse: require('./definitions/FindTargetJobResponse'),
+
+    AnswerJobRequest: require('./definitions/AnswerJobRequest'),
+    AnswerJobResponse: require('./definitions/AnswerJobResponse'),
   },
 };
