@@ -2,9 +2,14 @@ module.exports = {
   type: 'object',
   description: 'The image processed',
   required: [
+    'id',
     'url',
   ],
   properties: {
+    id: {
+      type: 'string',
+      description: 'ID of the image',
+    },
     url: {
       type: 'string',
       description: 'URL of the image',
@@ -19,8 +24,9 @@ module.exports = {
     },
   },
   example: {
+    id: '52547074-a622-11e6-8f61-63f37dc33285',
     url: 'https://publicly.available.domain.net/image-001.jpg',
     proxyUrl: 'https://api.quickpix.io/images/c7e9a2ca-c2ee-4290-90b4-04fe3df35be0',
-    customId: '0285a6b8-a617-11e6-8253-175f847ef3cf',
+    customId: 'some_person_filled_image',
   },
 };
