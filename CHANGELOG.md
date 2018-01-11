@@ -1,3 +1,9 @@
+## v2.0.0-rc13 (Unreleased)
+
+**BUG FIXES:**
+
+* API file missing `AnswerJobRequest` and `AnswerJobResponse` definition references
+
 ## v2.0.0-rc12 (Unreleased)
 **NEW FEATURES:**
 
