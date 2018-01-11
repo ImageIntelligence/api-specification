@@ -1,6 +1,7 @@
-## v2.0.0-rc13 (Unreleased)
+## v2.0.0-rc12 (Unreleased)
 **NEW FEATURES:**
 
+* Added the `/answer` endpoint. You give a Yes/No question you want to be answered for a list of images (image urls). If the answer is true for that list of images, the image chosen will be returned.
 * We can now adjust throttling on a per organizaton basis.
 * `ImageStatus` now has more possible values:
   ```
@@ -15,11 +16,7 @@
   'MODEL_SERVICE_ERROR',
   'MALFORMED_MESSAGE_ERROR'
   ```
-
-## v2.0.0-rc12 (Unreleased)
-**NEW FEATURES:**
-
-* Added the `/answer` endpoint. You give a Yes/No question you want to be answered for a list of images (image urls). If the answer is true for that list of images, the image chosen will be returned.
+* `ImageResponseItem` now includes `id` property
 
 ## v2.0.0-rc11 (Unreleased)
 
