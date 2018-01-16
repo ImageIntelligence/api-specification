@@ -75,6 +75,37 @@ module.exports = {
         },
       },
     },
+    imageResults: {
+      type: 'array',
+      items: {
+        type: 'object',
+        required: [
+          'id',
+          'url',
+          'status'
+        ],
+        properties: {
+          id: {
+            type: 'string',
+          },
+          url: {
+            type: 'string',
+            description: 'URL of the image',
+          },
+          proxyUrl: {
+            type: 'string',
+            description: 'Proxy URL of the image',
+          },
+          customId: {
+            type: 'string',
+            description: 'An arbitrary client specific resource identifier to reference this image (usually UUID)',
+          },
+          status: {
+            $ref: '#/definitions/ImageStatus',
+          },
+        },
+      },
+    },
   },
   example: {
     id: '5d689c71-e68f-46c3-ac71-4053806e71de',
@@ -95,6 +126,22 @@ module.exports = {
       },
       hitl: true,
     },
+    imageResults: [
+      {
+        id: '52547074-a622-11e6-8f61-63f37dc33285',
+        url: 'https://publicly.available.domain.net/image-001.jpg',
+        proxyUrl: 'https://api.quickpix.io/images/c7e9a2ca-c2ee-4290-90b4-04fe3df35be0',
+        customId: 'some_person_filled_image',
+        status: 'COMPLETED_SUCCESSFULLY',
+      },
+      {
+        id: '52547074-a622-11e6-8f61-63f37dc33286',
+        url: 'https://publicly.available.domain.net/image-002.jpg',
+        proxyUrl: 'https://api.quickpix.io/images/c7e9a2ca-c2ee-4290-90b4-04fe3df35be1',
+        customId: 'some_car_filled_image',
+        status: 'COMPLETED_SUCCESSFULLY',
+      },
+    ],
     createdAt: 1487648348,
     status: 'COMPLETED_SUCCESSFULLY',
     customId: '6c78df0a-67b6-4d5f-93cf-5820cfee501c',
