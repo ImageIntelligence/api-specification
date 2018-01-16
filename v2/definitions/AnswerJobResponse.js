@@ -37,6 +37,34 @@ module.exports = {
       description: 'The Yes/No question to be answered',
       maxLength: 256,
     },
+    examples: {
+      type: 'object',
+      required: [],
+      properties: {
+        yes: {
+          type: 'array',
+          description: 'A list of example image URLs for the \'Yes\' answer to the question',
+          items: {
+            type: 'string',
+            description: 'The image URL of the target image',
+            maxLength: 512,
+          },
+          maxItems: 3,
+          minItems: 1,
+        },
+        no: {
+          type: 'array',
+          description: 'A list of example image URLs for the \'No\' answer to the question',
+          items: {
+            type: 'string',
+            description: 'The image URL of the target image',
+            maxLength: 512,
+          },
+          maxItems: 3,
+          minItems: 1,
+        },
+      }
+    },
     jobResults: {
       type: 'object',
       required: [ ],
@@ -105,6 +133,18 @@ module.exports = {
       },
     ],
     question: 'Is my garage door open?',
+    examples: {
+      yes: [
+        "https://publicly.available.domain.net/yes-image-001.jpg",
+        "https://publicly.available.domain.net/yes-image-002.jpg",
+        "https://publicly.available.domain.net/yes-image-003.jpg",
+      ],
+      no: [
+        "https://publicly.available.domain.net/no-image-001.jpg",
+        "https://publicly.available.domain.net/no-image-002.jpg",
+        "https://publicly.available.domain.net/no-image-003.jpg",
+      ],
+    },
     createdAt: 1487648348,
     status: 'COMPLETED_SUCCESSFULLY',
     customId: '6c78df0a-67b6-4d5f-93cf-5820cfee501c',
