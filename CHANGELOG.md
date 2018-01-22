@@ -1,3 +1,10 @@
+## v2.0.0-rc14 (Unreleased)
+
+**NEW FEATURES:**
+
+* `imageResults` has been added to `FindTargetJobResponse` and `AnswerJobResponse`
+* `examples` has been added to `AnswerJobResponse`
+
 ## v2.0.0-rc13 (Unreleased)
 
 **BUG FIXES:**
@@ -5,6 +12,7 @@
 * API file missing `AnswerJobRequest` and `AnswerJobResponse` definition references
 
 ## v2.0.0-rc12 (Unreleased)
+
 **NEW FEATURES:**
 
 * Added the `/answer` endpoint. You give a Yes/No question you want to be answered for a list of images (image urls). If the answer is true for that list of images, the image chosen will be returned.
@@ -56,7 +64,7 @@
 
 **BACKWARDS INCOMPATIBILITIES / NOTES:**
 
-* Breaking changes to `FindObjectJobResponse`, in particular `imageResults[i].veridct` and `jobResults[i].image` (commit: 55c0b092b757044a6e81bfdf912fbc41216b7bb7)
+* Breaking changes to `FindObjectJobResponse`, in particular `imageResults[i].verdict` and `jobResults[i].image` (commit: 55c0b092b757044a6e81bfdf912fbc41216b7bb7)
 
 ## v2.0.0-rc6 (Unreleased)
 
