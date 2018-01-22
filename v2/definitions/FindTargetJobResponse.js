@@ -6,6 +6,7 @@ module.exports = {
     'createdAt',
     'status',
     'jobResults',
+    'imageResults',
   ],
   properties: {
     id: {

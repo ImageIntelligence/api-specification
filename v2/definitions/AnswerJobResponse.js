@@ -6,7 +6,8 @@ module.exports = {
     'createdAt',
     'status',
     'question',
-    'jobResults'
+    'jobResults',
+    'imageResults',
   ],
   properties: {
     id: {
