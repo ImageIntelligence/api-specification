@@ -1,3 +1,9 @@
+## v2.0.0-rc15 (Unreleased)
+
+**BUG FIXES:**
+
+* `imageResults` in `FindTargetJobResponse` and `AnswerJobResponse` should be marked as required
+
 ## v2.0.0-rc14 (Unreleased)
 
 **NEW FEATURES:**
