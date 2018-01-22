@@ -120,9 +120,10 @@ module.exports = {
         ],
       },
       image: {
-        url: 'https://publicly.available.domain.net/image-xxx.jpg',
-        customId: 'some_person_filled_image',
+        id: '52547074-a622-11e6-8f61-63f37dc33285',
+        url: 'https://publicly.available.domain.net/image-001.jpg',
         proxyUrl: 'https://api.quickpix.io/images/c7e9a2ca-c2ee-4290-90b4-04fe3df35be0',
+        customId: 'some_person_filled_image',
       },
       hitl: true,
     },

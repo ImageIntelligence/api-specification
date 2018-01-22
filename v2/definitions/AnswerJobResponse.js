@@ -111,9 +111,10 @@ module.exports = {
     id: '5d689c71-e68f-46c3-ac71-4053806e71de',
     jobResults: {
       image: {
+        id: '52547074-a622-11e6-8f61-63f37dc33285',
         url: 'https://publicly.available.domain.net/image-001.jpg',
-        customId: 'some_garage_door_open_image',
         proxyUrl: 'https://api.quickpix.io/images/c7e9a2ca-c2ee-4290-90b4-04fe3df35be0',
+        customId: 'some_garage_door_opened_image',
       },
     },
     imageResults: [
@@ -121,14 +122,14 @@ module.exports = {
         id: '52547074-a622-11e6-8f61-63f37dc33285',
         url: 'https://publicly.available.domain.net/image-001.jpg',
         proxyUrl: 'https://api.quickpix.io/images/c7e9a2ca-c2ee-4290-90b4-04fe3df35be0',
-        customId: 'some_person_filled_image',
+        customId: 'some_garage_door_opened_image',
         status: 'COMPLETED_SUCCESSFULLY',
       },
       {
         id: '52547074-a622-11e6-8f61-63f37dc33286',
         url: 'https://publicly.available.domain.net/image-002.jpg',
         proxyUrl: 'https://api.quickpix.io/images/c7e9a2ca-c2ee-4290-90b4-04fe3df35be1',
-        customId: 'some_car_filled_image',
+        customId: 'some_garage_door_closed_image',
         status: 'COMPLETED_SUCCESSFULLY',
       },
     ],
