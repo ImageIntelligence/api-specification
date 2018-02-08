@@ -1,6 +1,6 @@
 module.exports = {
   post: {
-    operationId: 'answer',
+    operationId: 'ask',
     security: [
       {
         Bearer: [],
@@ -8,19 +8,19 @@ module.exports = {
     ],
     parameters: [
       {
-        name: 'AnswerJobRequest',
+        name: 'AskJobRequest',
         in: 'body',
         schema: {
-          $ref: '#/definitions/AnswerJobRequest',
+          $ref: '#/definitions/AskJobRequest',
         },
         required: true,
       },
     ],
     responses: {
       '200': {
-        description: 'Answer job request was successfully submitted',
+        description: 'Ask job request was successfully submitted',
         schema: {
-          $ref: '#/definitions/AnswerJobResponse',
+          $ref: '#/definitions/AskJobResponse',
         },
       },
       '400': {
@@ -38,7 +38,7 @@ module.exports = {
     },
   },
   get: {
-    operationId: 'answer-search',
+    operationId: 'ask-search',
     security: [
       {
         Bearer: [],
@@ -88,7 +88,7 @@ module.exports = {
         schema: {
           type: 'array',
           items: {
-            $ref: '#/definitions/AnswerJobResponse',
+            $ref: '#/definitions/AskJobResponse',
           },
         },
       },

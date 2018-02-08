@@ -1,6 +1,6 @@
 module.exports = {
   get: {
-    operationId: 'answer-get',
+    operationId: 'ask-get',
     security: [
       {
         Bearer: [],
@@ -11,15 +11,15 @@ module.exports = {
         name: 'id',
         in: 'path',
         type: 'string',
-        description: 'The ID of a answer job',
+        description: 'The ID of an ask job',
         required: true,
       },
     ],
     responses: {
       '200': {
-        description: 'Resources from the answer job successfully returned',
+        description: 'Resources from the ask job successfully returned',
         schema: {
-          $ref: '#/definitions/AnswerJobResponse',
+          $ref: '#/definitions/AskJobResponse',
         },
       },
       '401': {
