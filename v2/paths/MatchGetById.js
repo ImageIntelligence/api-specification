@@ -1,6 +1,6 @@
 module.exports = {
   get: {
-    operationId: 'find-target-get',
+    operationId: 'match-get',
     security: [
       {
         Bearer: [],
@@ -11,15 +11,15 @@ module.exports = {
         name: 'id',
         in: 'path',
         type: 'string',
-        description: 'The ID of a find-target job',
+        description: 'The ID of a match job',
         required: true,
       },
     ],
     responses: {
       '200': {
-        description: 'Resources from the find-target job successfully returned',
+        description: 'Resources from the match job successfully returned',
         schema: {
-          $ref: '#/definitions/FindTargetJobResponse',
+          $ref: '#/definitions/MatchJobResponse',
         },
       },
       '400': {
