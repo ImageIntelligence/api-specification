@@ -1,3 +1,12 @@
+## v2.0.0-rc16 (Unreleased)
+
+**BACKWARDS INCOMPATIBILITIES / NOTES:**
+
+* Endpoints have been renamed to reflect the new products.
+  *  `/find-object` is now `/detect`
+  *  `/find-target` is now `/match`
+  *  `/answer` is now `/ask`
+
 ## v2.0.0-rc15 (Unreleased)
 
 **BUG FIXES:**
