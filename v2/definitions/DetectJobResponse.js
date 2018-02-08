@@ -1,6 +1,6 @@
 module.exports = {
   type: 'object',
-  description: 'The response to a find-object request',
+  description: 'The response to a detect request',
   required: [
     'id',
     'createdAt',

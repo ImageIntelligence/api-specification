@@ -1,6 +1,6 @@
 module.exports = {
   post: {
-    operationId: 'find-object',
+    operationId: 'detect',
     security: [
       {
         Bearer: [],
@@ -8,19 +8,19 @@ module.exports = {
     ],
     parameters: [
       {
-        name: 'FindObjectJobRequest',
+        name: 'DetectJobRequest',
         in: 'body',
         schema: {
-          $ref: '#/definitions/FindObjectJobRequest',
+          $ref: '#/definitions/DetectJobRequest',
         },
         required: true,
       },
     ],
     responses: {
       '200': {
-        description: 'Find object job request was successfully submitted',
+        description: 'Detect job request was successfully submitted',
         schema: {
-          $ref: '#/definitions/FindObjectJobResponse',
+          $ref: '#/definitions/DetectJobResponse',
         },
       },
       '400': {
@@ -38,7 +38,7 @@ module.exports = {
     },
   },
   get: {
-    operationId: 'find-object-search',
+    operationId: 'detect-search',
     security: [
       {
         Bearer: [],
@@ -88,7 +88,7 @@ module.exports = {
         schema: {
           type: 'array',
           items: {
-            $ref: '#/definitions/FindObjectJobResponse',
+            $ref: '#/definitions/DetectJobResponse',
           },
         },
       },

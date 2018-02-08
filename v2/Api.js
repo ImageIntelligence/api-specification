@@ -25,8 +25,8 @@ module.exports = {
   },
   paths: {
     '/oauth/token': require('./paths/OAuthToken'),
-    '/find-object': require('./paths/FindObject'),
-    '/find-object/{id}': require('./paths/FindObjectGetById'),
+    '/detect': require('./paths/Detect'),
+    '/detect/{id}': require('./paths/DetectGetById'),
     '/find-target': require('./paths/FindTarget'),
     '/find-target/{id}': require('./paths/FindTargetGetById'),
     '/answer': require('./paths/Answer'),
@@ -41,8 +41,8 @@ module.exports = {
     ImageRequestItem: require('./definitions/ImageRequestItem'),
     ImageResponseItem: require('./definitions/ImageResponseItem'),
 
-    FindObjectJobRequest: require('./definitions/FindObjectJobRequest'),
-    FindObjectJobResponse: require('./definitions/FindObjectJobResponse'),
+    DetectJobRequest: require('./definitions/DetectJobRequest'),
+    DetectJobResponse: require('./definitions/DetectJobResponse'),
 
     FindTargetJobRequest: require('./definitions/FindTargetJobRequest'),
     FindTargetJobResponse: require('./definitions/FindTargetJobResponse'),
