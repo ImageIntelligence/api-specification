@@ -1,6 +1,6 @@
 module.exports = {
   get: {
-    operationId: 'find-object-get',
+    operationId: 'detect-get',
     security: [
       {
         Bearer: [],
@@ -11,15 +11,15 @@ module.exports = {
         name: 'id',
         in: 'path',
         type: 'string',
-        description: 'The ID of a find-object job',
+        description: 'The ID of a detect job',
         required: true,
       },
     ],
     responses: {
       '200': {
-        description: 'Resources from the find-object job successfully returned',
+        description: 'Resources from the detect job successfully returned',
         schema: {
-          $ref: '#/definitions/FindObjectJobResponse',
+          $ref: '#/definitions/DetectJobResponse',
         },
       },
       '401': {
