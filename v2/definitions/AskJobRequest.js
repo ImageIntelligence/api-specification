@@ -20,7 +20,6 @@ module.exports = {
     },
     examples: {
       type: 'object',
-      required: [ ],
       properties: {
         yes: {
           type: 'array',

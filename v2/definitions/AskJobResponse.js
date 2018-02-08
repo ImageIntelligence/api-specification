@@ -1,6 +1,6 @@
 module.exports = {
   type: 'object',
-  description: 'The response to a answer request',
+  description: 'The response to an ask request',
   required: [
     'id',
     'createdAt',
@@ -40,7 +40,6 @@ module.exports = {
     },
     examples: {
       type: 'object',
-      required: [],
       properties: {
         yes: {
           type: 'array',
@@ -68,7 +67,6 @@ module.exports = {
     },
     jobResults: {
       type: 'object',
-      required: [ ],
       properties: {
         image: {
           type: 'object',
