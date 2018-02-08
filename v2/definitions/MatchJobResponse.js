@@ -1,6 +1,6 @@
 module.exports = {
   type: 'object',
-  description: 'The response to a find-target request',
+  description: 'The response to a match request',
   required: [
     'id',
     'createdAt',

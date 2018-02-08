@@ -1,6 +1,6 @@
 module.exports = {
   post: {
-    operationId: 'find-target',
+    operationId: 'match',
     security: [
       {
         Bearer: [],
@@ -8,19 +8,19 @@ module.exports = {
     ],
     parameters: [
       {
-        name: 'FindTargetJobRequest',
+        name: 'MatchJobRequest',
         in: 'body',
         schema: {
-          $ref: '#/definitions/FindTargetJobRequest',
+          $ref: '#/definitions/MatchJobRequest',
         },
         required: true,
       },
     ],
     responses: {
       '200': {
-        description: 'Find target job request was successfully submitted',
+        description: 'Match job request was successfully submitted',
         schema: {
-          $ref: '#/definitions/FindTargetJobResponse',
+          $ref: '#/definitions/MatchJobResponse',
         },
       },
       '400': {
@@ -38,7 +38,7 @@ module.exports = {
     },
   },
   get: {
-    operationId: 'find-target-search',
+    operationId: 'match-search',
     security: [
       {
         Bearer: [],
@@ -88,7 +88,7 @@ module.exports = {
         schema: {
           type: 'array',
           items: {
-            $ref: '#/definitions/FindTargetJobResponse',
+            $ref: '#/definitions/MatchJobResponse',
           },
         },
       },
