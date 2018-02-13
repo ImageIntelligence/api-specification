@@ -1,3 +1,10 @@
+## v2.0.0-rc17 (Unreleased)
+
+**BACKWARDS INCOMPATIBILITIES / NOTES:**
+
+* `hitl` has been changed to `verify` in `DetectJobRequest`
+* `verify` now accepts just two values - `AUTO` and `NEVER`. `ALWAYS` has been removed. 
+
 ## v2.0.0-rc16 (Unreleased)
 
 **BACKWARDS INCOMPATIBILITIES / NOTES:**
