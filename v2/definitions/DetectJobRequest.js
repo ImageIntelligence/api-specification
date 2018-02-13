@@ -25,12 +25,11 @@ module.exports = {
             type: 'string',
             description: 'A class (object) you want to search for',
           },
-          hitl: {
+          verify: {
             type: 'string',
             enum: [
               'NEVER',
               'AUTO',
-              'ALWAYS',
             ],
             description: 'Whether or not you want HITL verification',
             default: 'AUTO',
@@ -69,11 +68,11 @@ module.exports = {
     classes: [
       {
         'class': 'person',
-        hitl: 'ALWAYS',
+        verify: 'AUTO',
       },
       {
         'class': 'car',
-        hitl: 'NEVER',
+        verify: 'NEVER',
       },
     ],
     customId: '6c78df0a-67b6-4d5f-93cf-5820cfee501c',
