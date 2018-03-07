@@ -91,6 +91,7 @@ module.exports = {
               required: [
                 'class',
                 'confidence',
+                'verdict',
               ],
               properties: {
                 'class': {
@@ -103,7 +104,7 @@ module.exports = {
                 },
                 verdict: {
                   type: 'boolean',
-                  description: "Whether we're certain (based on AI only) if this class exists",
+                  description: "Whether we're certain if this class exists",
                 },
               },
             },
