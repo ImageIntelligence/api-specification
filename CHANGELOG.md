@@ -1,3 +1,9 @@
+## v2.0.0-rc18 (Unreleased)
+
+**IMPROVEMENTS:**
+
+* In `DetectJobResponse`, `verdict` is no longer optional. The response will now include verdict for all images processed by AI and HITL.
+
 ## v2.0.0-rc17 (Unreleased)
 
 **BACKWARDS INCOMPATIBILITIES / NOTES:**
