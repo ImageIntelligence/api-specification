@@ -43,6 +43,7 @@ module.exports = {
 
     DetectJobRequest: require('./definitions/DetectJobRequest'),
     DetectJobResponse: require('./definitions/DetectJobResponse'),
+    DetectJobResponseItem: require('./definitions/DetectJobResponseItem'),
 
     MatchJobRequest: require('./definitions/MatchJobRequest'),
     MatchJobResponse: require('./definitions/MatchJobResponse'),
