@@ -1,3 +1,10 @@
+## v2.0.0
+
+**NEW FEATURES:**
+
+* Added `boundingBox` option in the `DetectJobRequest`. If this is set to `true`, the response will include `boundingBox` coordinates of the detected object. Note that this is only applicable to `person` class currently. 
+* Added `confidence` for each image item in the `DetectJobResponse`.
+
 ## v2.0.0-rc18 (Unreleased)
 
 **IMPROVEMENTS:**
