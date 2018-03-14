@@ -46,7 +46,7 @@ module.exports = {
             description: 'A class you want to search for',
           },
           image: {
-            $ref: '#/definitions/ImageResponseItem',
+            $ref: '#/definitions/DetectJobResponseItem',
           },
           hitl: {
             type: 'boolean',
