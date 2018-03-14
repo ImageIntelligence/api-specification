@@ -74,6 +74,7 @@ module.exports = {
       {
         'class': 'person',
         verify: 'AUTO',
+        boundingBox: true,
       },
       {
         'class': 'car',
