@@ -34,6 +34,11 @@ module.exports = {
             description: 'Whether or not you want HITL verification',
             default: 'AUTO',
           },
+          boundingBox: {
+            type: 'boolean',
+            description: 'If true, the response will contain bounding box coordinates (currently applicable only for person class)',
+            default: 'false',
+          },
         },
       },
       minItems: 1,
