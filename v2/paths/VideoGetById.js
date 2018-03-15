@@ -1,6 +1,7 @@
 module.exports = {
   get: {
     operationId: 'video-get',
+    beta: true,
     security: [
       {
         Bearer: [],
