@@ -1,3 +1,9 @@
+## v2.1.0
+
+**NEW FEATURES:**
+
+* Added the `/video` endpoint. Video allows you to specify a URL of a video file and a set of classes you want to search for in the video.
+
 ## v2.0.0
 
 **NEW FEATURES:**
