@@ -10,6 +10,7 @@ module.exports = {
     fps: {
       type: 'integer',
       description: 'Number of frames to be classified, per second.',
+      minimum: 1,
       maximum: 2,
     },
     classes: {
