@@ -17,7 +17,6 @@ module.exports = {
     video: {
       type: 'string',
       description: 'URL of the video',
-      maxLength: 512,
     },
     fps: {
       type: 'integer',
