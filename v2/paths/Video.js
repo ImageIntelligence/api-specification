@@ -1,6 +1,7 @@
 module.exports = {
   post: {
     operationId: 'video',
+    beta: true,
     security: [
       {
         Bearer: [],
@@ -39,6 +40,7 @@ module.exports = {
   },
   get: {
     operationId: 'video-search',
+    beta: true,
     security: [
       {
         Bearer: [],
