@@ -2,7 +2,8 @@
 
 **NEW FEATURES:**
 
-* Added the `/video` endpoint. Video allows you to specify a URL of a video file and a set of classes you want to search for in the video.
+* Added the `/video` endpoint. Video allows you to specify a URL of a video file and a set of classes you want to search for in the video. 
+*NOTE* - This endpoit is currently in BETA. The API will likely change. 
 
 ## v2.0.0
 
