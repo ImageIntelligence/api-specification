@@ -124,12 +124,6 @@ module.exports = {
           proxyUrl: 'https://api.quickpix.io/images/c7e9a2ca-c2ee-4290-90b4-04fe3df35be0',
           customId: 'some_person_filled_image',
           confidence: 0.9971387386,
-          boundingBox: {
-            xMin: 240,
-            yMin: 477,
-            xMax: 383,
-            yMax: 887,
-          }
         },
         hitl: 'true',
       },
