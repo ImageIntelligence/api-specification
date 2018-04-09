@@ -1,3 +1,9 @@
+## v2.1.1
+
+**BUG FIX:**
+
+* Removed `boundingBox` in `DetectJobRequest` and `DetectJobResponse`. This feature has been disabled temporarily.
+
 ## v2.1.0
 
 **NEW FEATURES:**
