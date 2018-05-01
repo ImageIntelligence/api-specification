@@ -1,3 +1,9 @@
+## v2.2.0
+
+**NEW FEATURES:**
+
+* `/detect`, `/match`, and `/ask` can now accept image blobs (base64-encoded binary data) in the requests.
+
 ## v2.1.1
 
 **BUG FIX:**
