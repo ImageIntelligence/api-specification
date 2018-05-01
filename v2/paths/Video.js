@@ -33,6 +33,9 @@ module.exports = {
       '403': {
         description: 'Forbidden',
       },
+      '413': {
+        description: 'Request Entity Too Large. Max request size is 1 MB',
+      },
       '500': {
         description: 'Internal server error',
       },
