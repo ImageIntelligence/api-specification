@@ -1,14 +1,16 @@
 module.exports = {
   type: 'object',
   description: 'An image you want to process',
-  required: [
-    'url',
-  ],
+  required: [],
   properties: {
     url: {
       type: 'string',
       description: 'URL of the image',
       maxLength: 512,
+    },
+    blob: {
+      type: 'string',
+      description: 'Base64-encoded image bytes',
     },
     customId: {
       type: 'string',

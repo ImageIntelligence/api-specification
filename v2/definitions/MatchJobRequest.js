@@ -7,7 +7,7 @@ module.exports = {
   properties: {
     images: {
       type: 'array',
-      description: 'A list of image URLs. A maximum batch of size of 64 image URls may be submitted',
+      description: 'A list of images. Each object should contain either the image URL or blob of image bytes',
       items: {
         $ref: '#/definitions/ImageRequestItem',
       },
