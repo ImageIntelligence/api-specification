@@ -1,3 +1,9 @@
+## v2.3.0
+
+**BACKWARDS INCOMPATIBILITIES / NOTES:**
+
+* Removed `/video` endpoint. We've temporarily disable all video support in our API. We will be adding this back (but in a different format) in the future.
+
 ## v2.2.0
 
 **NEW FEATURES:**
@@ -15,7 +21,8 @@
 **NEW FEATURES:**
 
 * Added the `/video` endpoint. Video allows you to specify a URL of a video file and a set of classes you want to search for in the video. 
-*NOTE* - This endpoit is currently in BETA. The API will likely change. 
+
+*NOTE* - This endpoint is currently in BETA. The API will likely change. 
 
 ## v2.0.0
 

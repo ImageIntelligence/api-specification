@@ -31,8 +31,6 @@ module.exports = {
     '/match/{id}': require('./paths/MatchGetById'),
     '/ask': require('./paths/Ask'),
     '/ask/{id}': require('./paths/AskGetById'),
-    '/video': require('./paths/Video'),
-    '/video/{id}': require('./paths/VideoGetById'),
   },
   definitions: {
     ClientCredentials: require('./definitions/ClientCredentials'),
@@ -52,8 +50,5 @@ module.exports = {
 
     AskJobRequest: require('./definitions/AskJobRequest'),
     AskJobResponse: require('./definitions/AskJobResponse'),
-
-    VideoJobRequest: require('./definitions/VideoJobRequest'),
-    VideoJobResponse: require('./definitions/VideoJobResponse'),
   },
 };
