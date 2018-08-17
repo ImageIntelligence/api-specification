@@ -1,5 +1,7 @@
 dist: trusty
 language: node_js
+node_js:
+  - "8.11.4"
 env:
   VERSION=$TRAVIS_TAG
 script: npm version $VERSION
