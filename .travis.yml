@@ -5,7 +5,7 @@ node_js:
 env:
   VERSION=$TRAVIS_TAG
 script: |
-  if [[ -z "$VERSION" ]]; then
+  if [[ ! -z "$VERSION" ]]; then
     npm --no-git-tag-version version $VERSION
     npm publish
   fi
