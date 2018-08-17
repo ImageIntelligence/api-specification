@@ -1,7 +1,6 @@
 module.exports = {
   type: 'object',
   description: 'An image you want to process',
-  required: [],
   properties: {
     url: {
       type: 'string',
