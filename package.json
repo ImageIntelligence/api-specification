@@ -6,8 +6,5 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ImageIntelligence/api-specification.git"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }

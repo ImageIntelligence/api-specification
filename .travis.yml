@@ -4,12 +4,8 @@ node_js:
   - "8.11.4"
 env:
   VERSION=$TRAVIS_TAG
-script: npm --no-git-tag-version version $VERSION
-deploy:
-  provider: npm
-  email: $NPM_EMAIL
-  api_key:
-    secure: daZ7mfSaJnRab7LgF0wPbfk9Yz/vEB6p9rRrOmmWkMF3FesPUD9GFPdQoUNjLxENEv6FQlHW4sWOzxDHe3tzLfZ2lCAU9bNIlJgbZMoja8kj0BsUApWzbxamqJi9U5UsiVrpnsE+4BPi+snacN1X/y2zLvx47unxoZP1QP4IoYQWAxjRUINlu4JR0vsHuEqfYmyweawucVFEwE4vKRdEdj6K1BjZjbhWD/iPs17uwvL3LBLBtpjAzEzcgh3z/jNKifwfro5Xy2vieIHDMslpc6kGc83X+dBF64wDYE4R1xW3z75+vQQI/ci4jfQIr7U7+V7KdGtR7av0IZPj8ViiL/xAqH9jMttQGxt/XJvKKylxmb2E6WuT6QjMRjsiTPxbS48M2EF4f2hrHNQUEPGTmkEoJ0OEETegoY3sEjnvMkze1wciJPWsIzrkPdT+H1aZ8Z6TnShZvDicgtck59IThxuYMG3RH+I6jvG5A53ZDYPth+A2+jzXgdyY3Z7kPClws6qE/2oVyebtw2+K94LB6wkF5yzP9+7QRRQ99OEwR10wXQxJN8Sjno80ZGjV41iITZJHAzpburhDL9sssIIRFLIOV/Af55PrYZnTeFXA5CZWB34NcGAwzLwASx5VgqMBFsLu4lIkfjfIw8ZdAVQG5uoplms/jqjXcbOXXYsD9GQ=
-  on:
-    tags: true
-    repo: ImageIntelligence/api-specification
+script: |
+  if [[ -z "$VERSION" ]]; then
+    npm --no-git-tag-version version $VERSION
+    npm publish
+  fi
