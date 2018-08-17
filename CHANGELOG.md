@@ -1,3 +1,9 @@
+## v2.4.0
+
+**NEW FEATURES:**
+
+* Added `/feedback/` and `/feedback/:id` endpoints. They currently only work on jobs created via `/detect`. `/ask` and `/match` coming in the future version.
+
 ## v2.3.0
 
 **BACKWARDS INCOMPATIBILITIES / NOTES:**
