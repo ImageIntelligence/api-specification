@@ -1,5 +1,8 @@
 dist: trusty
 language: node_js
+env:
+  VERSION=$TRAVIS_TAG
+script: npm version $VERSION
 deploy:
   provider: npm
   email: $NPM_EMAIL
