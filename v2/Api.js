@@ -42,6 +42,7 @@ module.exports = {
     '/ask/{id}': require('./paths/ask/AskGetById'),
     '/face-recognition/recognize': Object.assign(
       require('./paths/faceRecognition/RecognizeCreate'),
+      require('./paths/faceRecognition/RecognizeSearch'),
     ),
     '/face-recognition/recognize/{id}': require('./paths/faceRecognition/RecognizeGetById'),
     '/feedback': Object.assign(
