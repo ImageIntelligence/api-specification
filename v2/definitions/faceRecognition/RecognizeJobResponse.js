@@ -125,17 +125,17 @@ module.exports = {
           {
             faceId: 'ced2d464-0567-480d-9616-092d2895cceb',
             identityId: '81e45841-4996-433d-9138-3383214176d1',
-            name: 'George ',
-            confidence: 0.410791,
+            name: 'George Costanza',
+            confidence: 0.05628731,
             boundingBox: {
-              xMin: 8,
-              yMin: 355,
-              xMax: 194,
-              yMax: 251,
+              xMin: 392,
+              yMin: 170,
+              xMax: 90,
+              yMax: 596,
             },
           },
         ],
-      }
+      },
     ],
   },
 };
