@@ -24,16 +24,28 @@ module.exports = {
     },
   },
   paths: {
-    '/oauth/token': require('./paths/OAuthToken'),
-    '/detect': require('./paths/Detect'),
-    '/detect/{id}': require('./paths/DetectGetById'),
-    '/match': require('./paths/Match'),
-    '/match/{id}': require('./paths/MatchGetById'),
-    '/ask': require('./paths/Ask'),
-    '/ask/{id}': require('./paths/AskGetById'),
-    '/feedback': require('./paths/Feedback'),
-    '/feedback/{id}': require('./paths/FeedbackGetById'),
+    '/oauth/token': require('./paths/authentication/OAuthToken'),
+    '/detect': Object.assign(
+      require('./paths/detect/DetectCreate'),
+      require('./paths/detect/DetectSearch'),
+    ),
+    '/detect/{id}': require('./paths/detect/DetectGetById'),
+    '/match': Object.assign(
+      require('./paths/match/MatchCreate'),
+      require('./paths/match/MatchSearch'),
+    ),
+    '/match/{id}': require('./paths/match/MatchGetById'),
+    '/ask': Object.assign(
+      require('./paths/ask/AskCreate'),
+      require('./paths/ask/AskSearch'),
+    ),
+    '/ask/{id}': require('./paths/ask/AskGetById'),
     '/face-recognition/recognize': require('./paths/faceRecognition/RecognizeCreate'),
+    '/feedback': Object.assign(
+      require('./paths/feedback/FeedbackCreate'),
+      require('./paths/feedback/FeedbackSearch'),
+    ),
+    '/feedback/{id}': require('./paths/feedback/FeedbackGetById'),
   },
   definitions: {
     // Common //
