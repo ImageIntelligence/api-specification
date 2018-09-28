@@ -53,6 +53,7 @@ module.exports = {
     '/face-recognition/identities': Object.assign(
       require('./paths/faceRecognition/IdentityCreate'),
       require('./paths/faceRecognition/IdentitySearch'),
+      require('./paths/faceRecognition/IdentityUpdate'),
     ),
     '/face-recognition/identities/{id}': require('./paths/faceRecognition/IdentityGetById'),
     '/feedback': Object.assign(
@@ -97,6 +98,7 @@ module.exports = {
     FaceRecognitionGroupCreateRequest: require('./definitions/faceRecognition/GroupCreateRequest'),
     FaceRecognitionGroupResponse: require('./definitions/faceRecognition/GroupResponse'),
     FaceRecognitionIdentityCreateRequest: require('./definitions/faceRecognition/IdentityCreateRequest'),
+    FaceRecognitionIdentityUpdateRequest: require('./definitions/faceRecognition/IdentityUpdateRequest'),
     FaceRecognitionIdentityResponse: require('./definitions/faceRecognition/IdentityResponse'),
 
     // Feedback //
