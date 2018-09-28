@@ -40,7 +40,10 @@ module.exports = {
       require('./paths/ask/AskSearch'),
     ),
     '/ask/{id}': require('./paths/ask/AskGetById'),
-    '/face-recognition/recognize': require('./paths/faceRecognition/RecognizeCreate'),
+    '/face-recognition/recognize': Object.assign(
+      require('./paths/faceRecognition/RecognizeCreate'),
+    ),
+    '/face-recognition/recognize/{id}': require('./paths/faceRecognition/RecognizeGetById'),
     '/feedback': Object.assign(
       require('./paths/feedback/FeedbackCreate'),
       require('./paths/feedback/FeedbackSearch'),
@@ -78,8 +81,8 @@ module.exports = {
 
     // FaceRecognition //
 
-    FaceRecognitionCreateJobRequest: require('./definitions/faceRecognition/CreateJobRequest'),
-    FaceRecognitionCreateJobResponse: require('./definitions/faceRecognition/CreateJobResponse'),
+    FaceRecognitionRecognizeJobRequest: require('./definitions/faceRecognition/RecognizeJobRequest'),
+    FaceRecognitionRecognizeJobResponse: require('./definitions/faceRecognition/RecognizeJobResponse'),
 
     // Feedback //
 

@@ -11,7 +11,7 @@ module.exports = {
         name: 'FaceRecognitionJobRequest',
         in: 'body',
         schema: {
-          $ref: '#/definitions/FaceRecognitionCreateJobRequest',
+          $ref: '#/definitions/FaceRecognitionRecognizeJobRequest',
         },
         required: true,
       },
@@ -20,7 +20,7 @@ module.exports = {
       '200': {
         description: 'Face recognition job request was successfully submitted',
         schema: {
-          $ref: '#/definitions/FaceRecognitionCreateJobResponse',
+          $ref: '#/definitions/FaceRecognitionRecognizeJobResponse',
         },
       },
       '400': {
