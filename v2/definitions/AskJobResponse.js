@@ -69,7 +69,6 @@ module.exports = {
       type: 'object',
       properties: {
         image: {
-          type: 'object',
           $ref: '#/definitions/ImageResponseItem',
         }
       },

@@ -67,7 +67,6 @@ module.exports = {
           },
         },
         image: {
-          type: 'object',
           $ref: '#/definitions/ImageResponseItem',
         },
         hitl: {
