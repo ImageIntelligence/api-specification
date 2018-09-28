@@ -56,6 +56,9 @@ module.exports = {
       require('./paths/faceRecognition/IdentityUpdate'),
     ),
     '/face-recognition/identities/{id}': require('./paths/faceRecognition/IdentityGetById'),
+    '/face-recognition/cluster-sets/compute': require('./paths/faceRecognition/ClusterSetCompute'),
+    '/face-recognition/cluster-sets': require('./paths/faceRecognition/ClusterSetSearch'),
+    '/face-recognition/cluster-sets/{id}': require('./paths/faceRecognition/ClusterSetGetById'),
     '/feedback': Object.assign(
       require('./paths/feedback/FeedbackCreate'),
       require('./paths/feedback/FeedbackSearch'),
@@ -100,6 +103,9 @@ module.exports = {
     FaceRecognitionIdentityCreateRequest: require('./definitions/faceRecognition/IdentityCreateRequest'),
     FaceRecognitionIdentityUpdateRequest: require('./definitions/faceRecognition/IdentityUpdateRequest'),
     FaceRecognitionIdentityResponse: require('./definitions/faceRecognition/IdentityResponse'),
+    FaceRecognitionClusterSetComputeRequest: require('./definitions/faceRecognition/ClusterSetComputeRequest'),
+    FaceRecognitionClusterSetComputeResponse: require('./definitions/faceRecognition/ClusterSetComputeResponse'),
+    FaceRecognitionClusterSetResponse: require('./definitions/faceRecognition/ClusterSetResponse'),
 
     // Feedback //
 

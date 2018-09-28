@@ -1,6 +1,6 @@
 module.exports = {
   get: {
-    operationId: 'face-recognition/recognize-search',
+    operationId: 'face-recognition/cluster-set-search',
     security: [
       {
         Bearer: [],
@@ -14,28 +14,14 @@ module.exports = {
         type: 'string',
         required: true,
       },
-      {
-        name: 'before',
-        in: 'query',
-        description: 'Search for jobs created before this timestamp',
-        type: 'number',
-        required: false,
-      },
-      {
-        name: 'after',
-        in: 'query',
-        description: 'Search for jobs created after this timestamp',
-        type: 'number',
-        required: false,
-      },
     ],
     responses: {
       '200': {
-        description: 'A list of jobs found given your search criteria',
+        description: 'A list of cluster sets found given your search criteria',
         schema: {
           type: 'array',
           items: {
-            $ref: '#/definitions/FaceRecognitionRecognizeJobResponse',
+            $ref: '#/definitions/FaceRecognitionClusterSetResponse',
           },
         },
       },
