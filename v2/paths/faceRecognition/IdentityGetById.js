@@ -1,6 +1,6 @@
 module.exports = {
   get: {
-    operationId: 'face-recognition/group-get',
+    operationId: 'face-recognition/identity-get',
     security: [
       {
         Bearer: [],
@@ -11,19 +11,16 @@ module.exports = {
         name: 'id',
         in: 'path',
         type: 'string',
-        description: 'The ID of a face recognition group',
+        description: 'The ID of a face recognition identity',
         required: true,
       },
     ],
     responses: {
       '200': {
-        description: 'Face recognition group resource',
+        description: 'Face recognition identity resource',
         schema: {
-          $ref: '#/definitions/FaceRecognitionGroupResponse',
+          $ref: '#/definitions/FaceRecognitionIdentityResponse',
         },
-      },
-      '400': {
-        description: 'Malformed request',
       },
       '401': {
         description: 'Unauthorized',
@@ -32,7 +29,7 @@ module.exports = {
         description: 'Forbidden',
       },
       '404': {
-        description: 'No group found with the given ID',
+        description: 'No identity found with the given ID',
       },
       '500': {
         description: 'Internal server error',

@@ -1,6 +1,6 @@
 module.exports = {
   post: {
-    operationId: 'face-recognition/group',
+    operationId: 'face-recognition/identity',
     security: [
       {
         Bearer: [],
@@ -8,19 +8,19 @@ module.exports = {
     ],
     parameters: [
       {
-        name: 'FaceRecognitionGroupCreateRequest',
+        name: 'FaceRecognitionIdentityCreateRequest',
         in: 'body',
         schema: {
-          $ref: '#/definitions/FaceRecognitionGroupCreateRequest',
+          $ref: '#/definitions/FaceRecognitionIdentityCreateRequest',
         },
         required: true,
       },
     ],
     responses: {
       '200': {
-        description: 'Face recognition create group request was successfully submitted',
+        description: 'Face recognition create identity request was successfully submitted',
         schema: {
-          $ref: '#/definitions/FaceRecognitionGroupResponse',
+          $ref: '#/definitions/FaceRecognitionIdentityResponse',
         },
       },
       '400': {

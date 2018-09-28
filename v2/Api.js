@@ -50,6 +50,11 @@ module.exports = {
       require('./paths/faceRecognition/GroupSearch'),
     ),
     '/face-recognition/groups/{id}': require('./paths/faceRecognition/GroupGetById'),
+    '/face-recognition/identities': Object.assign(
+      require('./paths/faceRecognition/IdentityCreate'),
+      require('./paths/faceRecognition/IdentitySearch'),
+    ),
+    '/face-recognition/identities/{id}': require('./paths/faceRecognition/IdentityGetById'),
     '/feedback': Object.assign(
       require('./paths/feedback/FeedbackCreate'),
       require('./paths/feedback/FeedbackSearch'),
@@ -89,8 +94,10 @@ module.exports = {
 
     FaceRecognitionRecognizeJobRequest: require('./definitions/faceRecognition/RecognizeJobRequest'),
     FaceRecognitionRecognizeJobResponse: require('./definitions/faceRecognition/RecognizeJobResponse'),
-    FaceRecognitionCreateGroupRequest: require('./definitions/faceRecognition/CreateGroupRequest'),
+    FaceRecognitionGroupCreateRequest: require('./definitions/faceRecognition/GroupCreateRequest'),
     FaceRecognitionGroupResponse: require('./definitions/faceRecognition/GroupResponse'),
+    FaceRecognitionIdentityCreateRequest: require('./definitions/faceRecognition/IdentityCreateRequest'),
+    FaceRecognitionIdentityResponse: require('./definitions/faceRecognition/IdentityResponse'),
 
     // Feedback //
 
