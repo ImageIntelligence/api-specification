@@ -70,6 +70,7 @@ module.exports = {
   },
   definitions: {
     // Common //
+
     BoundingBox: require('./definitions/common/BoundingBox'),
     ImageStatus: require('./definitions/common/ImageStatus'),
     JobStatus: require('./definitions/common/JobStatus'),
