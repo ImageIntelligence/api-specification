@@ -55,7 +55,10 @@ module.exports = {
       require('./paths/faceRecognition/IdentitySearch'),
       require('./paths/faceRecognition/IdentityUpdate'),
     ),
-    '/face-recognition/identities/{id}': require('./paths/faceRecognition/IdentityGetById'),
+    '/face-recognition/identities/{id}': Object.assign(
+      require('./paths/faceRecognition/IdentityGetById'),
+      require('./paths/faceRecognition/IdentityRemoveById'),
+    ),
     '/face-recognition/cluster-sets/compute': require('./paths/faceRecognition/ClusterSetCompute'),
     '/face-recognition/cluster-sets': require('./paths/faceRecognition/ClusterSetSearch'),
     '/face-recognition/cluster-sets/{id}': require('./paths/faceRecognition/ClusterSetGetById'),
