@@ -1,6 +1,6 @@
 module.exports = {
   delete: {
-    operationId: 'face-recognition/identity-remove',
+    operationId: 'face-recognition/group-remove',
     security: [
       {
         Bearer: [],
@@ -11,13 +11,13 @@ module.exports = {
         name: 'id',
         in: 'path',
         type: 'string',
-        description: 'The ID of a face recognition identity',
+        description: 'The ID of a face recognition group',
         required: true,
       },
     ],
     responses: {
       '200': {
-        description: 'Successfully removed the face recognition identity',
+        description: 'Successfully removed the face recognition group',
       },
       '401': {
         description: 'Unauthorized',
