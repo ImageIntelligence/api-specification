@@ -1,3 +1,9 @@
+## v2.5.0-rc2
+
+**NOTES:**
+
+* Fixed typos throughout the swagger spec.
+
 ## v2.5.0-rc1
 
 **NEW FEATURES:**
