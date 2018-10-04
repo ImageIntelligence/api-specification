@@ -1,3 +1,14 @@
+## v2.5.0-rc1
+
+**NEW FEATURES:**
+
+* Adds support for face recognition via `/face-recognition/{recognize,groups,identities,cluster-sets}` endpoints.
+* In addition to new endpoints we've also introduced `face-recognition:{read,write,update,delete}` scopes.
+
+**NOTES:**
+
+* Re-structured the api-specification repository, making navigation better
+
 ## v2.4.0
 
 **NEW FEATURES:**
