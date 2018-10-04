@@ -41,7 +41,7 @@ module.exports = {
           'hitl',
         ],
         properties: {
-          'class': {
+          class: {
             type: 'string',
             description: 'A class you want to search for',
           },
@@ -94,7 +94,7 @@ module.exports = {
                 'verdict',
               ],
               properties: {
-                'class': {
+                class: {
                   type: 'string',
                   description: 'The class found',
                 },
@@ -117,7 +117,7 @@ module.exports = {
     id: '5d689c71-e68f-46c3-ac71-4053806e71de',
     jobResults: [
       {
-        'class': 'person',
+        class: 'person',
         image: {
           id: '52547074-a622-11e6-8f61-63f37dc33285',
           url: 'https://publicly.available.domain.net/image-001.jpg',
@@ -125,10 +125,10 @@ module.exports = {
           customId: 'some_person_filled_image',
           confidence: 0.9971387386,
         },
-        hitl: 'true',
+        hitl: true,
       },
       {
-        'class': 'car',
+        class: 'car',
         image: {
           id: '52547074-a622-11e6-8f61-63f37dc33286',
           url: 'https://publicly.available.domain.net/image-002.jpg',
@@ -147,7 +147,7 @@ module.exports = {
         customId: 'some_person_filled_image',
         objects: [
           {
-            'class': 'person',
+            class: 'person',
             confidence: 0.9971387386,
             verdict: true,
           },
@@ -161,7 +161,7 @@ module.exports = {
         customId: 'some_car_filled_image',
         objects: [
           {
-            'class': 'car',
+            class: 'car',
             confidence: 0.9987652302,
             verdict: true,
           },

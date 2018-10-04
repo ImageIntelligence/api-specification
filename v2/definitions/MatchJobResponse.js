@@ -46,7 +46,7 @@ module.exports = {
             'images',
           ],
           properties: {
-            'class': {
+            class: {
               type: 'string',
               description: 'The class (target) found in the image',
             },
@@ -111,7 +111,7 @@ module.exports = {
     id: '5d689c71-e68f-46c3-ac71-4053806e71de',
     jobResults: {
       target: {
-        'class': 'person',
+        class: 'person',
         customId: 'custom_target_id',
         images: [
           'https://publicly.available.domain.net/person-001.jpg',

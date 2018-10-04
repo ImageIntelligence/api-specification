@@ -22,7 +22,7 @@ module.exports = {
           'class',
         ],
         properties: {
-          'class': {
+          class: {
             type: 'string',
             description: 'A class (object) you want to search for',
           },
@@ -68,11 +68,11 @@ module.exports = {
     ],
     classes: [
       {
-        'class': 'person',
+        class: 'person',
         verify: 'AUTO',
       },
       {
-        'class': 'car',
+        class: 'car',
         verify: 'NEVER',
       },
     ],

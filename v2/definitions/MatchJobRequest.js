@@ -71,7 +71,7 @@ module.exports = {
       },
     ],
     target: {
-      'class': 'person',
+      class: 'person',
       customId: 'example_target_id',
       images: [
         'https://publicly.available.domain.net/person-001.jpg',

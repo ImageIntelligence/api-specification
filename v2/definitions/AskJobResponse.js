@@ -134,14 +134,14 @@ module.exports = {
     question: 'Is my garage door open?',
     examples: {
       yes: [
-        "https://publicly.available.domain.net/yes-image-001.jpg",
-        "https://publicly.available.domain.net/yes-image-002.jpg",
-        "https://publicly.available.domain.net/yes-image-003.jpg",
+        'https://publicly.available.domain.net/yes-image-001.jpg',
+        'https://publicly.available.domain.net/yes-image-002.jpg',
+        'https://publicly.available.domain.net/yes-image-003.jpg',
       ],
       no: [
-        "https://publicly.available.domain.net/no-image-001.jpg",
-        "https://publicly.available.domain.net/no-image-002.jpg",
-        "https://publicly.available.domain.net/no-image-003.jpg",
+        'https://publicly.available.domain.net/no-image-001.jpg',
+        'https://publicly.available.domain.net/no-image-002.jpg',
+        'https://publicly.available.domain.net/no-image-003.jpg',
       ],
     },
     createdAt: 1487648348,
