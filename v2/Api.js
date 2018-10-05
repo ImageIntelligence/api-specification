@@ -27,50 +27,50 @@ module.exports = {
     '/oauth/token': require('./paths/authentication/OAuthToken'),
     '/detect': Object.assign(
       require('./paths/detect/DetectCreate'),
-      require('./paths/detect/DetectSearch'),
+      require('./paths/detect/DetectSearch')
     ),
     '/detect/{id}': require('./paths/detect/DetectGetById'),
     '/match': Object.assign(
       require('./paths/match/MatchCreate'),
-      require('./paths/match/MatchSearch'),
+      require('./paths/match/MatchSearch')
     ),
     '/match/{id}': require('./paths/match/MatchGetById'),
     '/ask': Object.assign(
       require('./paths/ask/AskCreate'),
-      require('./paths/ask/AskSearch'),
+      require('./paths/ask/AskSearch')
     ),
     '/ask/{id}': require('./paths/ask/AskGetById'),
     '/face-recognition/recognize': Object.assign(
       require('./paths/faceRecognition/RecognizeCreate'),
-      require('./paths/faceRecognition/RecognizeSearch'),
+      require('./paths/faceRecognition/RecognizeSearch')
     ),
     '/face-recognition/recognize/{id}': require('./paths/faceRecognition/RecognizeGetById'),
     '/face-recognition/groups': Object.assign(
       require('./paths/faceRecognition/GroupCreate'),
-      require('./paths/faceRecognition/GroupSearch'),
+      require('./paths/faceRecognition/GroupSearch')
     ),
     '/face-recognition/groups/{id}': Object.assign(
       require('./paths/faceRecognition/GroupGetById'),
-      require('./paths/faceRecognition/GroupRemoveById'),
+      require('./paths/faceRecognition/GroupRemoveById')
     ),
     '/face-recognition/identities': Object.assign(
       require('./paths/faceRecognition/IdentityCreate'),
       require('./paths/faceRecognition/IdentitySearch'),
-      require('./paths/faceRecognition/IdentityUpdate'),
+      require('./paths/faceRecognition/IdentityUpdate')
     ),
     '/face-recognition/identities/{id}': Object.assign(
       require('./paths/faceRecognition/IdentityGetById'),
-      require('./paths/faceRecognition/IdentityRemoveById'),
+      require('./paths/faceRecognition/IdentityRemoveById')
     ),
     '/face-recognition/cluster-sets/compute': require('./paths/faceRecognition/ClusterSetCompute'),
     '/face-recognition/cluster-sets': require('./paths/faceRecognition/ClusterSetSearch'),
     '/face-recognition/cluster-sets/{id}': Object.assign(
       require('./paths/faceRecognition/ClusterSetGetById'),
-      require('./paths/faceRecognition/ClusterSetRemoveById'),
+      require('./paths/faceRecognition/ClusterSetRemoveById')
     ),
     '/feedback': Object.assign(
       require('./paths/feedback/FeedbackCreate'),
-      require('./paths/feedback/FeedbackSearch'),
+      require('./paths/feedback/FeedbackSearch')
     ),
     '/feedback/{id}': require('./paths/feedback/FeedbackGetById'),
   },
