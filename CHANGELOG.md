@@ -1,3 +1,11 @@
+## v2.5.0-rc4
+
+**NOTES:**
+
+* Fixed more typos throughout the swagger spec.
+* Fixed `PATCH /identities/{id}`, it should have been in a different location
+* Add missing `id` in `IdentityResponse`
+
 ## v2.5.0-rc2
 
 **NOTES:**
