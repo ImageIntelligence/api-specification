@@ -4,7 +4,7 @@ module.exports = {
     'groupId',
   ],
   properties: {
-    name: {
+    groupId: {
       type: 'string',
     },
   },
