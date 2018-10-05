@@ -1,6 +1,12 @@
+## v2.5.0-rc5
+
+**BUG FIXES:**
+
+* `FaceRecognitionClusterSetComputeRequest` request payload should have a required `groupId`
+
 ## v2.5.0-rc4
 
-**NOTES:**
+**BUG FIXES:**
 
 * Fixed more typos throughout the swagger spec.
 * Fixed `PATCH /identities/{id}`, it should have been in a different location
@@ -8,7 +14,7 @@
 
 ## v2.5.0-rc2
 
-**NOTES:**
+**BUG FIXES:**
 
 * Fixed typos throughout the swagger spec.
 
