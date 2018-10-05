@@ -1,6 +1,6 @@
 module.exports = {
   patch: {
-    operationId: 'face-recognition/identity-update',
+    operationId: 'face-recognition/identity-update-by-id',
     security: [
       {
         Bearer: [],
