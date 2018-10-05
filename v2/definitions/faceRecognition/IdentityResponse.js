@@ -33,6 +33,7 @@ module.exports = {
     },
   },
   example: {
+    id: 'ab36de62-fe3e-4907-8a03-7d27c21fa01a',
     groupId: '14935044-1afd-49f5-9986-a2fae2f31f23',
     name: 'Kevin Spacey',
     faceIds: [
