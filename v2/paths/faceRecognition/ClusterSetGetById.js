@@ -17,7 +17,7 @@ module.exports = {
     ],
     responses: {
       '200': {
-        description: 'Face recognition group resource',
+        description: 'Face recognition cluster set resource',
         schema: {
           $ref: '#/definitions/FaceRecognitionClusterSetResponse',
         },

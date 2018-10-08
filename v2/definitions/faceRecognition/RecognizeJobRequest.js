@@ -16,8 +16,6 @@ module.exports = {
     },
     groupId: {
       type: 'string',
-      description: 'A groupId generated after creating a group (UUID)',
-      maxLength: 64,
     },
     webhookUrl: {
       type: 'string',

@@ -17,7 +17,7 @@ module.exports = {
     ],
     responses: {
       '200': {
-        description: 'Resources from the detect job successfully returned',
+        description: 'Resources from the recognize job successfully returned',
         schema: {
           $ref: '#/definitions/FaceRecognitionRecognizeJobResponse',
         },
