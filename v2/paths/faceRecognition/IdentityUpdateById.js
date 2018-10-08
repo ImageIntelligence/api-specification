@@ -8,6 +8,13 @@ module.exports = {
     ],
     parameters: [
       {
+        name: 'id',
+        in: 'path',
+        type: 'string',
+        description: 'The ID of a face recognition identity',
+        required: true,
+      },
+      {
         name: 'FaceRecognitionIdentityUpdateRequest',
         in: 'body',
         schema: {
