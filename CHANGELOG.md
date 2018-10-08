@@ -1,3 +1,14 @@
+## v2.5.0-rc6
+
+**BACKWARDS INCOMPATIBILITIES / NOTES:**
+
+* Removed the `Groups` API. Instead, you can specify any arbitrary groupId in the request
+
+**BUG FIXES:**
+
+* A few Request/Response definition descriptions had typos
+* `PATCH /face-recognition/identities/:id` had a missing `{id}` param
+
 ## v2.5.0-rc5
 
 **BUG FIXES:**
