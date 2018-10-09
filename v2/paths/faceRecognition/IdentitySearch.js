@@ -6,7 +6,15 @@ module.exports = {
         Bearer: [],
       },
     ],
-    parameters: [],
+    parameters: [
+      {
+        name: 'groupId',
+        in: 'query',
+        description: 'Filter by groupIds that belong to your organisation',
+        type: 'string',
+        required: true,
+      }
+    ],
     responses: {
       '200': {
         description: 'A list of identities that exist in the system',
