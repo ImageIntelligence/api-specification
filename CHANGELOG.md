@@ -1,3 +1,9 @@
+## v2.5.0-rc7
+
+**BUG FIXES:**
+
+* Add missing `groupId` to the query params in `GET /identities/`
+
 ## v2.5.0-rc6
 
 **BACKWARDS INCOMPATIBILITIES / NOTES:**
