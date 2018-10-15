@@ -11,11 +11,13 @@ module.exports = {
       type: 'number',
       format: 'int32',
       default: 64,
+      description: 'Faces with a smaller width than this will be excluded',
     },
     minHeight: {
       type: 'number',
       format: 'int32',
       default: 64,
+      description: 'Faces with a smaller height than this will be excluded',
     },
   },
   example: {
