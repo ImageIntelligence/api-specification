@@ -1,3 +1,13 @@
+## v2.5.0-rc8
+
+**NEW FEATURES:**
+
+* Added the ability to specify `minWidth` and `minHeight` when calling `/cluster-sets/compute`
+
+**BUG FIXES:**
+
+* `required` fields in `PATCH /identities/` wasn't matching those specified in `properties`
+
 ## v2.5.0-rc7
 
 **BUG FIXES:**
