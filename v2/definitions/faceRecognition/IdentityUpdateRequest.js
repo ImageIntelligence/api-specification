@@ -1,8 +1,8 @@
 module.exports = {
   type: 'object',
   required: [
-    'facesToAdd',
-    'facesToRemove',
+    'faceIdsToAdd',
+    'faceIdsToRemove',
   ],
   properties: {
     faceIdsToAdd: {
