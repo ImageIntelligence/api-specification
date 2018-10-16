@@ -20,7 +20,7 @@ module.exports = {
     webhookUrl: {
       type: 'string',
       description: 'Publicly accessible POST endpoint for receiving job status updates',
-      maxLength: 512,
+      maxLength: 2048,
     },
     customId: {
       type: 'string',
