@@ -1,4 +1,4 @@
-## v2.5.0-rc9
+## v2.5.0-rc10
 
 **NEW FEATURES:**
 
