@@ -20,7 +20,7 @@ module.exports = {
       '200': {
         description: 'Face recognition compute cluster set request successful',
         schema: {
-          $ref: '#/definitions/FaceRecognitionClusterSetComputeResponse',
+          $ref: '#/definitions/FaceRecognitionClusterSetResponse',
         },
       },
       '400': {

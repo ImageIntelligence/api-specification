@@ -104,7 +104,6 @@ module.exports = {
     FaceRecognitionIdentityUpdateRequest: require('./definitions/faceRecognition/IdentityUpdateRequest'),
     FaceRecognitionIdentityResponse: require('./definitions/faceRecognition/IdentityResponse'),
     FaceRecognitionClusterSetComputeRequest: require('./definitions/faceRecognition/ClusterSetComputeRequest'),
-    FaceRecognitionClusterSetComputeResponse: require('./definitions/faceRecognition/ClusterSetComputeResponse'),
     FaceRecognitionClusterSetResponse: require('./definitions/faceRecognition/ClusterSetResponse'),
 
     // Feedback //
