@@ -1,3 +1,13 @@
+## v2.5.0-rc9
+
+**NEW FEATURES:**
+
+* Increased max image url length to 2048
+
+**BUG FIXES:**
+
+* Removed ComputeClusterResponse `POST /cluster-sets/compute` now returns `ClusterSetResponse`
+
 ## v2.5.0-rc8
 
 **NEW FEATURES:**
