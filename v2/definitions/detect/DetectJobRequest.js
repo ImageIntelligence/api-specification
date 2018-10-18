@@ -16,6 +16,7 @@ module.exports = {
     },
     classes: {
       type: 'array',
+      minItems: 1,
       items: {
         type: 'object',
         required: [
@@ -35,9 +36,54 @@ module.exports = {
             description: 'Whether or not you want HITL verification',
             default: 'AUTO',
           },
+          exclusionZones: {
+            type: 'object',
+            description: 'A list of regions to exclude during analysis',
+            required: [
+              'points'
+            ],
+            properties: {
+              type: {
+                type: 'string',
+                enum: [
+                  'GRID',
+                  'FREEFORM'
+                ],
+                default: 'GRID',
+                description: 'The type of exclusion zone',
+              },
+              gridSize: {
+                type: 'number',
+                format: 'int32',
+                enum: [
+                  32,
+                  64,
+                  128,
+                  256
+                ],
+                default: 64,
+                description: 'Maximum size for the grid, only required if type=GRID',
+              },
+              points: {
+                type: 'array',
+                description: 'A list of lists where each nested list represents a region of the image to exclude',
+                minItems: 1,
+                items: {
+                  type: 'array',
+                  minItems: 3,
+                  items: {
+                    type: 'number',
+                    format: 'in32',
+                    minItems: 2,
+                    maxItems: 2,
+                    description: 'A 2 element tuple representing a (x, y) coordinate',
+                  },
+                },
+              },
+            },
+          },
         },
       },
-      minItems: 1,
     },
     webhookUrl: {
       type: 'string',
@@ -74,6 +120,14 @@ module.exports = {
       {
         class: 'car',
         verify: 'NEVER',
+        exclusionZones: {
+          type: 'GRID',
+          gridSize: 64,
+          points: [
+            [[0, 0], [0, 3], [1, 0], [1, 3]],
+            [[2, 6], [2, 9], [4, 6], [4, 9]],
+          ],
+        },
       },
     ],
     customId: '6c78df0a-67b6-4d5f-93cf-5820cfee501c',
