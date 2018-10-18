@@ -1,3 +1,14 @@
+## 2.5.0-rc11
+
+**NEW FEATURES:**
+
+* Added `GET /face-recognition/faces` and `GET /face-recognition/faces/{id}` endpoints
+* Added `exclusionZones` to `/detect` allowing you to ignore regions of an image per class
+
+**NOTES:**
+
+* Moved remaining endpoints (detect,ask,feedback,match) into their own directories
+
 ## v2.5.0-rc10
 
 **NEW FEATURES:**
