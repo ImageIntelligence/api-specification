@@ -31,7 +31,7 @@ module.exports = {
     ],
     responses: {
       '200': {
-        description: 'A list of jobs found given your search criteria',
+        description: 'A list of faces found given your search criteria',
         schema: {
           type: 'array',
           items: {
