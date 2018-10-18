@@ -82,19 +82,19 @@ module.exports = {
 
     // Detect //
 
-    DetectJobRequest: require('./definitions/DetectJobRequest'),
-    DetectJobResponse: require('./definitions/DetectJobResponse'),
-    DetectJobResponseItem: require('./definitions/DetectJobResponseItem'),
+    DetectJobRequest: require('./definitions/detect/DetectJobRequest'),
+    DetectJobResponse: require('./definitions/detect/DetectJobResponse'),
+    DetectJobResponseItem: require('./definitions/detect/DetectJobResponseItem'),
 
     // Match //
 
-    MatchJobRequest: require('./definitions/MatchJobRequest'),
-    MatchJobResponse: require('./definitions/MatchJobResponse'),
+    MatchJobRequest: require('./definitions/match/MatchJobRequest'),
+    MatchJobResponse: require('./definitions/match/MatchJobResponse'),
 
     // Ask //
 
-    AskJobRequest: require('./definitions/AskJobRequest'),
-    AskJobResponse: require('./definitions/AskJobResponse'),
+    AskJobRequest: require('./definitions/ask/AskJobRequest'),
+    AskJobResponse: require('./definitions/ask/AskJobResponse'),
 
     // FaceRecognition //
 
@@ -108,8 +108,8 @@ module.exports = {
 
     // Feedback //
 
-    FeedbackRequest: require('./definitions/FeedbackRequest'),
-    FeedbackRequestClassItem: require('./definitions/FeedbackRequestClassItem'),
-    FeedbackResponse: require('./definitions/FeedbackResponse'),
+    FeedbackRequest: require('./definitions/feedback/FeedbackRequest'),
+    FeedbackRequestClassItem: require('./definitions/feedback/FeedbackRequestClassItem'),
+    FeedbackResponse: require('./definitions/feedback/FeedbackResponse'),
   },
 };
