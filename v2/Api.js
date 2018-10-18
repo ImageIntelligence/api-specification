@@ -60,6 +60,7 @@ module.exports = {
       require('./paths/faceRecognition/ClusterSetGetById'),
       require('./paths/faceRecognition/ClusterSetRemoveById')
     ),
+    '/face-recognition/faces/': require('./paths/faceRecognition/FacesSearch'),
     '/face-recognition/faces/{id}': Object.assign(
       require('./paths/faceRecognition/FacesGetById')
     ),
