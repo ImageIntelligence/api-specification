@@ -66,7 +66,7 @@ module.exports = {
               },
               points: {
                 type: 'array',
-                description: 'A list of list of points where each nested list represents a region to exclude',
+                description: 'A list of lists where each nested list represents a region of the image to exclude',
                 minItems: 1,
                 items: {
                   type: 'array',
@@ -76,7 +76,7 @@ module.exports = {
                     format: 'in32',
                     minItems: 2,
                     maxItems: 2,
-                    description: 'A 2 element tuple representing the (x, y) coordinate',
+                    description: 'A 2 element tuple representing a (x, y) coordinate',
                   },
                 },
               },
