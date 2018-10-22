@@ -70,6 +70,7 @@ module.exports = {
                 'faceId',
                 'boundingBox',
                 'confidence',
+                'createdAt',
               ],
               properties: {
                 faceId: {
@@ -88,6 +89,11 @@ module.exports = {
                 },
                 boundingBox: {
                   $ref: '#/definitions/BoundingBox',
+                },
+                createdAt: {
+                  type: 'integer',
+                  format: 'int64',
+                  description: 'UNIX timestamp for when the face was created',
                 },
               },
             },
@@ -122,6 +128,7 @@ module.exports = {
               xMax: 194,
               yMax: 251,
             },
+            createdAt: 1534481491910,
           },
           {
             faceId: 'ced2d464-0567-480d-9616-092d2895cceb',
@@ -134,6 +141,7 @@ module.exports = {
               xMax: 90,
               yMax: 596,
             },
+            createdAt: 1534481491901,
           },
         ],
       },
