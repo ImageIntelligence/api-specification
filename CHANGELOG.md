@@ -1,3 +1,9 @@
+## 2.5.0-rc14
+
+**BUG FIXES:**
+
+* `faceIds` in `/compute` should be a required field
+
 ## 2.5.0-rc13
 
 **NEW FEATURES:**
