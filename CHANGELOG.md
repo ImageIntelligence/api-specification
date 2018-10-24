@@ -1,3 +1,13 @@
+## 2.5.0-rc12
+
+**NEW FEATURES:**
+
+* You can now search for faces and specify `minWidth` and `minHeight`
+
+**BACKWARDS INCOMPATIBILITIES / NOTES:**
+
+* `/cluster-sets/compute` no longer accepts `minWidth`/`minHeight` and requires `faceIds`
+
 ## 2.5.0-rc11
 
 **NEW FEATURES:**
