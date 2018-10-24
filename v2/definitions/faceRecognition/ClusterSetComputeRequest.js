@@ -2,6 +2,7 @@ module.exports = {
   type: 'object',
   required: [
     'groupId',
+    'faceIds',
   ],
   properties: {
     groupId: {
