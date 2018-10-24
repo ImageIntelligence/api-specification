@@ -13,7 +13,7 @@ module.exports = {
         description: 'Filter by groupIds that belong to your organisation',
         type: 'string',
         required: true,
-      }
+      },
     ],
     responses: {
       '200': {
