@@ -32,6 +32,7 @@ module.exports = {
             enum: [
               'NEVER',
               'AUTO',
+              'ALWAYS',
             ],
             description: 'Whether or not you want HITL verification',
             default: 'AUTO',
