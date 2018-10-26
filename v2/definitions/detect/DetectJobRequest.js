@@ -39,9 +39,10 @@ module.exports = {
           },
           exclusionZones: {
             type: 'object',
-            description: 'A list of regions to exclude during analysis',
+            description: 'A list of zones to exclude during analysis',
             required: [
-              'points'
+              'type',
+              'zones'
             ],
             properties: {
               type: {
@@ -53,31 +54,40 @@ module.exports = {
                 default: 'GRID',
                 description: 'The type of exclusion zone',
               },
-              gridSize: {
+              size: {
                 type: 'number',
                 format: 'int32',
                 enum: [
                   32,
                   64,
                   128,
-                  256
                 ],
                 default: 64,
-                description: 'Maximum size for the grid, only required if type=GRID',
+                description: 'Maximum grid size (32x32), required if type is GRID',
               },
-              points: {
+              zones: {
                 type: 'array',
-                description: 'A list of lists where each nested list represents a region of the image to exclude',
+                description: 'A list of lists where each nested list represents a zone of the image to exclude',
                 minItems: 1,
                 items: {
                   type: 'array',
-                  minItems: 3,
                   items: {
-                    type: 'number',
-                    format: 'in32',
-                    minItems: 2,
-                    maxItems: 2,
-                    description: 'A 2 element tuple representing a (x, y) coordinate',
+                    type: 'object',
+                    description: 'An object to represent (x, y) coordinates/points',
+                    required: [
+                      'x',
+                      'y',
+                    ],
+                    properties: {
+                      x: {
+                        type: 'number',
+                        format: 'in32',
+                      },
+                      y: {
+                        type: 'number',
+                        format: 'in32',
+                      },
+                    },
                   },
                 },
               },
@@ -116,17 +126,30 @@ module.exports = {
     classes: [
       {
         class: 'person',
-        verify: 'AUTO',
+      },
+      {
+        class: 'pet',
+        verify: 'ALWAYS',
       },
       {
         class: 'car',
         verify: 'NEVER',
         exclusionZones: {
           type: 'GRID',
-          gridSize: 64,
-          points: [
-            [[0, 0], [0, 3], [1, 0], [1, 3]],
-            [[2, 6], [2, 9], [4, 6], [4, 9]],
+          size: 32,
+          zones: [
+            [
+              { x: 0, y: 0 },
+              { x: 0, y: 3 },
+              { x: 1, y: 0 },
+              { x: 1, y: 3 },
+            ],
+            [
+              { x: 2, y: 6 },
+              { x: 2, y: 9 },
+              { x: 4, y: 6 },
+              { x: 4, y: 0 },
+            ],
           ],
         },
       },
