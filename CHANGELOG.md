@@ -1,3 +1,13 @@
+## 2.5.0-rc15
+
+**BUG FIXES:**
+
+* `ALWAYS` missing in `verify` field in `/detect`
+
+**BACKWARDS INCOMPATIBILITIES / NOTES:**
+
+* Breaking changes to `exclusionZones`. Renamed `points` to `zones`, `type` now required, and `[x, y]` replaced with an object `{x: number, y: number}`
+
 ## 2.5.0-rc14
 
 **BUG FIXES:**
