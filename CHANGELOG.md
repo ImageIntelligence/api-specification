@@ -1,3 +1,13 @@
+## 2.5.0-rc16
+
+**NEW FEATURES:**
+
+* `GET /face-recognition/cluster-sets` now allows `before` and `after` for pagination
+
+**BUG FIXES:**
+
+* All `createdAt` timestamps are milliseconds (not seconds)
+
 ## 2.5.0-rc15
 
 **BUG FIXES:**
