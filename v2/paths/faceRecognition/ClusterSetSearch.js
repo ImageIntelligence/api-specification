@@ -14,6 +14,20 @@ module.exports = {
         type: 'string',
         required: true,
       },
+      {
+        name: 'before',
+        in: 'query',
+        description: 'Search for cluster-sets created before this timestamp',
+        type: 'number',
+        required: false,
+      },
+      {
+        name: 'after',
+        in: 'query',
+        description: 'Search for cluster-sets created after this timestamp',
+        type: 'number',
+        required: false,
+      },
     ],
     responses: {
       '200': {
