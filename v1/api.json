@@ -782,11 +782,11 @@
             "status": {
               "code": "COMPLETED_SUCCESSFULLY"
             },
-            "createdAt": 1487648348,
+            "createdAt": 1487648348000,
             "customId": "some_person_filled_image"
           }
         ],
-        "createdAt": 1487648348,
+        "createdAt": 1487648348000,
         "status": {
           "code": "COMPLETED_SUCCESSFULLY",
           "message": "Labels successfully detected on all images."
@@ -992,7 +992,7 @@
       },
       "example": {
         "id": "5d689c71-e68f-46c3-ac71-4053806e71de",
-        "createdAt": 1487648348,
+        "createdAt": 1487648348000,
         "results": [
           {
             "id": "52547074-a622-11e6-8f61-63f37dc33285",
@@ -1251,7 +1251,7 @@
           "cat"
         ],
         "status": "APPROVED",
-        "createdAt": 1487648348
+        "createdAt": 1487648348000
       }
     }
   }

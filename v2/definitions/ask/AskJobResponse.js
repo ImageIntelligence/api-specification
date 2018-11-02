@@ -144,7 +144,7 @@ module.exports = {
         'https://publicly.available.domain.net/no-image-003.jpg',
       ],
     },
-    createdAt: 1487648348,
+    createdAt: 1487648348000,
     status: 'COMPLETED_SUCCESSFULLY',
     customId: '6c78df0a-67b6-4d5f-93cf-5820cfee501c',
     feedId: 'Camera_123456',

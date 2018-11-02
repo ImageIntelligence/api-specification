@@ -104,7 +104,7 @@ module.exports = {
   },
   example: {
     id: '5d689c71-e68f-46c3-ac71-4053806e71de',
-    createdAt: 1487648348,
+    createdAt: 1487648348000,
     status: 'COMPLETED_SUCCESSFULLY',
     customId: '6c78df0a-67b6-4d5f-93cf-5820cfee501c',
     feedId: 'Camera_123456',
