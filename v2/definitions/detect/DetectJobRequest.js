@@ -63,7 +63,7 @@ module.exports = {
                   128,
                 ],
                 default: 64,
-                description: 'Maximum grid size (32x32), required if type is GRID',
+                description: 'Maximum grid size (e.g. size=32 means 32x32), this is required if type is GRID',
               },
               zones: {
                 type: 'array',
