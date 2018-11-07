@@ -1,0 +1,5 @@
+steps:
+  - label: Publish to NPMJS
+    command: 'bash ./scripts/buildkite_pipeline/publish_npm.sh'
+    env:
+      VERSION: $BUILDKITE_TAG
