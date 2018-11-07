@@ -1,3 +1,15 @@
+## 2.5.0-rc18
+
+**BUG FIXES:**
+
+* `FaceResponse` should return an identityId and not `faceIds`
+
+## 2.5.0-rc17
+
+**BUG FIXES:**
+
+* Better description for exclusion zone grid size
+
 ## 2.5.0-rc16
 
 **NEW FEATURES:**
