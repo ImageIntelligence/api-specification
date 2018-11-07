@@ -13,7 +13,7 @@ module.exports = {
     groupId: {
       type: 'string',
     },
-    faceIds: {
+    identityId: {
       type: 'string',
     },
     createdAt: {
