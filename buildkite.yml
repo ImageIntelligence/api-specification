@@ -1,5 +1,8 @@
 steps:
   - label: Publish to NPMJS
-    command: 'bash ./scripts/buildkite_pipeline/publish_npm.sh'
+    command: 'bash ./scripts/buildkite_pipeline/run_docker.sh'
     env:
-      VERSION: $BUILDKITE_TAG
+      APP_NAME: 'api-specification'
+      BRANCH_NAME: '$BUILDKITE_BRANCH'
+      COMMIT_ID: '$BUILDKITE_COMMIT'
+      VERSION: '$BUILDKITE_TAG'
