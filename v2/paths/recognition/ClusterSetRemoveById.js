@@ -1,6 +1,6 @@
 module.exports = {
-  get: {
-    operationId: 'face-recognition/identity-get',
+  delete: {
+    operationId: 'recognition/cluster-set-remove',
     security: [
       {
         Bearer: [],
@@ -11,16 +11,13 @@ module.exports = {
         name: 'id',
         in: 'path',
         type: 'string',
-        description: 'The ID of a face recognition identity',
+        description: 'The ID of a face recognition cluster set',
         required: true,
       },
     ],
     responses: {
       '200': {
-        description: 'Face recognition identity resource',
-        schema: {
-          $ref: '#/definitions/FaceRecognitionIdentityResponse',
-        },
+        description: 'Successfully removed the face recognition cluster set',
       },
       '401': {
         description: 'Unauthorized',

@@ -1,6 +1,6 @@
 module.exports = {
   get: {
-    operationId: 'face-recognition/faces-search',
+    operationId: 'recognition/faces-search',
     security: [
       {
         Bearer: [],
@@ -49,7 +49,7 @@ module.exports = {
         schema: {
           type: 'array',
           items: {
-            $ref: '#/definitions/FaceRecognitionFaceResponse',
+            $ref: '#/definitions/RecognitionFaceResponse',
           },
         },
       },

@@ -1,6 +1,6 @@
 module.exports = {
   post: {
-    operationId: 'face-recognition/recognize',
+    operationId: 'recognition/recognize',
     security: [
       {
         Bearer: [],
@@ -8,10 +8,10 @@ module.exports = {
     ],
     parameters: [
       {
-        name: 'FaceRecognitionJobRequest',
+        name: 'RecognitionJobRequest',
         in: 'body',
         schema: {
-          $ref: '#/definitions/FaceRecognitionRecognizeJobRequest',
+          $ref: '#/definitions/RecognitionRecognizeJobRequest',
         },
         required: true,
       },
@@ -20,7 +20,7 @@ module.exports = {
       '200': {
         description: 'Face recognition job request was successfully submitted',
         schema: {
-          $ref: '#/definitions/FaceRecognitionRecognizeJobResponse',
+          $ref: '#/definitions/RecognitionRecognizeJobResponse',
         },
       },
       '400': {

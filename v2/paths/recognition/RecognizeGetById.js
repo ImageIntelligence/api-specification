@@ -1,6 +1,6 @@
 module.exports = {
-  delete: {
-    operationId: 'face-recognition/identity-remove',
+  get: {
+    operationId: 'recognition/recognize-get',
     security: [
       {
         Bearer: [],
@@ -11,13 +11,16 @@ module.exports = {
         name: 'id',
         in: 'path',
         type: 'string',
-        description: 'The ID of a face recognition identity',
+        description: 'The ID of a face recognition job',
         required: true,
       },
     ],
     responses: {
       '200': {
-        description: 'Successfully removed the face recognition identity',
+        description: 'Resources from the recognize job successfully returned',
+        schema: {
+          $ref: '#/definitions/RecognitionRecognizeJobResponse',
+        },
       },
       '401': {
         description: 'Unauthorized',
@@ -26,7 +29,7 @@ module.exports = {
         description: 'Forbidden',
       },
       '404': {
-        description: 'No identity found with the given ID',
+        description: 'No job found with the given ID',
       },
       '500': {
         description: 'Internal server error',

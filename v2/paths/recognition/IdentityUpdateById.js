@@ -1,6 +1,6 @@
 module.exports = {
   patch: {
-    operationId: 'face-recognition/identity-update-by-id',
+    operationId: 'recognition/identity-update-by-id',
     security: [
       {
         Bearer: [],
@@ -15,10 +15,10 @@ module.exports = {
         required: true,
       },
       {
-        name: 'FaceRecognitionIdentityUpdateRequest',
+        name: 'RecognitionIdentityUpdateRequest',
         in: 'body',
         schema: {
-          $ref: '#/definitions/FaceRecognitionIdentityUpdateRequest',
+          $ref: '#/definitions/RecognitionIdentityUpdateRequest',
         },
         required: true,
       },
@@ -27,7 +27,7 @@ module.exports = {
       '200': {
         description: 'Face recognition update identity request was successfully submitted',
         schema: {
-          $ref: '#/definitions/FaceRecognitionIdentityResponse',
+          $ref: '#/definitions/RecognitionIdentityResponse',
         },
       },
       '400': {

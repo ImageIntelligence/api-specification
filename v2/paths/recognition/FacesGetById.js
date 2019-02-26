@@ -1,6 +1,6 @@
 module.exports = {
   get: {
-    operationId: 'face-recognition/recognize-get',
+    operationId: 'recognition/faces-get',
     security: [
       {
         Bearer: [],
@@ -11,15 +11,15 @@ module.exports = {
         name: 'id',
         in: 'path',
         type: 'string',
-        description: 'The ID of a face recognition job',
+        description: 'The ID of a face recognition face',
         required: true,
       },
     ],
     responses: {
       '200': {
-        description: 'Resources from the recognize job successfully returned',
+        description: 'Face resource given ID successfully returned',
         schema: {
-          $ref: '#/definitions/FaceRecognitionRecognizeJobResponse',
+          $ref: '#/definitions/RecognitionFaceResponse',
         },
       },
       '401': {
@@ -29,7 +29,7 @@ module.exports = {
         description: 'Forbidden',
       },
       '404': {
-        description: 'No job found with the given ID',
+        description: 'No face found with the given ID',
       },
       '500': {
         description: 'Internal server error',

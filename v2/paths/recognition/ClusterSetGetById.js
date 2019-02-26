@@ -1,6 +1,6 @@
 module.exports = {
   get: {
-    operationId: 'face-recognition/faces-get',
+    operationId: 'recognition/cluster-set-get',
     security: [
       {
         Bearer: [],
@@ -11,16 +11,19 @@ module.exports = {
         name: 'id',
         in: 'path',
         type: 'string',
-        description: 'The ID of a face recognition face',
+        description: 'The ID of a face recognition cluster set',
         required: true,
       },
     ],
     responses: {
       '200': {
-        description: 'Face resource given ID successfully returned',
+        description: 'Face recognition cluster set resource',
         schema: {
-          $ref: '#/definitions/FaceRecognitionFaceResponse',
+          $ref: '#/definitions/RecognitionClusterSetResponse',
         },
+      },
+      '400': {
+        description: 'Malformed request',
       },
       '401': {
         description: 'Unauthorized',
@@ -29,7 +32,7 @@ module.exports = {
         description: 'Forbidden',
       },
       '404': {
-        description: 'No face found with the given ID',
+        description: 'No cluster set was found with the given ID',
       },
       '500': {
         description: 'Internal server error',

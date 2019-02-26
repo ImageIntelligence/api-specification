@@ -40,29 +40,29 @@ module.exports = {
       require('./paths/ask/AskSearch')
     ),
     '/ask/{id}': require('./paths/ask/AskGetById'),
-    '/face-recognition/recognize': Object.assign(
-      require('./paths/faceRecognition/RecognizeCreate'),
-      require('./paths/faceRecognition/RecognizeSearch')
+    '/recognition/recognize': Object.assign(
+      require('./paths/recognition/RecognizeCreate'),
+      require('./paths/recognition/RecognizeSearch')
     ),
-    '/face-recognition/recognize/{id}': require('./paths/faceRecognition/RecognizeGetById'),
-    '/face-recognition/identities': Object.assign(
-      require('./paths/faceRecognition/IdentityCreate'),
-      require('./paths/faceRecognition/IdentitySearch')
+    '/recognition/recognize/{id}': require('./paths/recognition/RecognizeGetById'),
+    '/recognition/identities': Object.assign(
+      require('./paths/recognition/IdentityCreate'),
+      require('./paths/recognition/IdentitySearch')
     ),
-    '/face-recognition/identities/{id}': Object.assign(
-      require('./paths/faceRecognition/IdentityGetById'),
-      require('./paths/faceRecognition/IdentityRemoveById'),
-      require('./paths/faceRecognition/IdentityUpdateById')
+    '/recognition/identities/{id}': Object.assign(
+      require('./paths/recognition/IdentityGetById'),
+      require('./paths/recognition/IdentityRemoveById'),
+      require('./paths/recognition/IdentityUpdateById')
     ),
-    '/face-recognition/cluster-sets/compute': require('./paths/faceRecognition/ClusterSetCompute'),
-    '/face-recognition/cluster-sets': require('./paths/faceRecognition/ClusterSetSearch'),
-    '/face-recognition/cluster-sets/{id}': Object.assign(
-      require('./paths/faceRecognition/ClusterSetGetById'),
-      require('./paths/faceRecognition/ClusterSetRemoveById')
+    '/recognition/cluster-sets/compute': require('./paths/recognition/ClusterSetCompute'),
+    '/recognition/cluster-sets': require('./paths/recognition/ClusterSetSearch'),
+    '/recognition/cluster-sets/{id}': Object.assign(
+      require('./paths/recognition/ClusterSetGetById'),
+      require('./paths/recognition/ClusterSetRemoveById')
     ),
-    '/face-recognition/faces': require('./paths/faceRecognition/FacesSearch'),
-    '/face-recognition/faces/{id}': Object.assign(
-      require('./paths/faceRecognition/FacesGetById')
+    '/recognition/faces': require('./paths/recognition/FacesSearch'),
+    '/recognition/faces/{id}': Object.assign(
+      require('./paths/recognition/FacesGetById')
     ),
     '/feedback': Object.assign(
       require('./paths/feedback/FeedbackCreate'),
@@ -100,16 +100,16 @@ module.exports = {
     AskJobRequest: require('./definitions/ask/AskJobRequest'),
     AskJobResponse: require('./definitions/ask/AskJobResponse'),
 
-    // FaceRecognition //
+    // Recognition //
 
-    FaceRecognitionRecognizeJobRequest: require('./definitions/faceRecognition/RecognizeJobRequest'),
-    FaceRecognitionRecognizeJobResponse: require('./definitions/faceRecognition/RecognizeJobResponse'),
-    FaceRecognitionIdentityCreateRequest: require('./definitions/faceRecognition/IdentityCreateRequest'),
-    FaceRecognitionIdentityUpdateRequest: require('./definitions/faceRecognition/IdentityUpdateRequest'),
-    FaceRecognitionIdentityResponse: require('./definitions/faceRecognition/IdentityResponse'),
-    FaceRecognitionFaceResponse: require('./definitions/faceRecognition/FaceResponse'),
-    FaceRecognitionClusterSetComputeRequest: require('./definitions/faceRecognition/ClusterSetComputeRequest'),
-    FaceRecognitionClusterSetResponse: require('./definitions/faceRecognition/ClusterSetResponse'),
+    RecognitionRecognizeJobRequest: require('./definitions/recognition/RecognizeJobRequest'),
+    RecognitionRecognizeJobResponse: require('./definitions/recognition/RecognizeJobResponse'),
+    RecognitionIdentityCreateRequest: require('./definitions/recognition/IdentityCreateRequest'),
+    RecognitionIdentityUpdateRequest: require('./definitions/recognition/IdentityUpdateRequest'),
+    RecognitionIdentityResponse: require('./definitions/recognition/IdentityResponse'),
+    RecognitionFaceResponse: require('./definitions/recognition/FaceResponse'),
+    RecognitionClusterSetComputeRequest: require('./definitions/recognition/ClusterSetComputeRequest'),
+    RecognitionClusterSetResponse: require('./definitions/recognition/ClusterSetResponse'),
 
     // Feedback //
 

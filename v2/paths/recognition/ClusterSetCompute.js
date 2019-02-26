@@ -1,6 +1,6 @@
 module.exports = {
   post: {
-    operationId: 'face-recognition/cluster-set-compute',
+    operationId: 'recognition/cluster-set-compute',
     security: [
       {
         Bearer: [],
@@ -8,10 +8,10 @@ module.exports = {
     ],
     parameters: [
       {
-        name: 'FaceRecognitionClusterSetComputeRequest',
+        name: 'RecognitionClusterSetComputeRequest',
         in: 'body',
         schema: {
-          $ref: '#/definitions/FaceRecognitionClusterSetComputeRequest',
+          $ref: '#/definitions/RecognitionClusterSetComputeRequest',
         },
         required: true,
       },
@@ -20,7 +20,7 @@ module.exports = {
       '200': {
         description: 'Face recognition compute cluster set request successful',
         schema: {
-          $ref: '#/definitions/FaceRecognitionClusterSetResponse',
+          $ref: '#/definitions/RecognitionClusterSetResponse',
         },
       },
       '400': {
