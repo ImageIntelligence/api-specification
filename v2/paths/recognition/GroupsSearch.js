@@ -17,7 +17,7 @@ module.exports = {
       {
         name: 'offset',
         in: 'body',
-        description: '',
+        description: 'Number of results to skip before returning a result',
         type: 'number',
         required: true,
       },

@@ -52,7 +52,7 @@ module.exports = {
     id: 'ab36de62-fe3e-4907-8a03-7d27c21fa01a',
     identityId: 'af278ded-5412-4916-bc5c-13469bfe7644',
     batchId: 'bf94e979-9205-4681-9b89-6ed11a498ec9',
-    namespace: '/v2/recognition/images/acme',
+    namespace: 'acme',
     linkModifiedBy: 'ML',
     linkLastModifiedAt: 1487648348000,
     images: [
