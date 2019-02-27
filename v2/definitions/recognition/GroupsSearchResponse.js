@@ -21,12 +21,21 @@ module.exports = {
     },
     namespace: {
       type: 'string',
-      // regex
-      // max number of chars
+      maxLength: 128,
+    },
+    organizationId: {
+      type: 'string',
+      minLength: 1,
+      maxLength: 128,
     },
     linkModifiedBy: {
       type: 'string',
-      // ENUM: MANUAL, ML, HITL
+      enum: [
+        'MANUAL',
+        'ML',
+        'HITL',
+      ],
+      required: false,
     },
     linkLastModifiedAt: {
       type: 'number',

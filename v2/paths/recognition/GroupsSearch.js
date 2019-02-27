@@ -24,14 +24,14 @@ module.exports = {
       {
         name: 'start',
         in: 'query',
-        description: '',
+        description: 'Pagination, the page to start at',
         type: 'number',
         required: false,
       },
       {
         name: 'end',
         in: 'query',
-        description: '',
+        description: 'Pagination, the page to end at',
         type: 'number',
         required: false,
       },
@@ -45,7 +45,7 @@ module.exports = {
       {
         name: 'ids',
         in: 'query',
-        description: '',
+        description: 'A list of group IDs to search for',
         type: 'array',
         items: {
           type: 'string',
