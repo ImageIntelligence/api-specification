@@ -55,12 +55,6 @@ module.exports = {
       require('./paths/recognition/IdentityUpdateById')
     ),
     '/recognition/groups/search': require('./paths/recognition/GroupsSearch'),
-    '/recognition/cluster-sets/compute': require('./paths/recognition/ClusterSetCompute'),
-    '/recognition/cluster-sets': require('./paths/recognition/ClusterSetSearch'),
-    '/recognition/cluster-sets/{id}': Object.assign(
-      require('./paths/recognition/ClusterSetGetById'),
-      require('./paths/recognition/ClusterSetRemoveById')
-    ),
     '/recognition/faces': require('./paths/recognition/ImagesSearch'),
     '/recognition/faces/{id}': Object.assign(
       require('./paths/recognition/ImagesGetById')
@@ -111,8 +105,6 @@ module.exports = {
     RecognitionFaceResponse: require('./definitions/recognition/FaceResponse'),
     RecognitionGroupsSearchRequest: require('./definitions/recognition/GroupsSearchRequest'),
     RecognitionGroupsSearchResponse: require('./definitions/recognition/GroupsSearchResponse'),
-    RecognitionClusterSetComputeRequest: require('./definitions/recognition/ClusterSetComputeRequest'),
-    RecognitionClusterSetResponse: require('./definitions/recognition/ClusterSetResponse'),
 
     // Feedback //
 
