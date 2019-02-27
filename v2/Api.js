@@ -61,9 +61,9 @@ module.exports = {
       require('./paths/recognition/ClusterSetGetById'),
       require('./paths/recognition/ClusterSetRemoveById')
     ),
-    '/recognition/faces': require('./paths/recognition/FacesSearch'),
+    '/recognition/faces': require('./paths/recognition/ImagesSearch'),
     '/recognition/faces/{id}': Object.assign(
-      require('./paths/recognition/FacesGetById')
+      require('./paths/recognition/ImagesGetById')
     ),
     '/feedback': Object.assign(
       require('./paths/feedback/FeedbackCreate'),
@@ -109,6 +109,7 @@ module.exports = {
     RecognitionIdentityUpdateRequest: require('./definitions/recognition/IdentityUpdateRequest'),
     RecognitionIdentityResponse: require('./definitions/recognition/IdentityResponse'),
     RecognitionFaceResponse: require('./definitions/recognition/FaceResponse'),
+    RecognitionGroupsSearchRequest: require('./definitions/recognition/GroupsSearchRequest'),
     RecognitionGroupsSearchResponse: require('./definitions/recognition/GroupsSearchResponse'),
     RecognitionClusterSetComputeRequest: require('./definitions/recognition/ClusterSetComputeRequest'),
     RecognitionClusterSetResponse: require('./definitions/recognition/ClusterSetResponse'),

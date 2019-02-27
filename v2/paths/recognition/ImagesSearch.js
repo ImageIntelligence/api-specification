@@ -1,6 +1,6 @@
 module.exports = {
   get: {
-    operationId: 'recognition/faces-search',
+    operationId: 'recognition/images-search',
     security: [
       {
         Bearer: [],
