@@ -1,5 +1,5 @@
 module.exports = {
-  get: {
+  post: {
     operationId: 'recognition/groups-search',
     security: [
       {
@@ -9,42 +9,42 @@ module.exports = {
     parameters: [
       {
         name: 'limit',
-        in: 'query',
+        in: 'body',
         description: 'Number of maximum objects in the query',
         type: 'number',
         required: true,
       },
       {
         name: 'offset',
-        in: 'query',
+        in: 'body',
         description: '',
         type: 'number',
         required: true,
       },
       {
         name: 'start',
-        in: 'query',
+        in: 'body',
         description: 'Pagination, the page to start at',
         type: 'number',
         required: false,
       },
       {
         name: 'end',
-        in: 'query',
+        in: 'body',
         description: 'Pagination, the page to end at',
         type: 'number',
         required: false,
       },
       {
         name: 'sortBy',
-        in: 'query',
+        in: 'body',
         description: 'Sort group search by an ID',
         type: 'number',
         required: false,
       },
       {
         name: 'ids',
-        in: 'query',
+        in: 'body',
         description: 'A list of group IDs to search for',
         type: 'array',
         items: {
