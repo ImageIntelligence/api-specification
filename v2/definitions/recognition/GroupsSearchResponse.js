@@ -3,9 +3,9 @@ module.exports = {
   description: 'The response to a face recognition job request',
   required: [
     'id',
-    'groupId',
-    'images',
-    'status',
+    'batchId',
+    'namespace',
+    'organizationId',
     'createdAt',
   ],
   properties: {
@@ -14,7 +14,6 @@ module.exports = {
     },
     identityId: {
       type: 'string',
-      required: false,
     },
     batchId: {
       type: 'string',
@@ -35,11 +34,9 @@ module.exports = {
         'ML',
         'HITL',
       ],
-      required: false,
     },
     linkLastModifiedAt: {
       type: 'number',
-      required: false,
     },
     createdAt: {
       type: 'number',
@@ -47,7 +44,7 @@ module.exports = {
     images: {
       type: 'array',
       items: {
-        $ref: '#/definitions/CommonImageResponseItem',
+        $ref: '#/definitions/ImageResponseItem',
       },
     }
   },

@@ -109,7 +109,7 @@ module.exports = {
     RecognitionIdentityUpdateRequest: require('./definitions/recognition/IdentityUpdateRequest'),
     RecognitionIdentityResponse: require('./definitions/recognition/IdentityResponse'),
     RecognitionFaceResponse: require('./definitions/recognition/FaceResponse'),
-    RecognitionGroupsSearch: require('./definitions/recognition/GroupsSearchResponse'),
+    RecognitionGroupsSearchResponse: require('./definitions/recognition/GroupsSearchResponse'),
     RecognitionClusterSetComputeRequest: require('./definitions/recognition/ClusterSetComputeRequest'),
     RecognitionClusterSetResponse: require('./definitions/recognition/ClusterSetResponse'),
 
