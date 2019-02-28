@@ -15,13 +15,6 @@ module.exports = {
         required: true,
       },
       {
-        name: 'groupId',
-        in: 'query',
-        description: 'Filter by groupIds that belong to your organisation',
-        type: 'string',
-        required: true,
-      },
-      {
         name: 'before',
         in: 'query',
         description: 'Search for jobs created before this timestamp',

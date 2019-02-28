@@ -33,7 +33,7 @@ module.exports = {
         type: 'string',
         minItems: 1,
       },
-    }
+    },
   },
   example: {
     limit: 5,

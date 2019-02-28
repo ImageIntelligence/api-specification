@@ -2,7 +2,6 @@ module.exports = {
   type: 'object',
   required: [
     'images',
-    'groupId',
   ],
   properties: {
     images: {
@@ -13,9 +12,6 @@ module.exports = {
       },
       maxItems: 64,
       minItems: 1,
-    },
-    groupId: {
-      type: 'string',
     },
     webhookUrl: {
       type: 'string',
@@ -42,7 +38,6 @@ module.exports = {
         url: 'https://publicly.available.domain.net/image-002.jpg',
       },
     ],
-    groupId: 'd4ef671e-2067-446e-8659-1dcd32b09c9a',
     customId: '6c78df0a-67b6-4d5f-93cf-5820cfee501c',
     feedId: 'Camera_123456',
     webhookUrl: 'https://publicly.available.domain.net/90f8754aa4e287bbb2c07ec99ade0de72ddbd4b6Et',

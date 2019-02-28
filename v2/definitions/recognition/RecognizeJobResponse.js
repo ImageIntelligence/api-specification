@@ -3,16 +3,12 @@ module.exports = {
   description: 'The response to a face recognition job request',
   required: [
     'id',
-    'groupId',
     'images',
     'status',
     'createdAt',
   ],
   properties: {
     id: {
-      type: 'string',
-    },
-    groupId: {
       type: 'string',
     },
     status: {
@@ -108,7 +104,6 @@ module.exports = {
     status: 'COMPLETED_SUCCESSFULLY',
     customId: '6c78df0a-67b6-4d5f-93cf-5820cfee501c',
     feedId: 'Camera_123456',
-    groupId: 'bd12f503-aaf2-49e2-9710-de2fe9cd0652',
     webhookUrl: 'https://publicly.available.domain.net/90f8754aa4e287bbb2c07ec99ade0de72ddbd4b6Et',
     images: [
       {

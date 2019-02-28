@@ -14,13 +14,6 @@ module.exports = {
         in: 'path',
         required: true,
       },
-      {
-        name: 'groupId',
-        in: 'query',
-        description: 'Filter by groupIds that belong to your organisation',
-        type: 'string',
-        required: true,
-      },
     ],
     responses: {
       '200': {
