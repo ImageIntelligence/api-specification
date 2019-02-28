@@ -1,5 +1,5 @@
 module.exports = {
-  get: {
+  post: {
     operationId: 'recognition/recognize-search',
     security: [
       {
