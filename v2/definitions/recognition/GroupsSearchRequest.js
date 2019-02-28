@@ -18,11 +18,11 @@ module.exports = {
     },
     start: {
       type: 'number',
-      description: 'Pagination, the page to start at',
+      description: 'Starting timeframe',
     },
     end: {
       type: 'number',
-      description: 'Pagination, the page to end at',
+      description: 'Ending timeframe',
     },
     sortBy: {
       type: 'string',
