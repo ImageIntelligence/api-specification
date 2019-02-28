@@ -18,7 +18,7 @@ module.exports = {
     batchId: {
       type: 'string',
     },
-    acme: {
+    namespace: {
       type: 'string',
       maxLength: 128,
     },
