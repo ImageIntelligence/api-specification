@@ -4,7 +4,7 @@ module.exports = {
   required: [
     'id',
     'batchId',
-    'namespace',
+    'acme',
     'organizationId',
     'createdAt',
   ],
@@ -18,7 +18,7 @@ module.exports = {
     batchId: {
       type: 'string',
     },
-    namespace: {
+    acme: {
       type: 'string',
       maxLength: 128,
     },
