@@ -8,6 +8,13 @@ module.exports = {
     ],
     parameters: [
       {
+        name: 'namespace',
+        type: 'string',
+        description: 'Groups\' namespace',
+        in: 'path',
+        required: true,
+      },
+      {
         name: 'groupId',
         in: 'query',
         description: 'Filter by groupIds that belong to your organisation',

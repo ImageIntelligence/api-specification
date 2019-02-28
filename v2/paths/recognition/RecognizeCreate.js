@@ -8,6 +8,13 @@ module.exports = {
     ],
     parameters: [
       {
+        name: 'namespace',
+        type: 'string',
+        description: 'Groups\' namespace',
+        in: 'path',
+        required: true,
+      },
+      {
         name: 'RecognitionJobRequest',
         in: 'body',
         schema: {
