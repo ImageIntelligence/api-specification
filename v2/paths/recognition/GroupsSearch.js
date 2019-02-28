@@ -11,7 +11,7 @@ module.exports = {
         name: 'namespace',
         type: 'string',
         description: 'Groups\' namespace',
-        in: 'query',
+        in: 'path',
         required: true,
       },
       {
