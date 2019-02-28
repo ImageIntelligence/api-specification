@@ -18,14 +18,19 @@ module.exports = {
     },
     start: {
       type: 'number',
-      description: 'Starting timeframe',
+      description: 'Search for groups created after this timestamp',
     },
     end: {
       type: 'number',
-      description: 'Ending timeframe',
+      description: 'Search for groups created before this timestamp',
     },
     sortBy: {
       type: 'string',
+      enum: [
+        'ASC',
+        'DESC'
+      ],
+      default: 'DESC',
       description: 'Sort group search by an ID',
     },
     ids: {
@@ -33,9 +38,17 @@ module.exports = {
       type: 'array',
       items: {
         type: 'string',
-        minItems: 1,
+        maximum: 100,
       },
     },
+    feedIds: {
+      description: 'A list of feed IDs',
+      type: 'array',
+      items: {
+        type: 'string',
+        maximum: 20,
+      }
+    }
   },
   example: {
     limit: 5,
