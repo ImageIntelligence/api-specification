@@ -63,13 +63,13 @@ module.exports = {
             items: {
               type: 'object',
               required: [
-                'faceId',
+                'imageId',
                 'boundingBox',
                 'confidence',
                 'createdAt',
               ],
               properties: {
-                faceId: {
+                imageId: {
                   type: 'string',
                 },
                 identityId: {
@@ -113,7 +113,7 @@ module.exports = {
         customId: 'a7e0bc2d-3226-46da-b242-9bb40666b14a',
         objects: [
           {
-            faceId: 'ced2d464-0567-480d-9616-092d2895cceb',
+            imageId: 'ced2d464-0567-480d-9616-092d2895cceb',
             identityId: '81e45841-4996-433d-9138-3383214176d1',
             name: 'Nick Cage',
             confidence: 0.410791,
@@ -126,7 +126,7 @@ module.exports = {
             createdAt: 1534481491910,
           },
           {
-            faceId: 'ced2d464-0567-480d-9616-092d2895cceb',
+            imageId: 'ced2d464-0567-480d-9616-092d2895cceb',
             identityId: '81e45841-4996-433d-9138-3383214176d1',
             name: 'George Costanza',
             confidence: 0.05628731,

@@ -3,7 +3,7 @@ module.exports = {
   required: [
     'id',
     'name',
-    'faceIds',
+    'imageIds',
     'createdAt',
   ],
   properties: {
@@ -15,7 +15,7 @@ module.exports = {
       description: 'The name of your identity (e.g. David)',
       maxLength: 256,
     },
-    faceIds: {
+    imageIds: {
       type: 'array',
       items: {
         type: 'string',
@@ -31,7 +31,7 @@ module.exports = {
   example: {
     id: 'ab36de62-fe3e-4907-8a03-7d27c21fa01a',
     name: 'Kevin Spacey',
-    faceIds: [
+    imageIds: [
       'af278ded-5412-4916-bb5c-13769bfb7644',
       '633081ed-4c05-459b-bddc-061c66581f92',
       'c3c61384-1861-4026-be2e-4d70646231c0',
