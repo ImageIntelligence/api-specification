@@ -1,7 +1,9 @@
 module.exports = {
   type: 'object',
   required: [
-    'ids'
+    'limit',
+    'offset',
+    'sortBy',
   ],
   properties: {
     limit: {
@@ -21,7 +23,7 @@ module.exports = {
       description: 'Pagination, the page to end at',
     },
     sortBy: {
-      type: 'number',
+      type: 'string',
       description: 'Sort group search by an ID',
     },
     ids: {
