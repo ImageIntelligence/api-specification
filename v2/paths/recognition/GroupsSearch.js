@@ -8,6 +8,13 @@ module.exports = {
     ],
     parameters: [
       {
+        name: 'namespace',
+        type: 'string',
+        description: 'Groups\' namespace',
+        in: 'query',
+        required: true,
+      },
+      {
         name: 'RecognitionGroupsSearchRequest',
         in: 'body',
         schema: {

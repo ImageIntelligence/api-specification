@@ -55,8 +55,8 @@ module.exports = {
       require('./paths/recognition/IdentityUpdateById')
     ),
     '/recognition/groups/search': require('./paths/recognition/GroupsSearch'),
-    '/recognition/faces': require('./paths/recognition/ImagesSearch'),
-    '/recognition/faces/{id}': Object.assign(
+    '/recognition/images': require('./paths/recognition/ImagesSearch'),
+    '/recognition/images/{id}': Object.assign(
       require('./paths/recognition/ImagesGetById')
     ),
     '/feedback': Object.assign(
