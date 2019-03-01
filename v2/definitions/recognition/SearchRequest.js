@@ -1,8 +1,5 @@
 module.exports = {
   type: 'object',
-  required: [
-    'limit'
-  ],
   properties: {
     limit: {
       type: 'number',
