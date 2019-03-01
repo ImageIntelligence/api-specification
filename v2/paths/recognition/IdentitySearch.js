@@ -14,6 +14,14 @@ module.exports = {
         in: 'path',
         required: true,
       },
+      {
+        name: 'RecognitionSearchRequest',
+        in: 'body',
+        schema: {
+          $ref: '#/definitions/RecognitionSearchRequest',
+        },
+        required: true,
+      },
     ],
     responses: {
       '200': {

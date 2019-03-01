@@ -15,32 +15,12 @@ module.exports = {
         required: true,
       },
       {
-        name: 'before',
-        in: 'query',
-        description: 'Search for faces created before this timestamp',
-        type: 'number',
-        required: false,
-      },
-      {
-        name: 'after',
-        in: 'query',
-        description: 'Search for faces created after this timestamp',
-        type: 'number',
-        required: false,
-      },
-      {
-        name: 'minWidth',
-        in: 'query',
-        type: 'number',
-        format: 'int32',
-        description: 'Faces with a smaller width than this will be excluded'
-      },
-      {
-        name: 'minHeight',
-        in: 'query',
-        type: 'number',
-        format: 'int32',
-        description: 'Faces with a smaller height than this will be excluded',
+        name: 'RecognitionSearchRequest',
+        in: 'body',
+        schema: {
+          $ref: '#/definitions/RecognitionSearchRequest',
+        },
+        required: true,
       },
     ],
     responses: {
