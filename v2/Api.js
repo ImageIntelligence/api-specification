@@ -52,6 +52,7 @@ module.exports = {
     ),
     '/recognition/images/{namespace}/search': require('./paths/recognition/ImagesSearch'),
     '/recognition/images/{namespace}/{id}': require('./paths/recognition/ImagesGetById'),
+    '/recognition/groups/{namespace}/search': require('./paths/recognition/GroupsSearch'),
     '/feedback': Object.assign(
       require('./paths/feedback/FeedbackCreate'),
       require('./paths/feedback/FeedbackSearch')

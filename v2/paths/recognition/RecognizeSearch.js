@@ -15,18 +15,12 @@ module.exports = {
         required: true,
       },
       {
-        name: 'before',
-        in: 'query',
-        description: 'Search for jobs created before this timestamp',
-        type: 'number',
-        required: false,
-      },
-      {
-        name: 'after',
-        in: 'query',
-        description: 'Search for jobs created after this timestamp',
-        type: 'number',
-        required: false,
+        name: 'RecognitionSearchRequest',
+        in: 'body',
+        schema: {
+          $ref: '#/definitions/RecognitionSearchRequest',
+        },
+        required: true,
       },
     ],
     responses: {

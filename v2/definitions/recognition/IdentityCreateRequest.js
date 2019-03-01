@@ -6,11 +6,6 @@ module.exports = {
       description: 'Custom ID to use',
       maxLength: 256,
     },
-    organizationId: {
-      type: 'string',
-      minLength: 1,
-      maxLength: 128,
-    },
     imageIds: {
       type: 'array',
       description: 'A list of images',
