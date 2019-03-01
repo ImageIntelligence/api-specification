@@ -40,23 +40,19 @@ module.exports = {
       require('./paths/ask/AskSearch')
     ),
     '/ask/{id}': require('./paths/ask/AskGetById'),
-    '/recognition/recognize': Object.assign(
-      require('./paths/recognition/RecognizeCreate'),
-      require('./paths/recognition/RecognizeSearch')
-    ),
-    '/recognition/recognize/{id}': require('./paths/recognition/RecognizeGetById'),
-    '/recognition/identities': Object.assign(
-      require('./paths/recognition/IdentityCreate'),
-      require('./paths/recognition/IdentitySearch')
-    ),
-    '/recognition/identities/{id}': Object.assign(
+    '/recognition/recognize/{namespace}': require('./paths/recognition/RecognizeCreate'),
+    '/recognition/recognize/{namespace}/search': require('./paths/recognition/RecognizeSearch'),
+    '/recognition/recognize/{namespace}/{id}': require('./paths/recognition/RecognizeGetById'),
+    '/recognition/identities/{namespace}': require('./paths/recognition/IdentityCreate'),
+    '/recognition/identities/{namespace}/search': require('./paths/recognition/IdentitySearch'),
+    '/recognition/identities/{namespace}/{id}': Object.assign(
       require('./paths/recognition/IdentityGetById'),
       require('./paths/recognition/IdentityRemoveById'),
       require('./paths/recognition/IdentityUpdateById')
     ),
-    '/recognition/groups/search': require('./paths/recognition/GroupsSearch'),
-    '/recognition/images': require('./paths/recognition/ImagesSearch'),
-    '/recognition/images/{id}': Object.assign(
+    '/recognition/groups/{namespace}/search': require('./paths/recognition/GroupsSearch'),
+    '/recognition/images/{namespace}/search': require('./paths/recognition/ImagesSearch'),
+    '/recognition/images/{namespace}/{id}': Object.assign(
       require('./paths/recognition/ImagesGetById')
     ),
     '/feedback': Object.assign(
@@ -105,6 +101,7 @@ module.exports = {
     RecognitionFaceResponse: require('./definitions/recognition/FaceResponse'),
     RecognitionGroupsSearchRequest: require('./definitions/recognition/GroupsSearchRequest'),
     RecognitionGroupsSearchResponse: require('./definitions/recognition/GroupsSearchResponse'),
+    RecognitionSearchRequest: require('./definitions/recognition/SearchRequest'),
 
     // Feedback //
 

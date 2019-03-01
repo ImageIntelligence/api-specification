@@ -4,7 +4,6 @@ module.exports = {
   required: [
     'id',
     'batchId',
-    'acme',
     'organizationId',
     'createdAt',
   ],

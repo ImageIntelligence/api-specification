@@ -18,7 +18,7 @@ module.exports = {
         name: 'RecognitionGroupsSearchRequest',
         in: 'body',
         schema: {
-          $ref: '#/definitions/RecognitionGroupsSearchRequest',
+          $ref: '#/definitions/RecognitionSearchRequest',
         },
         required: true,
       },

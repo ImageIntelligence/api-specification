@@ -20,11 +20,11 @@ module.exports = {
     },
     start: {
       type: 'number',
-      description: 'Search for groups created after this timestamp',
+      description: 'Search for created after this timestamp',
     },
     end: {
       type: 'number',
-      description: 'Search for groups created before this timestamp',
+      description: 'Search for created before this timestamp',
     },
     sortBy: {
       type: 'string',
@@ -33,10 +33,10 @@ module.exports = {
         'DESC'
       ],
       default: 'DESC',
-      description: 'Sort group search by an ID',
+      description: 'Sort search by an ID',
     },
     ids: {
-      description: 'A list of group IDs to search for',
+      description: 'A list of IDs to search for',
       type: 'array',
       items: {
         type: 'string',
