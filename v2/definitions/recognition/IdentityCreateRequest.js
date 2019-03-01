@@ -1,17 +1,19 @@
 module.exports = {
   type: 'object',
-  required: [
-    'name',
-    'imageIds',
-  ],
   properties: {
-    name: {
+    customId: {
       type: 'string',
-      description: 'The name of your identity (e.g. David)',
+      description: 'Custom ID to use',
       maxLength: 256,
+    },
+    organizationId: {
+      type: 'string',
+      minLength: 1,
+      maxLength: 128,
     },
     imageIds: {
       type: 'array',
+      description: 'A list of images',
       items: {
         type: 'string',
         minItems: 1,
@@ -19,7 +21,8 @@ module.exports = {
     },
   },
   example: {
-    name: 'Kevin Spacey',
+    customId: 'af278ded-5412-4916-bb5c-13769bfb7644',
+    organizationId: 'Nirovision',
     imageIds: [
       'af278ded-5412-4916-bb5c-13769bfb7644',
       '633081ed-4c05-459b-bddc-061c66581f92',
