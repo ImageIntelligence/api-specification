@@ -32,12 +32,31 @@ module.exports = {
   },
   example: {
     id: 'ab36de62-fe3e-4907-8a03-7d27c21fa01a',
-    name: 'Kevin Spacey',
-    imageIds: [
-      'af278ded-5412-4916-bb5c-13769bfb7644',
-      '633081ed-4c05-459b-bddc-061c66581f92',
-      'c3c61384-1861-4026-be2e-4d70646231c0',
+    customId: '0285a6b8-a617-11e6-8253-175f847ef3cf',
+    images: [
+      {
+        id: '52547074-a622-11e6-8f61-63f37dc33285',
+        customId: 'some_person_filled_image',
+        feedId: 'Camera_123456',
+        identityId: 'af278ded-5412-4916-bc5c-13469bfe7644',
+        url: 'https://publicly.available.domain.net/image-001.jpg',
+        boundingBox: {
+          xMin: 392,
+          yMin: 170,
+          xMax: 90,
+          yMax: 596,
+        },
+        groupId: 'Test GroupID',
+        boundingBoxConfidence: 0.9129213,
+        type: 'FACE',
+        isFrontal: true,
+        sharpness: false,
+        width: 150,
+        height: 200,
+        createdAt: 1487648348000,
+      }
     ],
+    namespace: 'testing',
     createdAt: 1487648348000,
   },
 };
