@@ -27,7 +27,7 @@ module.exports = {
       '200': {
         description: 'Face recognition create identity request was successfully submitted',
         schema: {
-          $ref: '#/definitions/RecognitionIdentityResponse',
+          $ref: '#/definitions/RecognitionImageResponse',
         },
       },
       '400': {

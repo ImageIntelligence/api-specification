@@ -29,7 +29,7 @@ module.exports = {
         schema: {
           type: 'array',
           items: {
-            $ref: '#/definitions/RecognitionImageResponseItem',
+            $ref: '#/definitions/RecognitionImageResponse',
           },
         },
       },

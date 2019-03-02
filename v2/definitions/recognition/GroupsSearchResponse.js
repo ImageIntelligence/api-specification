@@ -43,7 +43,7 @@ module.exports = {
     images: {
       type: 'array',
       items: {
-        $ref: '#/definitions/ImageResponseItem',
+        $ref: '#/definitions/RecognitionImageResponse',
       },
     }
   },

@@ -99,7 +99,7 @@ module.exports = {
     RecognitionFaceResponse: require('./definitions/recognition/FaceResponse'),
     RecognitionGroupsSearchResponse: require('./definitions/recognition/GroupsSearchResponse'),
     RecognitionSearchRequest: require('./definitions/recognition/SearchRequest'),
-    RecognitionImageResponseItem: require('./definitions/recognition/ImageResponse'),
+    RecognitionImageResponse: require('./definitions/recognition/ImageResponse'),
     // Feedback //
 
     FeedbackRequest: require('./definitions/feedback/FeedbackRequest'),

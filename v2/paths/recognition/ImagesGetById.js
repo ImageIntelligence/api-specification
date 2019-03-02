@@ -26,7 +26,7 @@ module.exports = {
       '200': {
         description: 'Face resource given ID successfully returned',
         schema: {
-          $ref: '#/definitions/RecognitionFaceResponse',
+          $ref: '#/definitions/RecognitionImageResponse',
         },
       },
       '401': {

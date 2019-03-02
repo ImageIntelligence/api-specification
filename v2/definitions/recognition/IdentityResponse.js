@@ -17,7 +17,7 @@ module.exports = {
     images: {
       type: 'array',
       items: {
-        $ref: '#/definitions/RecognitionImageResponseItem',
+        $ref: '#/definitions/RecognitionImageResponse',
       }
     },
     namespace: {
