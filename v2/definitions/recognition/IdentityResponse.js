@@ -10,17 +10,13 @@ module.exports = {
     id: {
       type: 'string',
     },
-    name: {
+    customId: {
       type: 'string',
-      description: 'The name of your identity (e.g. David)',
-      maxLength: 256,
+      required: false,
     },
-    imageIds: {
-      type: 'array',
-      items: {
-        type: 'string',
-        minItems: 1,
-      },
+    namespace: {
+      type: 'string',
+      maxLength: 128,
     },
     createdAt: {
       type: 'integer',
