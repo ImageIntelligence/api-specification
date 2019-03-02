@@ -14,6 +14,12 @@ module.exports = {
       type: 'string',
       required: false,
     },
+    images: {
+      type: 'array',
+      items: {
+        $ref: '#/definitions/RecognitionImageResponseItem',
+      }
+    },
     namespace: {
       type: 'string',
       maxLength: 128,

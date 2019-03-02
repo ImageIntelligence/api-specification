@@ -1,10 +1,6 @@
 module.exports = {
   type: 'object',
   description: 'The image processed',
-  required: [
-    'id',
-    'url',
-  ],
   properties: {
     id: {
       type: 'string',
