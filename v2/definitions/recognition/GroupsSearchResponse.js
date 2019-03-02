@@ -1,12 +1,6 @@
 module.exports = {
   type: 'object',
   description: 'The response to a face recognition job request',
-  required: [
-    'id',
-    'batchId',
-    'organizationId',
-    'createdAt',
-  ],
   properties: {
     id: {
       type: 'string',
@@ -54,6 +48,7 @@ module.exports = {
     namespace: 'acme',
     linkModifiedBy: 'ML',
     linkLastModifiedAt: 1487648348000,
+    createdAt: 1487648348000,
     images: [
       {
         id: '52547074-a622-11e6-8f61-63f37dc33285',
