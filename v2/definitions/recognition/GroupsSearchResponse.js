@@ -3,42 +3,33 @@ module.exports = {
   description: 'The response to a face recognition job request',
   properties: {
     id: {
-      type: 'string',
+      type: 'string'
     },
     identityId: {
-      type: 'string',
+      type: 'string'
     },
     batchId: {
-      type: 'string',
+      type: 'string'
     },
     namespace: {
       type: 'string',
-      maxLength: 128,
-    },
-    organizationId: {
-      type: 'string',
-      minLength: 1,
-      maxLength: 128,
+      maxLength: 128
     },
     linkModifiedBy: {
       type: 'string',
-      enum: [
-        'MANUAL',
-        'ML',
-        'HITL',
-      ],
+      enum: ['MANUAL', 'ML', 'HITL']
     },
     linkLastModifiedAt: {
-      type: 'number',
+      type: 'number'
     },
     createdAt: {
-      type: 'number',
+      type: 'number'
     },
     images: {
       type: 'array',
       items: {
-        $ref: '#/definitions/RecognitionImageResponse',
-      },
+        $ref: '#/definitions/RecognitionImageResponse'
+      }
     }
   },
   example: {
@@ -57,20 +48,20 @@ module.exports = {
         identityId: 'af278ded-5412-4916-bc5c-13469bfe7644',
         url: 'https://publicly.available.domain.net/image-001.jpg',
         boundingBox: {
-          xMin: 392,
-          yMin: 170,
-          xMax: 90,
-          yMax: 596,
+          xMin: 0.23873,
+          yMin: 0.23873,
+          xMax: 0.75087,
+          yMax: 0.96537
         },
-        groupId: 'Test GroupID',
+        groupId: '65dd9554-ce46-4a29-bcd7-eeb48683b421',
         boundingBoxConfidence: 0.9129213,
         type: 'FACE',
         isFrontal: true,
-        sharpness: false,
+        sharpness: 0.671230746,
         width: 150,
         height: 200,
-        createdAt: 1487648348000,
+        createdAt: 1487648348000
       }
     ]
-  },
+  }
 };

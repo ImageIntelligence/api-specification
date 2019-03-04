@@ -3,25 +3,25 @@ module.exports = {
     operationId: 'recognition/groups-search',
     security: [
       {
-        Bearer: [],
-      },
+        Bearer: []
+      }
     ],
     parameters: [
       {
         name: 'namespace',
         type: 'string',
-        description: 'Groups\' namespace',
+        description: "Groups' namespace",
         in: 'path',
-        required: true,
+        required: true
       },
       {
         name: 'RecognitionSearchRequest',
         in: 'body',
         schema: {
-          $ref: '#/definitions/RecognitionSearchRequest',
+          $ref: '#/definitions/RecognitionSearchRequest'
         },
-        required: true,
-      },
+        required: true
+      }
     ],
     responses: {
       '200': {
@@ -29,16 +29,16 @@ module.exports = {
         schema: {
           type: 'array',
           items: {
-            $ref: '#/definitions/RecognitionGroupsSearchResponse',
-          },
-        },
+            $ref: '#/definitions/RecognitionGroupsSearchResponse'
+          }
+        }
       },
       '401': {
-        description: 'Unauthorized',
+        description: 'Unauthorized'
       },
       '500': {
-        description: 'Internal server error',
-      },
-    },
-  },
+        description: 'Internal server error'
+      }
+    }
+  }
 };

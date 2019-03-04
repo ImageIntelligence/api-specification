@@ -1,55 +1,52 @@
 module.exports = {
   type: 'object',
-  description: 'The image processed',
   properties: {
     id: {
       type: 'string',
-      description: 'ID of the image',
+      description: 'ID of the image'
     },
     customId: {
       type: 'string',
-      description: 'An arbitrary client specific resource identifier to reference this image (usually UUID)',
+      description: 'An arbitrary client specific resource identifier to reference this image (usually UUID)'
     },
     feedId: {
       type: 'string'
     },
     identityId: {
-      type: 'string',
+      type: 'string'
     },
     url: {
       type: 'string',
-      description: 'URL of the image',
+      description: 'URL of the image'
     },
     boundingBox: {
-      $ref: '#/definitions/BoundingBox',
+      $ref: '#/definitions/BoundingBox'
     },
     boundingBoxConfidence: {
       type: 'number'
     },
     type: {
       type: 'string',
-      enum: [
-        'FACE'
-      ],
+      enum: ['FACE']
     },
     groupId: {
-      type: 'string',
+      type: 'string'
     },
     isFrontal: {
       type: 'boolean'
     },
     sharpness: {
-      type: 'number',
+      type: 'number'
     },
     width: {
-      type: 'number',
+      type: 'number'
     },
     height: {
-      type: 'number',
+      type: 'number'
     },
     createdAt: {
-      type: 'number',
-    },
+      type: 'number'
+    }
   },
   example: {
     id: '52547074-a622-11e6-8f61-63f37dc33285',
@@ -58,18 +55,18 @@ module.exports = {
     identityId: 'af278ded-5412-4916-bc5c-13469bfe7644',
     url: 'https://publicly.available.domain.net/image-001.jpg',
     boundingBox: {
-      xMin: 392,
-      yMin: 170,
-      xMax: 90,
-      yMax: 596,
+      xMin: 0.23873,
+      yMin: 0.23873,
+      xMax: 0.75087,
+      yMax: 0.96537
     },
-    groupId: 'Test GroupID',
+    groupId: '63652986-b730-4ab8-a175-7914a950e7a0',
     boundingBoxConfidence: 0.9129213,
     type: 'FACE',
     isFrontal: true,
-    sharpness: false,
+    sharpness: 0.67123074,
     width: 150,
     height: 200,
-    createdAt: 1487648348000,
-  },
+    createdAt: 1487648348000
+  }
 };

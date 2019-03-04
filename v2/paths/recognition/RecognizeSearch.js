@@ -3,42 +3,41 @@ module.exports = {
     operationId: 'recognition/recognize-search',
     security: [
       {
-        Bearer: [],
-      },
+        Bearer: []
+      }
     ],
     parameters: [
       {
         name: 'namespace',
         type: 'string',
-        description: 'Groups\' namespace',
         in: 'path',
-        required: true,
+        required: true
       },
       {
         name: 'RecognitionSearchRequest',
         in: 'body',
         schema: {
-          $ref: '#/definitions/RecognitionSearchRequest',
+          $ref: '#/definitions/RecognitionSearchRequest'
         },
-        required: true,
-      },
+        required: true
+      }
     ],
     responses: {
       '200': {
-        description: 'A list of jobs found given your search criteria',
+        description: 'A list of resources found given your search criteria',
         schema: {
           type: 'array',
           items: {
-            $ref: '#/definitions/RecognitionRecognizeJobResponse',
-          },
-        },
+            $ref: '#/definitions/RecognitionRecognizeJobResponse'
+          }
+        }
       },
       '401': {
-        description: 'Unauthorized',
+        description: 'Unauthorized'
       },
       '500': {
-        description: 'Internal server error',
-      },
-    },
-  },
+        description: 'Internal server error'
+      }
+    }
+  }
 };

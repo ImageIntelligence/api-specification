@@ -1,46 +1,45 @@
 module.exports = {
   get: {
-    operationId: 'recognition/faces-get',
+    operationId: 'recognition/images-get',
     security: [
       {
-        Bearer: [],
-      },
+        Bearer: []
+      }
     ],
     parameters: [
       {
         name: 'namespace',
         type: 'string',
-        description: 'Groups\' namespace',
         in: 'path',
-        required: true,
+        required: true
       },
       {
         name: 'id',
         in: 'path',
         type: 'string',
-        description: 'The ID of a face recognition face',
-        required: true,
-      },
+        description: 'The ID of a recognition image',
+        required: true
+      }
     ],
     responses: {
       '200': {
         description: 'Face resource given ID successfully returned',
         schema: {
-          $ref: '#/definitions/RecognitionImageResponse',
-        },
+          $ref: '#/definitions/RecognitionImageResponse'
+        }
       },
       '401': {
-        description: 'Unauthorized',
+        description: 'Unauthorized'
       },
       '403': {
-        description: 'Forbidden',
+        description: 'Forbidden'
       },
       '404': {
-        description: 'No face found with the given ID',
+        description: 'No face found with the given ID'
       },
       '500': {
-        description: 'Internal server error',
-      },
-    },
-  },
+        description: 'Internal server error'
+      }
+    }
+  }
 };

@@ -1,102 +1,80 @@
 module.exports = {
   type: 'object',
   description: 'The response to a face recognition job request',
-  required: [
-    'id',
-    'images',
-    'status',
-    'createdAt',
-  ],
+  required: ['id', 'images', 'status', 'createdAt'],
   properties: {
     id: {
-      type: 'string',
+      type: 'string'
     },
     status: {
-      $ref: '#/definitions/JobStatus',
+      $ref: '#/definitions/JobStatus'
     },
     customId: {
       type: 'string',
-      description: 'An arbitrary client specific resource identifier to reference this job (usually UUID)',
+      description: 'An arbitrary client specific resource identifier to reference this job (usually UUID)'
     },
     feedId: {
       type: 'string',
-      description: 'User specified ID to reference the source of the images within this job',
+      description: 'User specified ID to reference the source of the images within this job'
     },
     webhookUrl: {
       type: 'string',
-      description: 'Publicly accessible POST endpoint for receiving job status updates',
+      description: 'Publicly accessible POST endpoint for receiving job status updates'
     },
     createdAt: {
       type: 'integer',
       format: 'int64',
-      description: 'UNIX timestamp for when the job was created',
+      description: 'UNIX timestamp for when the job was created'
     },
     images: {
       type: 'array',
       items: {
         type: 'object',
-        required: [
-          'id',
-          'url',
-          'status',
-          'objects',
-        ],
+        required: ['id', 'url', 'status', 'objects'],
         properties: {
           id: {
             type: 'string',
-            description: 'ID of the image',
+            description: 'ID of the image'
           },
           url: {
             type: 'string',
-            description: 'URL of the image',
+            description: 'URL of the image'
           },
           proxyUrl: {
             type: 'string',
-            description: 'Proxy URL of the image',
+            description: 'Proxy URL of the image'
           },
           customId: {
             type: 'string',
-            description: 'An arbitrary client specific resource identifier to reference this image (usually UUID)',
+            description: 'An arbitrary client specific resource identifier to reference this image (usually UUID)'
           },
           objects: {
             type: 'array',
             items: {
               type: 'object',
-              required: [
-                'imageId',
-                'boundingBox',
-                'confidence',
-                'createdAt',
-              ],
+              required: ['boundingBox', 'confidence', 'createdAt'],
               properties: {
-                imageId: {
-                  type: 'string',
-                },
                 identityId: {
-                  type: 'string',
-                },
-                name: {
-                  type: 'string',
-                  description: 'The name of your identity (e.g. Danny DeVito)'
+                  type: 'string'
                 },
                 confidence: {
                   type: 'number',
-                  format: 'float',
+                  format: 'float'
                 },
                 boundingBox: {
-                  $ref: '#/definitions/BoundingBox',
+                  $ref: '#/definitions/BoundingBox'
                 },
                 createdAt: {
                   type: 'integer',
                   format: 'int64',
-                  description: 'UNIX timestamp for when the face was created',
-                },
-              },
-            },
-          },
-        },
-      },
-    },
+                  description: 'UNIX timestamp for when the face was created'
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   },
   example: {
     id: '5d689c71-e68f-46c3-ac71-4053806e71de',
@@ -113,33 +91,28 @@ module.exports = {
         customId: 'a7e0bc2d-3226-46da-b242-9bb40666b14a',
         objects: [
           {
-            imageId: 'ced2d464-0567-480d-9616-092d2895cceb',
-            identityId: '81e45841-4996-433d-9138-3383214176d1',
-            name: 'Nick Cage',
             confidence: 0.410791,
             boundingBox: {
-              xMin: 8,
-              yMin: 355,
-              xMax: 194,
-              yMax: 251,
+              xMin: 0.23873,
+              yMin: 0.23873,
+              xMax: 0.75087,
+              yMax: 0.96537
             },
-            createdAt: 1534481491910,
+            createdAt: 1534481491910
           },
           {
-            imageId: 'ced2d464-0567-480d-9616-092d2895cceb',
             identityId: '81e45841-4996-433d-9138-3383214176d1',
-            name: 'George Costanza',
             confidence: 0.05628731,
             boundingBox: {
-              xMin: 392,
-              yMin: 170,
-              xMax: 90,
-              yMax: 596,
+              xMin: 0.23873,
+              yMin: 0.23873,
+              xMax: 0.75087,
+              yMax: 0.96537
             },
-            createdAt: 1534481491901,
-          },
-        ],
-      },
-    ],
-  },
+            createdAt: 1534481491901
+          }
+        ]
+      }
+    ]
+  }
 };

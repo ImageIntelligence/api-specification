@@ -3,45 +3,44 @@ module.exports = {
     operationId: 'recognition/identity',
     security: [
       {
-        Bearer: [],
-      },
+        Bearer: []
+      }
     ],
     parameters: [
       {
         name: 'namespace',
         type: 'string',
-        description: 'Groups\' namespace',
         in: 'path',
-        required: true,
+        required: true
       },
       {
         name: 'RecognitionIdentityCreateRequest',
         in: 'body',
         schema: {
-          $ref: '#/definitions/RecognitionIdentityCreateRequest',
+          $ref: '#/definitions/RecognitionIdentityCreateRequest'
         },
-        required: true,
-      },
+        required: true
+      }
     ],
     responses: {
       '200': {
-        description: 'Face recognition create identity request was successfully submitted',
+        description: 'Recognition create identity request was successfully submitted',
         schema: {
-          $ref: '#/definitions/RecognitionImageResponse',
-        },
+          $ref: '#/definitions/RecognitionImageResponse'
+        }
       },
       '400': {
-        description: 'Malformed request',
+        description: 'Malformed request'
       },
       '401': {
-        description: 'Unauthorized',
+        description: 'Unauthorized'
       },
       '403': {
-        description: 'Forbidden',
+        description: 'Forbidden'
       },
       '500': {
-        description: 'Internal server error',
-      },
-    },
-  },
+        description: 'Internal server error'
+      }
+    }
+  }
 };

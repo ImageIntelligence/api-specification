@@ -1,34 +1,29 @@
 module.exports = {
   type: 'object',
-  required: [
-    'id',
-    'name',
-    'imageIds',
-    'createdAt',
-  ],
+  required: ['id', 'name', 'imageIds', 'createdAt'],
   properties: {
     id: {
-      type: 'string',
+      type: 'string'
     },
     customId: {
       type: 'string',
-      required: false,
+      required: false
     },
     images: {
       type: 'array',
       items: {
-        $ref: '#/definitions/RecognitionImageResponse',
+        $ref: '#/definitions/RecognitionImageResponse'
       }
     },
     namespace: {
       type: 'string',
-      maxLength: 128,
+      maxLength: 128
     },
     createdAt: {
       type: 'integer',
       format: 'int64',
-      description: 'UNIX timestamp for when the identity was created',
-    },
+      description: 'UNIX timestamp for when the identity was created'
+    }
   },
   example: {
     id: 'ab36de62-fe3e-4907-8a03-7d27c21fa01a',
@@ -41,22 +36,22 @@ module.exports = {
         identityId: 'af278ded-5412-4916-bc5c-13469bfe7644',
         url: 'https://publicly.available.domain.net/image-001.jpg',
         boundingBox: {
-          xMin: 392,
-          yMin: 170,
-          xMax: 90,
-          yMax: 596,
+          xMin: 0.23873,
+          yMin: 0.23873,
+          xMax: 0.75087,
+          yMax: 0.96537
         },
-        groupId: 'Test GroupID',
+        groupId: '63652986-b730-4ab8-a175-7914a950e7a0',
         boundingBoxConfidence: 0.9129213,
         type: 'FACE',
         isFrontal: true,
-        sharpness: false,
+        sharpness: 0.671230746,
         width: 150,
         height: 200,
-        createdAt: 1487648348000,
+        createdAt: 1487648348000
       }
     ],
-    namespace: 'testing',
-    createdAt: 1487648348000,
-  },
+    namespace: 'acme',
+    createdAt: 1487648348000
+  }
 };
