@@ -1,6 +1,6 @@
 module.exports = {
   type: 'object',
-  description: 'The response to a face recognition job request',
+  description: 'The response to a recognition job request',
   properties: {
     id: {
       type: 'string'
