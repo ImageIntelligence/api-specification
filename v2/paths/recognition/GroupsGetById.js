@@ -1,6 +1,6 @@
 module.exports = {
-  post: {
-    operationId: 'recognition/identity',
+  get: {
+    operationId: 'recognition/groups-get',
     security: [
       {
         Bearer: []
@@ -14,29 +14,28 @@ module.exports = {
         required: true
       },
       {
-        name: 'RecognitionIdentityCreateRequest',
-        in: 'body',
-        schema: {
-          $ref: '#/definitions/RecognitionIdentityCreateRequest'
-        },
+        name: 'id',
+        in: 'path',
+        type: 'string',
+        description: 'The ID of a recognition identity',
         required: true
       }
     ],
     responses: {
       '200': {
-        description: 'Recognition create identity request was successfully submitted',
+        description: 'Recognition identity resource',
         schema: {
-          $ref: '#/definitions/RecognitionImageResponse'
+          $ref: '#/definitions/RecognitionGroupsResponse'
         }
-      },
-      '400': {
-        description: 'Malformed request'
       },
       '401': {
         description: 'Unauthorized'
       },
       '403': {
         description: 'Forbidden'
+      },
+      '404': {
+        description: 'No identity found with the given ID'
       },
       '500': {
         description: 'Internal server error'

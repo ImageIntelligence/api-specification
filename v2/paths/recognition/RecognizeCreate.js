@@ -1,50 +1,49 @@
 module.exports = {
   post: {
-    operationId: 'recognition/recognize',
+    operationId: 'recognize',
     security: [
       {
-        Bearer: [],
-      },
+        Bearer: []
+      }
     ],
     parameters: [
       {
         name: 'namespace',
         type: 'string',
-        description: 'Groups\' namespace',
         in: 'path',
-        required: true,
+        required: true
       },
       {
         name: 'RecognitionJobRequest',
         in: 'body',
         schema: {
-          $ref: '#/definitions/RecognitionRecognizeJobRequest',
+          $ref: '#/definitions/RecognitionRecognizeJobRequest'
         },
-        required: true,
-      },
+        required: true
+      }
     ],
     responses: {
       '200': {
-        description: 'Face recognition job request was successfully submitted',
+        description: 'Recognition job request was successfully submitted',
         schema: {
-          $ref: '#/definitions/RecognitionRecognizeJobResponse',
-        },
+          $ref: '#/definitions/RecognitionRecognizeJobResponse'
+        }
       },
       '400': {
-        description: 'Malformed request',
+        description: 'Malformed request'
       },
       '401': {
-        description: 'Unauthorized',
+        description: 'Unauthorized'
       },
       '403': {
-        description: 'Forbidden',
+        description: 'Forbidden'
       },
       '413': {
-        description: 'Request Entity Too Large. Max request size is 1 MB',
+        description: 'Request Entity Too Large'
       },
       '500': {
-        description: 'Internal server error',
-      },
-    },
-  },
+        description: 'Internal server error'
+      }
+    }
+  }
 };

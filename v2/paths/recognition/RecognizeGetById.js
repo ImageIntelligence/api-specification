@@ -3,44 +3,43 @@ module.exports = {
     operationId: 'recognition/recognize-get',
     security: [
       {
-        Bearer: [],
-      },
+        Bearer: []
+      }
     ],
     parameters: [
       {
         name: 'namespace',
         type: 'string',
-        description: 'Groups\' namespace',
         in: 'path',
-        required: true,
+        required: true
       },
       {
         name: 'id',
         in: 'path',
         type: 'string',
         description: 'The ID of a face recognition job',
-        required: true,
-      },
+        required: true
+      }
     ],
     responses: {
       '200': {
         description: 'Resources from the recognize job successfully returned',
         schema: {
-          $ref: '#/definitions/RecognitionRecognizeJobResponse',
-        },
+          $ref: '#/definitions/RecognitionRecognizeJobResponse'
+        }
       },
       '401': {
-        description: 'Unauthorized',
+        description: 'Unauthorized'
       },
       '403': {
-        description: 'Forbidden',
+        description: 'Forbidden'
       },
       '404': {
-        description: 'No job found with the given ID',
+        description: 'No job found with the given ID'
       },
       '500': {
-        description: 'Internal server error',
-      },
-    },
-  },
+        description: 'Internal server error'
+      }
+    }
+  }
 };

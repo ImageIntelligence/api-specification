@@ -3,52 +3,51 @@ module.exports = {
     operationId: 'recognition/identity-update-by-id',
     security: [
       {
-        Bearer: [],
-      },
+        Bearer: []
+      }
     ],
     parameters: [
       {
         name: 'namespace',
         type: 'string',
-        description: 'Groups\' namespace',
         in: 'path',
-        required: true,
+        required: true
       },
       {
         name: 'id',
         in: 'path',
         type: 'string',
-        description: 'The ID of a face recognition identity',
-        required: true,
+        description: 'The ID of a recognition identity',
+        required: true
       },
       {
         name: 'RecognitionIdentityUpdateRequest',
         in: 'body',
         schema: {
-          $ref: '#/definitions/RecognitionIdentityUpdateRequest',
+          $ref: '#/definitions/RecognitionIdentityUpdateRequest'
         },
-        required: true,
-      },
+        required: true
+      }
     ],
     responses: {
       '200': {
-        description: 'Face recognition update identity request was successfully submitted',
+        description: 'Recognition update identity request was successfully submitted',
         schema: {
-          $ref: '#/definitions/RecognitionIdentityResponse',
-        },
+          $ref: '#/definitions/RecognitionIdentityResponse'
+        }
       },
       '400': {
-        description: 'Malformed request',
+        description: 'Malformed request'
       },
       '401': {
-        description: 'Unauthorized',
+        description: 'Unauthorized'
       },
       '403': {
-        description: 'Forbidden',
+        description: 'Forbidden'
       },
       '500': {
-        description: 'Internal server error',
-      },
-    },
-  },
+        description: 'Internal server error'
+      }
+    }
+  }
 };

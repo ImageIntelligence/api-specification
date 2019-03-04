@@ -8,26 +8,26 @@ module.exports = {
         required: true,
         description: 'Contains a client ID and secret',
         schema: {
-          $ref: '#/definitions/ClientCredentials',
-        },
-      },
+          $ref: '#/definitions/ClientCredentials'
+        }
+      }
     ],
     responses: {
       '200': {
         description: 'Access token with organization name, time of issue, and time of expiry',
         schema: {
-          $ref: '#/definitions/AccessTokenResponse',
-        },
+          $ref: '#/definitions/AccessTokenResponse'
+        }
       },
       '400': {
-        description: 'Malformed request',
+        description: 'Malformed request'
       },
       '401': {
-        description: 'Request failed due to invalid authentication credentials',
+        description: 'Request failed due to invalid authentication credentials'
       },
       '500': {
-        description: 'Internal server error',
-      },
-    },
-  },
+        description: 'Internal server error'
+      }
+    }
+  }
 };

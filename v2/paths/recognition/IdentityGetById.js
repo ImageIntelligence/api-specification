@@ -3,44 +3,43 @@ module.exports = {
     operationId: 'recognition/identity-get',
     security: [
       {
-        Bearer: [],
-      },
+        Bearer: []
+      }
     ],
     parameters: [
       {
         name: 'namespace',
         type: 'string',
-        description: 'Groups\' namespace',
         in: 'path',
-        required: true,
+        required: true
       },
       {
         name: 'id',
         in: 'path',
         type: 'string',
-        description: 'The ID of a face recognition identity',
-        required: true,
-      },
+        description: 'The ID of a recognition identity',
+        required: true
+      }
     ],
     responses: {
       '200': {
-        description: 'Face recognition identity resource',
+        description: 'Recognition identity resource',
         schema: {
-          $ref: '#/definitions/RecognitionIdentityResponse',
-        },
+          $ref: '#/definitions/RecognitionIdentityResponse'
+        }
       },
       '401': {
-        description: 'Unauthorized',
+        description: 'Unauthorized'
       },
       '403': {
-        description: 'Forbidden',
+        description: 'Forbidden'
       },
       '404': {
-        description: 'No identity found with the given ID',
+        description: 'No identity found with the given ID'
       },
       '500': {
-        description: 'Internal server error',
-      },
-    },
-  },
+        description: 'Internal server error'
+      }
+    }
+  }
 };

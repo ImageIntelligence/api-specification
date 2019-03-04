@@ -1,4 +1,4 @@
-FROM imageintelligence/nodejs:2a0b500eb1aae78740602d304dc0f5b90a87e567
+FROM node:10.13.0-slim
 LABEL MAINTAINER="David Vuong <david@imageintelligence.com>"
 
 COPY . /root/app
