@@ -1,13 +1,12 @@
 module.exports = {
   type: 'object',
-  required: ['id', 'name', 'imageIds', 'createdAt'],
+  required: ['id', 'images', 'createdAt'],
   properties: {
     id: {
       type: 'string'
     },
     customId: {
       type: 'string',
-      required: false
     },
     images: {
       type: 'array',

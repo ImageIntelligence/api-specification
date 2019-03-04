@@ -38,6 +38,7 @@ module.exports = {
     '/recognition/images/{namespace}/search': require('./paths/recognition/ImagesSearch'),
     '/recognition/images/{namespace}/{id}': require('./paths/recognition/ImagesGetById'),
     '/recognition/groups/{namespace}/search': require('./paths/recognition/GroupsSearch'),
+    '/recognition/groups/{namespace}/{id}': require('./paths/recognition/GroupsGetById'),
     '/feedback': Object.assign(require('./paths/feedback/FeedbackCreate'), require('./paths/feedback/FeedbackSearch')),
     '/feedback/{id}': require('./paths/feedback/FeedbackGetById')
   },
@@ -78,7 +79,7 @@ module.exports = {
     RecognitionIdentityCreateRequest: require('./definitions/recognition/IdentityCreateRequest'),
     RecognitionIdentityUpdateRequest: require('./definitions/recognition/IdentityUpdateRequest'),
     RecognitionIdentityResponse: require('./definitions/recognition/IdentityResponse'),
-    RecognitionGroupsSearchResponse: require('./definitions/recognition/GroupsSearchResponse'),
+    RecognitionGroupsResponse: require('./definitions/recognition/GroupsResponse'),
     RecognitionSearchRequest: require('./definitions/recognition/SearchRequest'),
     RecognitionImageResponse: require('./definitions/recognition/ImageResponse'),
 

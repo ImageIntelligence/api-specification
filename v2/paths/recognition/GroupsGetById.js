@@ -1,6 +1,6 @@
 module.exports = {
-  post: {
-    operationId: 'recognition/groups-search',
+  get: {
+    operationId: 'recognition/groups-get',
     security: [
       {
         Bearer: []
@@ -10,31 +10,32 @@ module.exports = {
       {
         name: 'namespace',
         type: 'string',
-        description: "Groups' namespace",
         in: 'path',
         required: true
       },
       {
-        name: 'RecognitionSearchRequest',
-        in: 'body',
-        schema: {
-          $ref: '#/definitions/RecognitionSearchRequest'
-        },
+        name: 'id',
+        in: 'path',
+        type: 'string',
+        description: 'The ID of a recognition identity',
         required: true
       }
     ],
     responses: {
       '200': {
-        description: 'A list of jobs found given your search criteria',
+        description: 'Recognition identity resource',
         schema: {
-          type: 'array',
-          items: {
-            $ref: '#/definitions/RecognitionGroupsResponse'
-          }
+          $ref: '#/definitions/RecognitionGroupsResponse'
         }
       },
       '401': {
         description: 'Unauthorized'
+      },
+      '403': {
+        description: 'Forbidden'
+      },
+      '404': {
+        description: 'No identity found with the given ID'
       },
       '500': {
         description: 'Internal server error'
