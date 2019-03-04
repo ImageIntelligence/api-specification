@@ -10,42 +10,53 @@ module.exports = {
       description: 'An arbitrary client specific resource identifier to reference this image (usually UUID)'
     },
     feedId: {
-      type: 'string'
+      type: 'string',
+      description: 'User specified ID to reference the source of the images within this job',
     },
     identityId: {
-      type: 'string'
+      type: 'string',
+      description: 'Identity ID associated to this resource'
     },
     url: {
       type: 'string',
       description: 'URL of the image'
     },
     boundingBox: {
+      description: 'Bounding box values',
       $ref: '#/definitions/BoundingBox'
     },
     boundingBoxConfidence: {
-      type: 'number'
+      type: 'number',
+      description: 'Confidence level of the resulting bounding box',
     },
     type: {
       type: 'string',
+      description: 'Type of response e.g. "FACE"',
       enum: ['FACE']
     },
     groupId: {
-      type: 'string'
+      type: 'string',
+      description: 'Group that the resource belongs to'
     },
     isFrontal: {
-      type: 'boolean'
+      type: 'boolean',
+      description: 'Whether the image is frontal or not',
     },
     sharpness: {
-      type: 'number'
+      type: 'number',
+      description: 'Sharpness of the image'
     },
     width: {
-      type: 'number'
+      type: 'number',
+      description: 'Width of the image',
     },
     height: {
-      type: 'number'
+      type: 'number',
+      description: 'Height of the image',
     },
     createdAt: {
-      type: 'number'
+      type: 'number',
+      description: 'Timestamp of when the job was created'
     }
   },
   example: {
