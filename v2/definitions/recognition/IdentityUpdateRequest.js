@@ -1,34 +1,31 @@
 module.exports = {
   type: 'object',
-  required: ['imageIdsToAdd', 'imageIdsToRemove'],
   properties: {
     customId: {
       type: 'string',
       description: 'An arbitrary client specific resource identifier to reference this job (usually UUID)',
     },
     images: {
-      type: 'array',
-      items: {
-        type: 'object',
-        properties: {
-          add: {
-            type: 'array',
-            items: {
-              type: 'string',
-              description: 'Images to add',
-            },
-            maxLength: 20,
-            uniqueItems: true,
+      type: 'object',
+      required: ['add', 'remove'],
+      properties: {
+        add: {
+          type: 'array',
+          items: {
+            type: 'string',
+            description: 'Images to add',
           },
-          remove: {
-            type: 'array',
-            items: {
-              type: 'string',
-              description: 'Images to remove',
-            },
-            maxLength: 20,
-            uniqueItems: true,
-          }
+          maxLength: 20,
+          uniqueItems: true,
+        },
+        remove: {
+          type: 'array',
+          items: {
+            type: 'string',
+            description: 'Images to remove',
+          },
+          maxLength: 20,
+          uniqueItems: true,
         }
       }
     },
