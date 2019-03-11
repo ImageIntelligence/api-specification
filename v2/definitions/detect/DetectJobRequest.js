@@ -49,7 +49,6 @@ module.exports = {
               zones: {
                 type: 'array',
                 description: 'A list of lists where each nested list represents a zone of the image to exclude',
-                minItems: 1,
                 items: {
                   type: 'array',
                   items: {
