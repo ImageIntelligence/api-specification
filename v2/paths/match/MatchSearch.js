@@ -3,46 +3,38 @@ module.exports = {
     operationId: 'match-search',
     security: [
       {
-        Bearer: [],
-      },
+        Bearer: []
+      }
     ],
     parameters: [
-      {
-        name: 'page',
-        in: 'query',
-        description: 'Pagination, the page to start at',
-        type: 'number',
-        required: false,
-        default: 1,
-      },
       {
         name: 'customId',
         in: 'query',
         description: 'Search for jobs with this custom ID',
         type: 'string',
-        required: false,
+        required: false
       },
       {
         name: 'feedId',
         in: 'query',
         description: 'Search for jobs with this feed ID',
         type: 'string',
-        required: false,
+        required: false
       },
       {
         name: 'before',
         in: 'query',
         description: 'Search for jobs created before this timestamp',
         type: 'number',
-        required: false,
+        required: false
       },
       {
         name: 'after',
         in: 'query',
         description: 'Search for jobs created after this timestamp',
         type: 'number',
-        required: false,
-      },
+        required: false
+      }
     ],
     responses: {
       '200': {
@@ -50,16 +42,16 @@ module.exports = {
         schema: {
           type: 'array',
           items: {
-            $ref: '#/definitions/MatchJobResponse',
-          },
-        },
+            $ref: '#/definitions/MatchJobResponse'
+          }
+        }
       },
       '401': {
-        description: 'Unauthorized',
+        description: 'Unauthorized'
       },
       '500': {
-        description: 'Internal server error',
-      },
-    },
-  },
+        description: 'Internal server error'
+      }
+    }
+  }
 };
