@@ -40,7 +40,8 @@ module.exports = {
     '/recognition/groups/{namespace}/search': require('./paths/recognition/GroupsSearch'),
     '/recognition/groups/{namespace}/{id}': require('./paths/recognition/GroupsGetById'),
     '/feedback': Object.assign(require('./paths/feedback/FeedbackCreate'), require('./paths/feedback/FeedbackSearch')),
-    '/feedback/{id}': require('./paths/feedback/FeedbackGetById')
+    '/feedback/{id}': require('./paths/feedback/FeedbackGetById'),
+    '/webhooks': require('./paths/webhook/WebhookRegister')
   },
   definitions: {
     // Common //
@@ -87,6 +88,11 @@ module.exports = {
 
     FeedbackRequest: require('./definitions/feedback/FeedbackRequest'),
     FeedbackRequestClassItem: require('./definitions/feedback/FeedbackRequestClassItem'),
-    FeedbackResponse: require('./definitions/feedback/FeedbackResponse')
+    FeedbackResponse: require('./definitions/feedback/FeedbackResponse'),
+
+    // Webhooks //
+
+    WebhookRegisterRequest: require('./definitions/webhook/WebhookRegisterRequest'),
+    WebhookResponse: require('./definitions/webhook/WebhookResponse')
   }
 };
